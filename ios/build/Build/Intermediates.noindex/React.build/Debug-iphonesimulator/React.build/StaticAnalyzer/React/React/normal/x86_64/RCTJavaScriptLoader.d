@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTJavaScriptLoader.mm \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTMultipartStreamReader.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTPerformanceLogger.h

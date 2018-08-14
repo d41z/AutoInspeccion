@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTWrapperViewController.m \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTWrapperViewController.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTViewControllerProtocol.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTNavItem.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/henry/Documents/autoinspeccion/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/henry/Documents/autoinspeccion/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h
