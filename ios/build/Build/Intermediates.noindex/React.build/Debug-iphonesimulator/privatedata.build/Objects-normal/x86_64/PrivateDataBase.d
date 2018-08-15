@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/henry/Documents/autoinspeccion/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.cpp \
-  /Users/henry/Documents/autoinspeccion/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.h
+  /Users/david/ReactNative/autoinspeccion/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.cpp \
+  /Users/david/ReactNative/autoinspeccion/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.h

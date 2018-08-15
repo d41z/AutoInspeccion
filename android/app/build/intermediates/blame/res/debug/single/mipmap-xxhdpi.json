@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\HENRY DIAZ\\Documents\\ProyectosDavid\\Let\\autoinspeccion\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\HENRY DIAZ\\Documents\\ProyectosDavid\\Let\\autoinspeccion\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "/Users/david/ReactNative/autoinspeccion/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/david/ReactNative/autoinspeccion/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/david/ReactNative/autoinspeccion/android/C:\\Users\\HENRY DIAZ\\Documents\\ProyectosDavid\\Let\\autoinspeccion\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "/Users/david/ReactNative/autoinspeccion/android/C:\\Users\\HENRY DIAZ\\Documents\\ProyectosDavid\\Let\\autoinspeccion\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     }
 ]
