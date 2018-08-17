@@ -1,4 +1,4 @@
-#Tue Aug 14 21:26:03 CLST 2018
-base.0=/Users/david/ReactNative/autoinspeccion/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Fri Aug 17 09:59:14 CLST 2018
+base.0=C\:\\Users\\HENRY DIAZ\\Documents\\Proyects\\autoinspeccion\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=/Users/david/ReactNative/autoinspeccion/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=C\:\\Users\\HENRY DIAZ\\Documents\\Proyects\\autoinspeccion\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

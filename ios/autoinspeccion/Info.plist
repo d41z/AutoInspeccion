@@ -39,9 +39,8 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSAppTransportSecurity</key>
-	<!--See http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/ -->
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
@@ -53,12 +52,33 @@
 		</dict>
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>$(PRODUCT_NAME) would like access to your photo gallery</string>
-    <key>NSCameraUsageDescription</key>
-    <string>$(PRODUCT_NAME) would like to use your camera</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>$(PRODUCT_NAME) would like to save photos to your photo gallery</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>$(PRODUCT_NAME) would like to your microphone (for videos)</string>
+	<string>$(PRODUCT_NAME) would like access to your photo gallery</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to use your camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to save photos to your photo gallery</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to your microphone (for videos)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FiraSans-Black.ttf</string>
+		<string>FiraSans-BlackItalic.ttf</string>
+		<string>FiraSans-Bold.ttf</string>
+		<string>FiraSans-BoldItalic.ttf</string>
+		<string>FiraSans-ExtraBold.ttf</string>
+		<string>FiraSans-ExtraBoldItalic.ttf</string>
+		<string>FiraSans-ExtraLight.ttf</string>
+		<string>FiraSans-ExtraLightItalic.ttf</string>
+		<string>FiraSans-Italic.ttf</string>
+		<string>FiraSans-Light.ttf</string>
+		<string>FiraSans-LightItalic.ttf</string>
+		<string>FiraSans-Medium.ttf</string>
+		<string>FiraSans-MediumItalic.ttf</string>
+		<string>FiraSans-Regular.ttf</string>
+		<string>FiraSans-SemiBold.ttf</string>
+		<string>FiraSans-SemiBoldItalic.ttf</string>
+		<string>FiraSans-Thin.ttf</string>
+		<string>FiraSans-ThinItalic.ttf</string>
+	</array>
 </dict>
 </plist>
