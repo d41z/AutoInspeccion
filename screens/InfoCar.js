@@ -9,6 +9,7 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   TextInput,
+  KeyboardAvoidingView
 } from 'react-native';
 
 const { width, height } = Dimensions.get('screen');
@@ -56,13 +57,15 @@ export default class InfoCar extends Component {
 
               
           </View>
+          
 
-          <View style={styles.containIn}>
+          <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={0} style={styles.containIn}>
               <View style={{alignItems: 'center'}}>
               <Image source={require('../assets/others/linea-info-vehiculo.png')}
                      style={styles.imgLinea} />
 
               </View>
+            
             <View style={styles.groupForm}>
                     <Text>Marca</Text>
                     <TextInput
@@ -91,10 +94,12 @@ export default class InfoCar extends Component {
                       style={styles.btnIngresar} />
                     </TouchableWithoutFeedback>
             </View>
+           
 
 
                 
-          </View>
+        
+          </KeyboardAvoidingView>
 
          
 

@@ -13,7 +13,8 @@ import {
   TextInput,
   Alert,
   Modal,
-  StatusBar
+  StatusBar,
+  KeyboardAvoidingView
 } from 'react-native';
 
 const { width, height } = Dimensions.get('screen');
@@ -73,10 +74,14 @@ export default class Login extends Component {
     const { navigate, goBack } = this.props.navigation
 
     return(
+      
         
-        <View style={{flex: 1}}>
+        <KeyboardAvoidingView style={{flex: 1} } behavior="padding" keyboardVerticalOffset={0}>
           <ImageBackground source={require('../assets/fondo-splash.jpg')}
           style={styles.imageBackground}>
+
+          
+
           <StatusBar
             barStyle="light-content"
             backgroundColor="#4F6D7A"
@@ -90,6 +95,7 @@ export default class Login extends Component {
             </View>
 
           </ImageBackground>
+          
               <View style={styles.contentSplit}>
 
                 <View style={styles.contentIn}> 
@@ -128,9 +134,9 @@ export default class Login extends Component {
 
 
               </View>
-        </View>
+              
+        </KeyboardAvoidingView>
 
-        
       );
   }
 }

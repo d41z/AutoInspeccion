@@ -54,7 +54,7 @@ export default class Terms extends Component {
 
 
          </ImageBackground>
-         <View style={{flex: 1}}>
+         <View style={{flex: 1, marginLeft: 30, marginRight: 20}}>
               <ScrollView
                   onScroll={({nativeEvent}) => {
                     if (isCloseToBottom(nativeEvent)) {
@@ -64,59 +64,131 @@ export default class Terms extends Component {
                   scrollEventThrottle={400}
                   
               >
-                      <Text>
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAA
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAAASASASASASASASASASASASASASAS
-                      ASASASASASASASASASASASASASASSAA
-
+                      <Text style={{fontFamily: 'FiraSans-Black', fontSize: 18, color: 'black', marginTop: 30}}>
+                      TÉRMINOS Y CONDICIONES DE USO APP AUTOINSPECCIONES
                       </Text>
+
+                      <Text style={{marginTop: 20}}>
+                        El uso de la Aplicación está sujeto a los siguientes Términos
+                        y Condiciones, que el Usuario declara conocer y aceptar:
+                      </Text>
+
+                      <Text style={{fontFamily: 'FiraSans-Black', color: 'black', marginTop: 20}}>
+                        Definiciones:
+                      </Text>
+
+                     
+                      <Text style={{marginTop: 20}}>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            1. Aplicación
+                        </Text>
+                        <Text>
+                          : la aplicación móvil desarrollada y puesta a disposición del público general por LET 
+                          para el apoyo del proceso de contratación de seguros de vehículos livianos.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            2. Asegurado
+                        </Text>
+                        <Text>
+                          : la persona que está contratando el seguro sobre el Vehículo al que se le realiza la Autoinspección.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            3. 3. Autoinspección
+                        </Text>
+                        <Text>
+                          : captura de la Información realizada por el Usuario a través de la Aplicación, 
+                          cuyo objetivo es permitir que LET informe a la Compañía sobre la individualización, características y estado del Vehículo,
+                           de manera que esta última evalúe la suscripción o rechazo de una póliza de seguro sobre el Vehículo.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            4. Compañía
+                        </Text>
+                        <Text>
+                          : la compañía de seguros que está tomando el seguro del Asegurado.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            5. Corredor
+                        </Text>
+                        <Text>
+                          : el vendedor de la póliza de seguro, intermediario entre el Asegurado y la Compañía.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            6. Información
+                        </Text>
+                        <Text>
+                          : fotografías tomadas e información declarada por el Usuario a través de la Aplicación.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            7. LET
+                        </Text>
+                        <Text>
+                          : LET Chile SpA, desarrolladora y dueña de la Aplicación.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            8. Usuario
+                        </Text>
+                        <Text>
+                          : la persona que, a través de la Aplicación, realiza la Autoinspección.
+                        </Text>
+                      </Text>
+
+                      <Text>
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                            9. Vehículo
+                        </Text>
+                        <Text>
+                          : vehículo liviano sobre el que el Asegurado está contratando
+                           un seguro y respecto del que el Usuario realizará la Autoinspección.
+                        </Text>
+                      </Text>
+
+                      
+                        <Text style={{fontFamily: 'FiraSans-Black', color: 'black', marginTop: 20}}>
+                            Es deber del Usuario:
+                        </Text>
+                 
+                        <Text style={{marginTop:5}}>
+                            - En caso de ser una persona distinta del Asegurado, contar con la autorización de éste para, en su representación, 
+                            realizar la Autoinspección y autorizar a LET las acciones descritas en el párrafo siguiente.
+                        </Text>
+                 
+
+                          <Text style={{marginTop:5}}>
+                            - Tomar fotografías y declarar información única y exclusivamente del Vehículo.
+                          </Text>
+
+                        <Text style={{marginTop:5}}>
+                        - Informar el verdadero estado de conservación del Vehículo, sus características y accesorios.
+                        </Text>
+
+                        <Text style={{marginTop:5}}>
+                        - Declarar y fotografiar todos y cada uno de los daños que presenta el Vehículo.
+                        </Text>
+
+                      
+                      
+                      
               </ScrollView>
             </View>
             <View style={{flex: 0.3}}>
