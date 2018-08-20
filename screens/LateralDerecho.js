@@ -41,9 +41,9 @@ export default class LateralDerecho extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     
-    Orientation.lockToLandscapeLeft();
+    Orientation.lockToLandscapeRight();
     
   }
 

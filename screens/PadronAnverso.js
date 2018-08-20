@@ -41,10 +41,8 @@ export default class PadronAnverso extends Component {
     }
   }
 
-  componentDidMount() {
-    
-    Orientation.lockToLandscapeLeft();
-    
+  componentWillMount() {
+    Orientation.lockToLandscapeRight();
   }
 
   openImagePicker(){

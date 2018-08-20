@@ -41,9 +41,9 @@ export default class Panel extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     
-    Orientation.lockToLandscapeLeft();
+    Orientation.lockToLandscapeRight();
     
   }
 

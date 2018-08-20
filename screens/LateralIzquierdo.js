@@ -41,9 +41,9 @@ export default class LateralIzquierdo extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     
-    Orientation.lockToLandscapeLeft();
+    Orientation.lockToLandscapeRight();
     
   }
 

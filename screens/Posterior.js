@@ -41,9 +41,9 @@ export default class Posterior extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     
-    Orientation.lockToLandscapeLeft();
+    Orientation.lockToLandscapeRight();
     
   }
 

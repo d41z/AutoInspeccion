@@ -9,11 +9,16 @@ import {
   TouchableWithoutFeedback,
   Image
 } from 'react-native';
+import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('screen');
 
-
   export default class LoginForm extends Component{
+
+    componentWillMount() {
+      Orientation.lockToPortrait()
+    }
+
     render(){
       const { navigate, goBack } = this.props.navigation
       return(

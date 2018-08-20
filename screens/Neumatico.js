@@ -41,9 +41,9 @@ export default class Neumatico extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     
-    Orientation.lockToLandscapeLeft();
+    Orientation.lockToLandscapeRight();
     
   }
 

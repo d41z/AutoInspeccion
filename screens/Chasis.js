@@ -41,10 +41,8 @@ export default class Chasis extends Component {
     }
   }
 
-  componentDidMount() {
-    
-    Orientation.lockToLandscapeLeft();
-    
+  componentWillMount() {
+    Orientation.lockToLandscapeRight();
   }
 
   openImagePicker(){

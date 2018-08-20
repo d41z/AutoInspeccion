@@ -105,7 +105,6 @@ export default class App extends Component{
               headerMode: 'none',
               navigationOptions: {
                 tabBarVisible: false,
-
               },
             }),
           },
