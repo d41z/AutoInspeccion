@@ -9,31 +9,106 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   ScrollView,
+  Alert
 } from 'react-native';
 
 const { width, height } = Dimensions.get('screen');
 
-const isCloseToBottom = ({layoutMeasurement, contentOffset, contentSize}) => {
-  const paddingToBottom = 20;
-  return layoutMeasurement.height + contentOffset.y >=
-    contentSize.height - paddingToBottom;
-};
+
 
 export default class Inntruccion extends Component {
   constructor(props) {
     super(props)
     this.state = {
       disabledButton: true,
-      
+      uri1: require('../assets/images/botones/bt-instrucciones-off.png'),
+      uri2: require('../assets/images/botones/bt-instrucciones-off.png'),
+      uri3: require('../assets/images/botones/bt-instrucciones-off.png'),
+      uri4: require('../assets/images/botones/bt-instrucciones-off.png'),
+      uri5: require('../assets/images/botones/bt-instrucciones-off.png'),
+      uri6: require('../assets/images/botones/bt-instrucciones-off.png'),
+      okOn1: false,
+      okOn2: false,
+      okOn3: false,
+      okOn4: false,
+      okOn5: false,
+      okOn6: false,
 
     }
   }
+
+  onTap1 = () => {
+
+    this.setState({
+            okOn1: true,
+        });
+    this.checkMethod();
+      
+    }
+
+    onTap2 = () => {
+    this.setState({
+            okOn2: true,
+        });
+    this.checkMethod();
+      
+    }
+
+    onTap3 = () => {
+      this.checkMethod();
+    this.setState({
+            okOn3: true,
+        });
+      
+    }
+
+    onTap4 = () => {
+      this.checkMethod();
+    this.setState({
+            okOn4: true,
+        });
+      
+    }
+
+    onTap5 = () => {
+      this.checkMethod();
+    this.setState({
+            okOn5: true,
+        });
+      
+    }
+
+    onTap6 = () => {
+      this.checkMethod();
+    this.setState({
+            okOn6: true,
+        });
+      
+    }
+
+
+
+
+
+
+    checkMethod(){
+
+      if(this.state.okOn1===true && this.state.okOn2===true){
+        this.setState({
+            disabledButton: false,
+        });
+
+      }
+      
+    }
 
 
 
   render(){
     const { width, height } = Dimensions.get('screen');
+
     return(
+
       <View style={styles.container}>
         <ImageBackground source={require('../assets/others/fondo-titulos.png')}
           style={styles.fondoHeader}>
@@ -61,8 +136,8 @@ export default class Inntruccion extends Component {
           
             
               <View style={{backgroundColor: '#F3F3F3', flexDirection: 'row'}}>
-                <View style={{flex: 1}}>
-                  <Text>
+                <View style={{flex: 1, justifyContent:'center'}}>
+                  <Text style={{textAlign: 'justify'}}>
                   • Tomar fotografías en un lugar espacioso y bien iluminado,
                    no se permiten autoinspecciones en subterráneos ni de noche.
                    </Text>
@@ -70,14 +145,18 @@ export default class Inntruccion extends Component {
                 <View style={{flex: 0.5, flexDirection: 'row'}}>
                   <Image source={require('../assets/others/linea-instrucciones.png')}
                       style={styles.imgLinea} />
-                  <Image source={require('../assets/images/botones/bt-instrucciones-off.png')}
-                      style={styles.imgButton} />
+                  <TouchableWithoutFeedback
+                  onPress={ this.onTap1 }
+                  > 
+                  {this.state.okOn1 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} /> 
+                  : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
+                  </TouchableWithoutFeedback>
                       
                 </View>
               </View>
 
               <View style={{backgroundColor: '#F3F3F3', flexDirection: 'row'}}>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, justifyContent:'center'}}>
                   <Text>
                     • Seguir los ejemplos de las fotos guías.
                   </Text>
@@ -85,13 +164,17 @@ export default class Inntruccion extends Component {
                 <View style={{flex: 0.5, flexDirection: 'row'}}>
                   <Image source={require('../assets/others/linea-instrucciones.png')}
                       style={styles.imgLinea} />
-                  <Image source={require('../assets/images/botones/bt-instrucciones-off.png')}
-                      style={styles.imgButton} />    
+                  <TouchableWithoutFeedback
+                  onPress={ this.onTap2 }
+                  > 
+                  {this.state.okOn2 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} /> 
+                  : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
+                  </TouchableWithoutFeedback>   
                 </View>
               </View>
 
               <View style={{backgroundColor: '#F3F3F3', flexDirection: 'row'}}>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, justifyContent:'center'}}>
                   <Text>
                     • Tomar las fotografías en forma horizontal.
                   </Text>
@@ -99,13 +182,17 @@ export default class Inntruccion extends Component {
                 <View style={{flex: 0.5, flexDirection: 'row'}}>
                   <Image source={require('../assets/others/linea-instrucciones.png')}
                       style={styles.imgLinea} />
-                  <Image source={require('../assets/images/botones/bt-instrucciones-off.png')}
-                      style={styles.imgButton} />    
+                  <TouchableWithoutFeedback
+                  onPress={ this.onTap3 }
+                  > 
+                  {this.state.okOn3 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} /> 
+                  : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
+                  </TouchableWithoutFeedback>  
                 </View>
               </View>
 
               <View style={{backgroundColor: '#F3F3F3', flexDirection: 'row'}}>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, justifyContent:'center'}}>
                   <Text>
                     • La aplicación requiere acceder al GPS para georefenciar la información de la autoinspección.
                      No se permite realizar autoinspecciones sin georreferenciación 
@@ -114,13 +201,17 @@ export default class Inntruccion extends Component {
                 <View style={{flex: 0.5, flexDirection: 'row'}}>
                   <Image source={require('../assets/others/linea-instrucciones.png')}
                       style={styles.imgLinea} />
-                  <Image source={require('../assets/images/botones/bt-instrucciones-off.png')}
-                      style={styles.imgButton} />    
+                  <TouchableWithoutFeedback
+                  onPress={ this.onTap4 }
+                  > 
+                  {this.state.okOn4 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} /> 
+                  : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
+                  </TouchableWithoutFeedback>   
                 </View>
               </View>
 
               <View style={{backgroundColor: '#F3F3F3', flexDirection: 'row'}}>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, justifyContent:'center'}}>
                   <Text>
                     • Si los datos móviles están desactivados, tiene que conectar su dispositivo a una red Wi-Fi 
                   </Text>
@@ -128,13 +219,17 @@ export default class Inntruccion extends Component {
                 <View style={{flex: 0.5, flexDirection: 'row'}}>
                   <Image source={require('../assets/others/linea-instrucciones.png')}
                       style={styles.imgLinea} />
-                  <Image source={require('../assets/images/botones/bt-instrucciones-off.png')}
-                      style={styles.imgButton} />    
+                  <TouchableWithoutFeedback
+                  onPress={ this.onTap5 }
+                  > 
+                  {this.state.okOn5 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} /> 
+                  : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
+                  </TouchableWithoutFeedback>  
                 </View>
               </View>
 
               <View style={{backgroundColor: '#F3F3F3', flexDirection: 'row'}}>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, justifyContent:'center'}}>
                   <Text>
                     • Para mayor información consulta la ayuda presionando el icono en la parte inferior derecha.
                   </Text>
@@ -142,8 +237,12 @@ export default class Inntruccion extends Component {
                 <View style={{flex: 0.5, flexDirection: 'row'}}>
                   <Image source={require('../assets/others/linea-instrucciones.png')}
                       style={styles.imgLinea} />
-                  <Image source={require('../assets/images/botones/bt-instrucciones-off.png')}
-                      style={styles.imgButton} />    
+                  <TouchableWithoutFeedback
+                  onPress={ this.onTap6 }
+                  > 
+                  {this.state.okOn6 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} /> 
+                  : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
+                  </TouchableWithoutFeedback>   
                 </View>
               </View>
 
@@ -154,10 +253,15 @@ export default class Inntruccion extends Component {
           
           <View style={styles.containFooter}>
           <TouchableWithoutFeedback
-                      onPress={() => this.props.navigation.navigate('inicioins')}>
-                    <Image source={require('../assets/images/botones/bt-continuar.png')}
-                      style={styles.btnIngresar} />
-                    </TouchableWithoutFeedback>
+                      onPress={() => this.props.navigation.navigate('inicioins')}
+                      disabled={this.state.disabledButton}>
+              {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-aceptarycontinuar-off.png')} 
+              style={styles.btnIngresar}/>:<Image source={require('../assets/images/botones/bt-aceptarycontinuar.png')}
+              style={styles.btnIngresar} />}
+
+          </TouchableWithoutFeedback>
+
+
 
               
           </View>
@@ -200,6 +304,7 @@ export default class Inntruccion extends Component {
       flex: 1,
       backgroundColor: 'white',
       justifyContent: 'space-between',
+      paddingHorizontal: 20,
     },
     containFooter:{
       flex: 0.3,
@@ -209,13 +314,14 @@ export default class Inntruccion extends Component {
     },
     imgLinea: {
       resizeMode: 'contain',
-      height: height * 0.1,
+      height: height * 0.09,
 
     },
     imgButton: {
       resizeMode: 'contain',
       height: height * 0.1,
       width: width * 0.15,
+      left: 10
     },
 
   btnIngresar: {
@@ -227,13 +333,30 @@ export default class Inntruccion extends Component {
     justifyContent: 'center'
   },
   title: {
-    flex: 0.3,
+    flex: 0.2,
     backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
   },
   textTitle: {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 18,
+    color: 'black'
   }
 
 
 
   })
+
+
+ /*
+ <TouchableWithoutFeedback
+                      onPress={() => this.props.navigation.navigate('inicioins')}
+                      disabled={this.state.disabledButton}>
+              {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-aceptarycontinuar-off.png')} 
+              style={styles.btnIngresar}/>:<Image source={require('../assets/images/botones/bt-aceptarycontinuar.png')}
+              style={styles.btnIngresar} />}
+
+          </TouchableWithoutFeedback>
+*/

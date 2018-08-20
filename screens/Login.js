@@ -17,6 +17,8 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 
+import LoginForm from '../components/LoginForm'
+
 const { width, height } = Dimensions.get('screen');
 
 export default class Login extends Component {
@@ -74,68 +76,31 @@ export default class Login extends Component {
     const { navigate, goBack } = this.props.navigation
 
     return(
-      
-        
-        <KeyboardAvoidingView style={{flex: 1} } behavior="padding" keyboardVerticalOffset={0}>
-          <ImageBackground source={require('../assets/fondo-splash.jpg')}
+        <ImageBackground source={require('../assets/fondo-splash.jpg')}
           style={styles.imageBackground}>
-
-          
-
-          <StatusBar
-            barStyle="light-content"
-            backgroundColor="#4F6D7A"
-          />
-            <View style={styles.container}>
+          <KeyboardAvoidingView behavior="padding" style={styles.container}> 
+            <View style={styles.logoContainer}> 
               <Image source={require('../assets/images/logos/logo-let.png')}
-                style={styles.logoLet} />
+                     style={styles.logoLet}
+              />
               <Image source={require('../assets/images/logos/titulo-let.png')}
-                style={styles.logoTitulo} />
+                     style={styles.logoLet}
+              />
+
+
+
+            </View>
+            <View style={styles.formContainer}>
+              <LoginForm navigation={this.props.navigation}/>
 
             </View>
 
+
+          </KeyboardAvoidingView>
           </ImageBackground>
-          
-              <View style={styles.contentSplit}>
+      
+   
 
-                <View style={styles.contentIn}> 
-                  <View>
-                    <Text style={styles.textoRut}>RUT Asegurado: </Text>
-                    
-                    <View style={styles.groupForm}>
-                    <TextInput
-                    style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-          
-                    onChangeText={(rut) => this.setState({ rut })}
-                    value={this.state.rut} />
-                    </View>
-                    <Text style={styles.textoRut}>Patente: </Text>
-                    <View style={styles.groupForm}>
-                    <TextInput
-                    style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-          
-                    onChangeText={(patente) => this.setState({ patente })}
-                    value={this.state.patente} />
-
-
-                    </View>
-                    <TouchableWithoutFeedback
-                      onPress={() => this.props.navigation.navigate('terms')}>
-                    <Image source={require('../assets/images/botones/bt-ingresar.png')}
-                      style={styles.btnIngresar} />
-                    </TouchableWithoutFeedback>
-                    
-                   
-                    
-                  </View>
-                   
-
-                </View>
-
-
-              </View>
-              
-        </KeyboardAvoidingView>
 
       );
   }
@@ -144,10 +109,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignSelf: 'stretch',
-    alignItems: 'center',
     backgroundColor: 'transparent',
-    position: 'absolute',
     
   },
   imageBackground: {
@@ -156,15 +118,19 @@ const styles = StyleSheet.create({
     height: undefined,
   },
   logoLet: {
-    marginTop: 5,
-    width: width * 0.95,
-    height: height * 0.2,
-    resizeMode: 'contain',
+    width: 300,
+    height: 100,
+    
   },
   logoTitulo: {
     width: width * 0.9,
-    height: height * 0.15,
-    resizeMode: 'contain',
+    height: height * 0.10,
+    
+  },
+  logoContainer:{
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center'
 
   },
   contentSplit: {
@@ -235,3 +201,4 @@ const styles = StyleSheet.create({
   },
 
 })
+

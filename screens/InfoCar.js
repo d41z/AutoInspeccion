@@ -43,23 +43,27 @@ export default class InfoCar extends Component {
             </View>
          </ImageBackground>
 
-          <View style={styles.containInfo}>
-              <Image source={require('../assets/others/icono-info-automovil.png')}
-                     style={styles.logoAuto} />
-
-              
-              <View style={{flex: 1}}>
-                <Text>Patente:</Text>
-                <Text></Text>
-                <Text>Revisa la informacíon y editalade ser necesario</Text>
-              </View>
-
-
-              
-          </View>
+         
+          
           
 
-          <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={0} style={styles.containIn}>
+          <KeyboardAvoidingView behavior="padding" style={styles.containIn} keyboardVerticalOffset={-100}>
+
+              <View style={styles.containInfo}>
+                  <Image source={require('../assets/others/icono-info-automovil.png')}
+                         style={styles.logoAuto} />
+
+                  
+                  <View style={{flex: 1}}>
+                    <Text>Patente:</Text>
+                    <Text></Text>
+                    <Text>Revisa la informacíon y editalade ser necesario</Text>
+                  </View>
+
+
+                  
+              </View>
+
               <View style={{alignItems: 'center'}}>
               <Image source={require('../assets/others/linea-info-vehiculo.png')}
                      style={styles.imgLinea} />
@@ -100,6 +104,8 @@ export default class InfoCar extends Component {
                 
         
           </KeyboardAvoidingView>
+
+         
 
          
 
@@ -145,7 +151,7 @@ export default class InfoCar extends Component {
       
     },
     containInfo:{
-      flex: 0.3,
+      flex: 1,
       height: height * 0.1,
       backgroundColor: 'white',
       paddingTop: 23,

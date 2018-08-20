@@ -131,7 +131,7 @@ export default class InicioInspeccion extends Component {
         resizeMode: 'contain',
     },
     textHeader: {
-        textAlign: 'center',
+        textAlign: 'left',
         textAlignVertical: "center"
     },
     flecha: {
@@ -146,6 +146,7 @@ export default class InicioInspeccion extends Component {
       backgroundColor: 'white',
       paddingTop: 23,
       justifyContent: 'space-between',
+      paddingHorizontal: 30
       
     },
     containFooter:{

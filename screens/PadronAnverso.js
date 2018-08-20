@@ -35,7 +35,7 @@ export default class PadronAnverso extends Component {
       imageHeight: '',
       imageWidth: '',
       imagenUri: '',
-      uri: require('../assets/images/fotos-obligatorias/bt-tomar-foto.png'),
+      imageRef: require('../assets/fotoRef/foto1.png'),
       ideaOP: true,
       btnEstado: true
     }
@@ -43,7 +43,7 @@ export default class PadronAnverso extends Component {
 
   componentDidMount() {
     
-    Orientation.lockToLandscape();
+    Orientation.lockToLandscapeLeft();
     
   }
 
@@ -71,11 +71,12 @@ export default class PadronAnverso extends Component {
           console.log(source)
 
           this.setState({
-            imagenUri: response.uri,
+            imageRef: source,
             imageHeight: response.height,
             imageWidth: response.width,
             fotoUp: true,
-            btnEstado: false
+            btnEstado: false,
+            disabledButton: false
 
           });
         }
@@ -83,12 +84,13 @@ export default class PadronAnverso extends Component {
   }
 
   cambioImagen=()=>{
-    /*
+   
     this.setState({
-      imagenUri: this.state.uri,
+      imageRef: require('../assets/fotoRef/foto1.png'),
+      disabledButton: true
     })
-    */
-    Alert.alert('ASDASD')
+    
+    
   }
 
 
@@ -102,21 +104,49 @@ export default class PadronAnverso extends Component {
 
            <View style={styles.containHeader}>
 
+              <View style={{flex:0.8}}>
+                <View style={{flexDirection: 'row'}}>
                <Image source={require('../assets/others/icono-titulos.png')}
                 style={styles.logoLet} />
                 <Text style={styles.textHeader}>
                   INGRESO DE FOTOGRAFÍAS
                 </Text>
-          
-              <ImageBackground source={require('../assets/others/cabecera-fondo-amarillo.png')}
-              style={styles.containFotoObligatoria} resizeMode='contain' >
+                </View>
+                
+              </View>
+              
+              
 
-                <Text style={styles.textFotoObligatoria}>
-                      Fotos Obligatorias
-                </Text>
+                <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
+                                 style={styles.containFotoObligatoria}>
+                  
+                <View style={{flexDirection: 'column'}}>
+                  <Text>
+                    Fotos Obligatorias
+                  </Text>
+                  <View>
+                    <Text>
+                      Foto 1 de 12
+                    </Text>
+                  </View>
+                </View>
+                  
+                    
+
+                </ImageBackground>
+
               
+
+              <View style={{flex:0.2}}>
+                <Image source={require('../assets/others/flecha-amarilla.png')} style={styles.flecha} />
+              </View>
+
+              <View style={{flex:0.1}}>
+                <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+              </View>
+
+
               
-              </ImageBackground>
 
           
             </View>
@@ -128,14 +158,14 @@ export default class PadronAnverso extends Component {
 
             <View style={{backgroundColor:'#E3B38D', height: width, width: height*0.5, position: 'absolute'}}>
 
-              {this.state.imagenUri ? <Image style={styles.imagePhoto} source={{uri: this.state.imagenUri}} /> : null}
+              <Image style={styles.imagePhoto} source={this.state.imageRef} />
 
             </View>
 
             <View style={{backgroundColor:'white', height: width, width: height*0.5, position: 'absolute', left: (height/2), justifyContent: 'center', alignItems: 'center'}}>
               <View style={{flex: 1, alignItems: 'center', paddingTop: 20}}>
                 <Text>
-                  Padrón Anverso
+                  Padrón Adverso
                 </Text>
                 <Text style={{textAlign: 'center'}}>
                   Debe poder leerse claramente el texto del documento
@@ -162,9 +192,12 @@ export default class PadronAnverso extends Component {
 
                 <View style={{flex: 1}}>
                   <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('padronA')}>
-                      <Image source={require('../assets/images/botones/bt-continuar.png')}
-                        style={styles.btnSiguiente} />
+                        onPress={() => this.props.navigation.navigate('padronR')}
+                        disabled={this.state.disabledButton}
+                        >
+                      {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
+                      style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
+                      style={styles.btnSiguiente} />}
                   </TouchableWithoutFeedback>
                 </View>
               </View>
@@ -189,8 +222,9 @@ export default class PadronAnverso extends Component {
         flex: 1
     },
     containHeader: {
+      flex:1,
         flexDirection: 'row',
-        width: height * 0.7,
+        width: height,
         height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
@@ -210,6 +244,12 @@ export default class PadronAnverso extends Component {
         resizeMode: 'contain',
     },
     textHeader: {
+      flex:1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      textAlignVertical: 'center'
+
 
         
     },
@@ -226,9 +266,10 @@ export default class PadronAnverso extends Component {
       textAlignVertical: 'center'
     },
     containFotoObligatoria: {
+        flex:1,
         flexDirection: 'row',
-        width: height * 0.5,
-        height: width * 0.5,
+        width: height * 0.3,
+        height: width * 0.15,
         borderColor: 'grey',
         borderBottomWidth: 0,
         justifyContent:'center',
@@ -248,6 +289,11 @@ export default class PadronAnverso extends Component {
     test1: {
       height: 0,
       width: 0
+    },
+    flecha: {
+      width: width * 0.1,
+      height: height * 0.1,
+      resizeMode: 'contain',
     },
 
 
