@@ -75,7 +75,7 @@ export default class Login extends Component {
     const { navigate, goBack } = this.props.navigation
 
     return(
-        <ImageBackground source={require('../assets/fondo-splash.jpg')}
+        <ImageBackground source={require('../assets/foto-fondo-login.png')}
           style={styles.imageBackground}>
           <KeyboardAvoidingView behavior="padding" style={styles.container}> 
             <View style={styles.logoContainer}> 

@@ -37,7 +37,7 @@ export default class InicioInspeccion extends Component {
 
                <Image source={require('../assets/others/icono-titulos.png')}
                 style={styles.logoLet} />
-                <Text style={styles.textHeader}>
+                <Text style={styles.textHeader1}>
                   INICIAR AUTOINSPECCION
                 </Text>
 
@@ -133,6 +133,12 @@ export default class InicioInspeccion extends Component {
     textHeader: {
         textAlign: 'left',
         textAlignVertical: "center"
+    },
+    textHeader1: {
+      textAlign: 'center',
+      fontFamily: 'FiraSans-Black',
+        fontSize: 18,
+        color: 'black'
     },
     flecha: {
       width: width * 0.1,

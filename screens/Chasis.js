@@ -37,12 +37,17 @@ export default class Chasis extends Component {
       imagenUri: '',
       imageRef: require('../assets/fotoRef/foto10.png'),
       ideaOP: true,
-      btnEstado: true
+      btnEstado: true,
+      openModal: false
     }
   }
 
   componentWillMount() {
-    Orientation.lockToLandscapeRight();
+    if (Platform.OS == 'ios') {
+      Orientation.lockToLandscapeRight();
+    }else{
+      Orientation.lockToLandscapeLeft();
+    }
   }
 
   openImagePicker(){
@@ -67,6 +72,12 @@ export default class Chasis extends Component {
         else {
           let source = { uri: response.uri };
           console.log(source)
+
+          if (Platform.OS == 'ios') {
+            Orientation.lockToLandscapeRight();
+          }else{
+            Orientation.lockToLandscapeLeft();    
+          }
 
           this.setState({
             imageRef: source,
@@ -119,11 +130,11 @@ export default class Chasis extends Component {
                                  style={styles.containFotoObligatoria}>
                   
                 <View style={{flexDirection: 'column'}}>
-                  <Text>
+                  <Text style={{fontSize: 14, color: 'black'}}>
                     Fotos Obligatorias
                   </Text>
                   <View>
-                    <Text>
+                    <Text style={{fontSize: 18, color: 'black'}}>
                       Foto 10 de 12
                     </Text>
                   </View>
@@ -140,7 +151,10 @@ export default class Chasis extends Component {
               </View>
 
               <View style={{flex:0.1}}>
+                <TouchableWithoutFeedback
+                          onPress={() => this.setState({ openModal: true })}>
                 <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+              </TouchableWithoutFeedback>
               </View>
 
 
@@ -199,6 +213,109 @@ export default class Chasis extends Component {
                   </TouchableWithoutFeedback>
                 </View>
               </View>
+              <Modal
+                  visible={this.state.openModal}
+                  transparent={true}
+                  animationType={'slide'}
+                  onRequestClose={() => this.setState({ openModal: false })}
+                  supportedOrientations={['landscape']}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1}}>
+                          <View style={{flexDirection:'row', alignItems: 'center'}}>
+                            <Image source={require('../assets/modal/icono-ayuda.png')}
+                              style={styles.iconoAyudaModal} />
+                            <View style={{flex: 1}}>
+                              <Text style={{fontSize: 16, color: 'black'}}>
+                                FOTOS OBLIGATORIAS
+                              </Text>
+                              <Text></Text>
+                              <Text style={{fontSize: 18, color: 'black'}}>
+                                CHASIS
+                              </Text>
+                            </View>
+
+                          </View>
+                          <View style={{flex:1, paddingHorizontal: 20}}>
+                            <Text style={{paddingBottom: 10}}>
+                                  -
+                            </Text>
+                            <Text>
+                                  - 
+                            </Text>
+                            <Text>
+                                  - 
+                            </Text>
+                            <Text>
+                                  - 
+                            </Text>
+                            <Text style={{paddingTop: 10}}>
+                                  
+                            </Text>
+                          </View>
+
+
+
+                        </View>
+                        <View style={{flex:0.1, paddingVertical: 20}}>
+
+                              <Image source={require('../assets/modal/linea.png')}
+                              style={{height: width * 0.6, width: 10}} />
+
+                        </View>
+                        <View style={{flex:0.7, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center',
+                                      paddingVertical: 20}}>
+                          <Text style={{fontSize: 16, color: 'black'}}>
+                            MESA DE AYUDA
+                          </Text>
+
+                          <View style={{flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
+                            <Image source={require('../assets/modal/icono-telefono-fijo.png')}
+                              style={styles.iconoConfirmacionModal} />
+                            <View style={{flex: 1}}>
+                              <Text style={{color: 'black'}}>
+                                Telefono Fijo
+                              </Text>
+                              <Text></Text>
+                              <Text style={{color: 'black'}}>
+                                22 6565081
+                              </Text>
+                            </View>
+
+
+                          </View>
+
+                          <View style={{flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
+                            <Image source={require('../assets/modal/icono-whatsapp.png')}
+                              style={styles.iconoConfirmacionModal} />
+                            <View style={{flex: 1}}>
+                              <Text style={{color: 'black'}}>
+                                WHATSAPP
+                              </Text>
+                              <Text></Text>
+                              <Text style={{color: 'black'}}>
+                                +569931300485
+                              </Text>
+                            </View>
+
+
+                          </View>
+
+
+
+                        </View>
+
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModal: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
 
 
             </View>
@@ -246,7 +363,10 @@ export default class Chasis extends Component {
       alignItems: 'center',
       justifyContent: 'center',
       textAlign: 'center',
-      textAlignVertical: 'center'
+      textAlignVertical: 'center',
+      fontFamily: 'FiraSans-Black',
+        fontSize: 18,
+        color: 'black'
 
 
         
@@ -293,6 +413,49 @@ export default class Chasis extends Component {
       height: height * 0.1,
       resizeMode: 'contain',
     },
+    modalConfirmation: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
+  containerModal: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bordeModal: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    height: height * 0.4,
+    width: width * 1.5,
+    borderRadius: width * 0.02,
+    borderColor: 'white',
+    borderWidth: 0.666,
+    backgroundColor: 'white',
+  },
+  iconoAyudaModal: {
+    width: width * 0.14,
+    height: height * 0.14,
+    resizeMode: 'contain',
+    marginLeft: width * 0.03,
+
+  },
+  iconoConfirmacionModal: {
+    width: width * 0.15,
+    height: height * 0.15,
+    resizeMode: 'contain',
+    marginLeft: width * 0.03,
+  },
+  btnCerrarModal: {
+    position: 'absolute',
+    top: -(height * 0.04),
+    right: -(width * 0.04),
+    width: 50,
+    height: 50,
+
+  },
 
 
 

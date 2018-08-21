@@ -192,6 +192,11 @@ export default class Terms extends Component {
               </ScrollView>
             </View>
             <View style={{flex: 0.3}}>
+
+              {this.state.disabledButton ? <Image source={require('../assets/others/flecha-abajo.png')} 
+              style={styles.btnIngresar}/>: <View style={{width: width * 0.8,
+    height: height * 0.10}}></View>}
+
               <TouchableWithoutFeedback
                   onPress={() => this.props.navigation.navigate('infoCar')}
                   disabled={this.state.disabledButton}
@@ -235,7 +240,10 @@ export default class Terms extends Component {
         resizeMode: 'contain',
     },
     textHeader: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'FiraSans-Black',
+        fontSize: 18,
+        color: 'black'
     },
      btnIngresar: {
     width: width * 0.8,

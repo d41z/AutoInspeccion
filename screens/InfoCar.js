@@ -142,7 +142,10 @@ export default class InfoCar extends Component {
         resizeMode: 'contain',
     },
     textHeader: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'FiraSans-Black',
+        fontSize: 18,
+        color: 'black'
     },
     logoAuto: {
       width: width * 0.44,

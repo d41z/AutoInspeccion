@@ -232,6 +232,7 @@ export default class Inntruccion extends Component {
         </View>
 
         <View style={styles.containFooter}>
+
           <TouchableWithoutFeedback
             onPress={() => this.props.navigation.navigate('inicioins')}
             disabled={this.state.disabledButton}>
@@ -278,7 +279,10 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   textHeader: {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'FiraSans-Black',
+        fontSize: 18,
+        color: 'black'
   },
   containBody: {
     flex: 1,
@@ -287,7 +291,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   containFooter: {
-    flex: 0.3,
+    flex: 0.2,
     backgroundColor: 'white',
     alignItems: 'center',
 
