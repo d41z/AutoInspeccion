@@ -121,7 +121,7 @@ export default class App extends Component{
       navigationOptions: {
         tabBarVisible: false,
       },
-      
+      swipeEnabled: false,
     })
 
     return (

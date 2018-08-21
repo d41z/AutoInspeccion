@@ -35,62 +35,50 @@ export default class Inntruccion extends Component {
     }
   }
 
-  onTap1 = () => {
-
-    this.setState({
-      okOn1: true,
-    });
-    this.checkMethod();
-
-  }
-
-  onTap2 = () => {
-    this.setState({
-      okOn2: true,
-    });
-    this.checkMethod();
-
-  }
-
-  onTap3 = () => {
-    this.checkMethod();
-    this.setState({
-      okOn3: true,
-    });
-
-  }
-
-  onTap4 = () => {
-    this.checkMethod();
-    this.setState({
-      okOn4: true,
-    });
-
-  }
-
-  onTap5 = () => {
-    this.checkMethod();
-    this.setState({
-      okOn5: true,
-    });
-
-  }
-
-  onTap6 = () => {
-    this.checkMethod();
-    this.setState({
-      okOn6: true,
-    });
-
+  onTap(opt) {
+    switch (opt) {
+      case 1:
+        this.setState({
+          okOn1: !this.state.okOn1,
+        }, () => this.checkMethod())
+        break
+      case 2:
+        this.setState({
+          okOn2: !this.state.okOn2,
+        }, () => this.checkMethod())
+        break
+      case 3:
+        this.setState({
+          okOn3: !this.state.okOn3,
+        }, () => this.checkMethod())
+        break
+      case 4:
+        this.setState({
+          okOn4: !this.state.okOn4,
+        }, () => this.checkMethod())
+        break
+      case 5:
+        this.setState({
+          okOn5: !this.state.okOn5,
+        }, () => this.checkMethod())
+        break
+      case 6:
+        this.setState({
+          okOn6: !this.state.okOn6,
+        }, () => this.checkMethod())
+        break
+    }
   }
 
   checkMethod() {
-
-    if (this.state.okOn1 === true && this.state.okOn2 === true) {
+    if (this.state.okOn1 && this.state.okOn2 && this.state.okOn3 && this.state.okOn4 && this.state.okOn5 && this.state.okOn6) {
       this.setState({
         disabledButton: false,
-      });
-
+      })
+    } else {
+      this.setState({
+        disabledButton: true,
+      })
     }
 
   }
@@ -138,7 +126,7 @@ export default class Inntruccion extends Component {
                 <Image source={require('../assets/others/linea-instrucciones.png')}
                   style={styles.imgLinea} />
                 <TouchableWithoutFeedback
-                  onPress={this.onTap1}
+                  onPress={() => this.onTap(1)}
                 >
                   {this.state.okOn1 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} />
                     : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
@@ -157,7 +145,7 @@ export default class Inntruccion extends Component {
                 <Image source={require('../assets/others/linea-instrucciones.png')}
                   style={styles.imgLinea} />
                 <TouchableWithoutFeedback
-                  onPress={this.onTap2}
+                  onPress={() => this.onTap(2)}
                 >
                   {this.state.okOn2 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} />
                     : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
@@ -175,7 +163,7 @@ export default class Inntruccion extends Component {
                 <Image source={require('../assets/others/linea-instrucciones.png')}
                   style={styles.imgLinea} />
                 <TouchableWithoutFeedback
-                  onPress={this.onTap3}
+                  onPress={() => this.onTap(3)}
                 >
                   {this.state.okOn3 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} />
                     : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
@@ -194,7 +182,7 @@ export default class Inntruccion extends Component {
                 <Image source={require('../assets/others/linea-instrucciones.png')}
                   style={styles.imgLinea} />
                 <TouchableWithoutFeedback
-                  onPress={this.onTap4}
+                  onPress={() => this.onTap(4)}
                 >
                   {this.state.okOn4 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} />
                     : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
@@ -212,7 +200,7 @@ export default class Inntruccion extends Component {
                 <Image source={require('../assets/others/linea-instrucciones.png')}
                   style={styles.imgLinea} />
                 <TouchableWithoutFeedback
-                  onPress={this.onTap5}
+                  onPress={() => this.onTap(5)}
                 >
                   {this.state.okOn5 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} />
                     : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}
@@ -230,7 +218,7 @@ export default class Inntruccion extends Component {
                 <Image source={require('../assets/others/linea-instrucciones.png')}
                   style={styles.imgLinea} />
                 <TouchableWithoutFeedback
-                  onPress={this.onTap6}
+                  onPress={() => this.onTap(6)}
                 >
                   {this.state.okOn6 ? <Image source={require('../assets/images/botones/bt-instrucciones-ok.png')} style={styles.imgButton} />
                     : <Image source={require('../assets/images/botones/bt-instrucciones-off.png')} style={styles.imgButton} />}

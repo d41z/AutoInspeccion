@@ -16,7 +16,6 @@ import {
   StatusBar,
   KeyboardAvoidingView
 } from 'react-native';
-import Orientation from 'react-native-orientation';
 import LoginForm from '../components/LoginForm'
 
 const { width, height } = Dimensions.get('screen');
@@ -33,10 +32,6 @@ export default class Login extends Component {
         token: '',
       },
     }
-  }
-
-  componentWillMount() {
-    Orientation.lockToPortrait()
   }
 
   fetchDataLogin() {
