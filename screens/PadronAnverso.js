@@ -173,7 +173,7 @@ export default class PadronAnverso extends Component {
             </View>
 
             <View style={{backgroundColor:'white', height: width, width: height*0.5, position: 'absolute', left: (height/2), justifyContent: 'center', alignItems: 'center'}}>
-              <View style={{flex: 1, alignItems: 'center', paddingTop: 20}}>
+              <View style={{flex: 1, alignItems: 'center', paddingTop: 0}}>
                 <Text>
                   Padrón Adverso
                 </Text>

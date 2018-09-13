@@ -24,52 +24,11 @@ export default class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      loading: false,
-      openModal: false,
-      user: {
-        rut: '',
-        patente: '',
-        token: '',
-      },
+      
     }
   }
 
-  fetchDataLogin() {
-    var patente = this.state.patente1+this.state.patente2+this.state.patente3;
-    fetch('url', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: 'email=' + encodeURIComponent(this.state.rut) + '&'
-        + 'password=' + encodeURIComponent(patente),
-    })
-      .then((response) => response.json())
-      .then((responseData) => {
-        this.setState({
-          mensajeRegistro: responseData.mensaje,
-          tokenUsuario: responseData.token
-        })
-      }).then(
-        () => this.handleLogin()
-      )
-      .catch((error) => {
-        console.log(error)
-      });
-  }
-
-  handleLogin() {
-    if (this.state.mensajeRegistro == 'Ok') {
-      AsyncStorage.setItem('token', this.state.tokenUsuario);
-      this.props.navigation.navigate('bienvenida', { item: 'bienvenida', token: this.state.tokenUsuario})
-    } else {
-      console.log('Login Incorrecto')
-      this.setState({
-        openModal: true,
-      })
-    }
-  }
+  
 
   render(){
     const { navigate, goBack } = this.props.navigation
@@ -113,8 +72,10 @@ const styles = StyleSheet.create({
   },
   imageBackground: {
     flex: 1,
-    width: undefined,
-    height: undefined,
+    width: width,
+    height: height,
+    
+    
   },
   logoLet: {
     width: 300,
@@ -197,6 +158,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     alignItems:'center',
     justifyContent: 'center'
+  },
+  formContainer: {
+    paddingBottom: height * 0.05
+
   },
 
 })

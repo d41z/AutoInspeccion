@@ -9,7 +9,8 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   TextInput,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Modal
 } from 'react-native';
 
 const { width, height } = Dimensions.get('screen');
@@ -20,6 +21,7 @@ export default class InfoCar extends Component {
     super(props)
     this.state = {
       disabledButton: true,
+      openModalMarca: false
     }
   }
 
@@ -72,31 +74,98 @@ export default class InfoCar extends Component {
             
             <View style={styles.groupForm}>
                     <Text>Marca</Text>
-                    <TextInput
-                    style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                    onChangeText={(rut) => this.setState({ rut })}
-                    value={this.state.rut} />
+                      <View style={{flexDirection: 'row'}}>
+                        <TextInput
+                        editable={false}
+                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                        onChangeText={(rut) => this.setState({ rut })}
+                        value={this.state.rut} />
+                        <TouchableWithoutFeedback
+                          onPress={() => this.setState({ openModalMarca: true })}>
+                          <Image source={require('../assets/others/icono-editar.png')}
+                                 style={styles.icon} />
+                        </TouchableWithoutFeedback>
+                      </View>
                     <Text>Modelo</Text>
-                    <TextInput
-                    style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                    onChangeText={(rut) => this.setState({ rut })}
-                    value={this.state.rut} />
+                    <View style={{flexDirection: 'row'}}>
+                        <TextInput
+                        editable={false}
+                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                        onChangeText={(rut) => this.setState({ rut })}
+                        value={this.state.rut} />
+                        <Image source={require('../assets/others/icono-editar.png')}
+                               style={styles.icon} />
+                      </View>
                     <Text>Año</Text>
-                    <TextInput
-                    style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                    onChangeText={(rut) => this.setState({ rut })}
-                    value={this.state.rut} />
+                    <View style={{flexDirection: 'row'}}>
+                        <TextInput
+                        editable={false}
+                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                        onChangeText={(rut) => this.setState({ rut })}
+                        value={this.state.rut} />
+                        <Image source={require('../assets/others/icono-editar.png')}
+                               style={styles.icon} />
+                      </View>
                     <Text>Color</Text>
-                    <TextInput
-                    style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                    onChangeText={(rut) => this.setState({ rut })}
-                    value={this.state.rut} />
+                    <View style={{flexDirection: 'row'}}>
+                        <TextInput
+                        editable={false}
+                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                        onChangeText={(rut) => this.setState({ rut })}
+                        value={this.state.rut} />
+                        <Image source={require('../assets/others/icono-editar.png')}
+                               style={styles.icon} />
+                      </View>
 
                     <TouchableWithoutFeedback
                       onPress={() => this.props.navigation.navigate('instru')}>
                     <Image source={require('../assets/images/botones/bt-confirmar.png')}
                       style={styles.btnIngresar} />
                     </TouchableWithoutFeedback>
+
+                    <Modal
+                  visible={this.state.openModalMarca}
+                  transparent={true}
+                  animationType={'fade'}
+                  onRequestClose={() => this.setState({ openModalMarca: false })}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1, alignItems:'center'}}>
+
+                          <Image  source={require('../assets/others/icono-editar-modal.png')}
+                                  style={{height: height * 0.05, width: width * 0.09}} />
+
+                          <Text style={{paddingVertical: height * 0.01}}>
+                            Marca del vechículo
+                          </Text>
+
+
+                           <TextInput
+                                  style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
+                                  onChangeText={(rut) => this.setState({ rut })}
+                                  value={this.state.rut} />
+
+                          <TouchableWithoutFeedback
+                              onPress={() => this.setState({ openModalMarca: false })}>
+                              <Image source={require('../assets/images/botones/bt-ok.png')}
+                                  style={styles.btnIngresarModal} />
+                           </TouchableWithoutFeedback>
+
+
+
+                          
+                        </View>
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModalMarca: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
             </View>
            
 
@@ -202,6 +271,87 @@ export default class InfoCar extends Component {
     alignItems:'center',
     justifyContent: 'center'
   },
+  icon: {
+    height: height * 0.07,
+    width: width * 0.088,
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    justifyContent: 'center',
+    right: 16
+  },
+  editIcon: {
+    right: 16,
+  },
+  modalConfirmation: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
+  containerModal: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bordeModal: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    height: height * 0.3,
+    width: width * 0.7,
+    borderRadius: width * 0.02,
+    borderColor: 'white',
+    borderWidth: 0.666,
+    backgroundColor: 'white',
+  },
+  iconoAyudaModal: {
+    width: width * 0.14,
+    height: height * 0.14,
+    resizeMode: 'contain',
+    marginLeft: width * 0.03,
+
+  },
+  iconoConfirmacionModal: {
+    width: width * 0.15,
+    height: height * 0.15,
+    resizeMode: 'contain',
+    marginLeft: width * 0.03,
+  },
+  btnCerrarModal: {
+    position: 'absolute',
+    top: -(height * 0.04),
+    right: -(width * 0.04),
+    width: 50,
+    height: 50,
+
+  },
+  inputModal: {
+    height: height * 0.2,
+    width: width * 0.3,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    color: 'black',
+    borderRadius: 10,
+    fontSize: 12,
+    textAlign: 'center',
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+  },
+  textAreaRutModal: {
+    height: height * 0.08,
+    width: width * 0.5,
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+  },
+  btnIngresarModal: {
+    height: height * 0.05,
+    width: width * 0.3,
+    resizeMode: 'contain',
+    backgroundColor: 'transparent',
+    paddingTop: height * 0.1
+    
+
+  },
+
 
 
 
