@@ -18,6 +18,8 @@ import {
 } from 'react-native';
 import LoginForm from '../components/LoginForm'
 
+import Orientation from 'react-native-orientation';
+
 const { width, height } = Dimensions.get('screen');
 
 export default class Login extends Component {
@@ -28,6 +30,12 @@ export default class Login extends Component {
     }
   }
 
+  componentWillMount(){
+    Orientation.lockToPortrait();
+  }
+
+
+  
   
 
   render(){

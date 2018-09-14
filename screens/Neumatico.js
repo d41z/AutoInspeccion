@@ -149,7 +149,7 @@ export default class Neumatico extends Component {
               
 
               <View style={{flex:0.2}}>
-                <Image source={require('../assets/others/flecha-amarilla.png')} style={styles.flecha} />
+                <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
               </View>
 
               <View style={{flex:0.1}}>

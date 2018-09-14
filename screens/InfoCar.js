@@ -43,6 +43,8 @@ export default class InfoCar extends Component {
                 </Text>
 
             </View>
+
+
          </ImageBackground>
 
          
@@ -56,10 +58,10 @@ export default class InfoCar extends Component {
                          style={styles.logoAuto} />
 
                   
-                  <View style={{flex: 1}}>
-                    <Text>Patente:</Text>
+                  <View style={{flex: 1, paddingTop: height * 0.05}}>
+                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>Patente:</Text>
                     <Text></Text>
-                    <Text>Revisa la informacíon y editalade ser necesario</Text>
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Revisa la informacíon y editalade ser necesario</Text>
                   </View>
 
 
@@ -73,7 +75,7 @@ export default class InfoCar extends Component {
               </View>
             
             <View style={styles.groupForm}>
-                    <Text>Marca</Text>
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Marca</Text>
                       <View style={{flexDirection: 'row'}}>
                         <TextInput
                         editable={false}
@@ -86,7 +88,7 @@ export default class InfoCar extends Component {
                                  style={styles.icon} />
                         </TouchableWithoutFeedback>
                       </View>
-                    <Text>Modelo</Text>
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Modelo</Text>
                     <View style={{flexDirection: 'row'}}>
                         <TextInput
                         editable={false}
@@ -96,7 +98,7 @@ export default class InfoCar extends Component {
                         <Image source={require('../assets/others/icono-editar.png')}
                                style={styles.icon} />
                       </View>
-                    <Text>Año</Text>
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Año</Text>
                     <View style={{flexDirection: 'row'}}>
                         <TextInput
                         editable={false}
@@ -106,7 +108,7 @@ export default class InfoCar extends Component {
                         <Image source={require('../assets/others/icono-editar.png')}
                                style={styles.icon} />
                       </View>
-                    <Text>Color</Text>
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Color</Text>
                     <View style={{flexDirection: 'row'}}>
                         <TextInput
                         editable={false}
@@ -269,7 +271,8 @@ export default class InfoCar extends Component {
     resizeMode: 'contain',
     backgroundColor: 'transparent',
     alignItems:'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    bottom: 0,
   },
   icon: {
     height: height * 0.07,

@@ -32,13 +32,12 @@ export default class PadronAnverso extends Component {
       loading: false,
       openModal: false,
       imagePath: '',
-      imageHeight: '',
-      imageWidth: '',
       imagenUri: '',
       imageRef: require('../assets/fotoRef/foto1.png'),
       ideaOP: true,
       btnEstado: true,
-      openModal: false
+      imageHeight: height,
+      imageWidth: width,
     }
   }
 
@@ -149,7 +148,7 @@ export default class PadronAnverso extends Component {
               
 
               <View style={{flex:0.2}}>
-                <Image source={require('../assets/others/flecha-amarilla.png')} style={styles.flecha} />
+                <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
               </View>
 
               <View style={{flex:0.1}}>
@@ -166,50 +165,64 @@ export default class PadronAnverso extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{backgroundColor:'#E3B38D', height: width, width: height*0.5, position: 'absolute'}}>
+            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.65, position: 'absolute'}}>
+               <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                    <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+               </View>
+               <View style={{flex:0.4, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <View style={{flex:1, flexDirection: 'row'}}>
+                   
+                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Ver Referencia</Text> : <Text  style={{paddingTop: width * 0.03}}></Text>}
 
-              <Image style={styles.imagePhoto} source={this.state.imageRef} />
 
-            </View>
-
-            <View style={{backgroundColor:'white', height: width, width: height*0.5, position: 'absolute', left: (height/2), justifyContent: 'center', alignItems: 'center'}}>
-              <View style={{flex: 1, alignItems: 'center', paddingTop: 0}}>
-                <Text>
-                  Padrón Adverso
-                </Text>
-                <Text style={{textAlign: 'center'}}>
-                  Debe poder leerse claramente el texto del documento
-                </Text>
-
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                  <View style={{flexDirection: 'column'}}>
                     <TouchableWithoutFeedback
                         onPress={this.cambioImagen.bind(this)}
                         disabled={this.state.btnEstado}
                       >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
                     </TouchableWithoutFeedback>
+                    </View>
                   </View>
-                  <View style={{flexDirection: 'column'}}>
+
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <View style={{flexDirection: 'row'}}>
+                    
+                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Repetir Foto</Text> : <Text  style={{paddingTop: width * 0.03}}>Tomar Foto</Text>}
+                    
+
                     <TouchableWithoutFeedback
                       onPress={this.openImagePicker.bind(this)}
                       
                     >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
                     </TouchableWithoutFeedback>
-                  </View>
-                </View>
+                    </View>
 
-                <View style={{flex: 1}}>
+                  </View>
+                    
+                    
+               </View>
+            </View>
+
+            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
+              <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
+                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Documento Anverso</Text>
+                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                  <Text>El documento no debe quedar cortado.</Text>
+                  <Text>Debe poder leerse claramente el texto del documento</Text>
+                  <Text>Si el documento tiene soló una cara, repetir la fotografía en anverso y reverso.</Text>
+                </View>
                   <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('padronR')}
+                        onPress={() => this.props.navigation.navigate('padronA')}
                         disabled={this.state.disabledButton}
                         >
                       {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
                       style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
                       style={styles.btnSiguiente} />}
                   </TouchableWithoutFeedback>
-                </View>
+
+                
               </View>
               <Modal
                   visible={this.state.openModal}
@@ -341,7 +354,6 @@ export default class PadronAnverso extends Component {
         height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
-        backgroundColor: 'transparent',
         paddingHorizontal: 20,
         borderColor: 'grey',
         borderBottomWidth: 0,
@@ -370,8 +382,8 @@ export default class PadronAnverso extends Component {
         
     },
     iconCam: {
-      width: width * 0.2,
-      height: height * 0.3,
+      width: height * 0.2,
+      height: width * 0.15,
       resizeMode: 'contain',
       
     },
@@ -392,7 +404,7 @@ export default class PadronAnverso extends Component {
 
     },
     btnSiguiente: {
-      width: width * 0.8,
+      width: width * 0.5,
       height: height * 0.10,
       resizeMode: 'contain',
       backgroundColor: 'transparent',

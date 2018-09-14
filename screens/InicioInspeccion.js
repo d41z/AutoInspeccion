@@ -52,7 +52,7 @@ export default class InicioInspeccion extends Component {
           </View>
 
           <View style={styles.containBody}>
-              <Text>
+              <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
                 Estas a punto de iniciar la autoinspección. Gira tu teléfono para tomar las fotografías
                 (deben ser horizontales) y porfavor recuerda:
               </Text>
@@ -132,7 +132,9 @@ export default class InicioInspeccion extends Component {
     },
     textHeader: {
         textAlign: 'left',
-        textAlignVertical: "center"
+        textAlignVertical: "center",
+        fontFamily: 'FiraSans-Regular',
+        color: 'black'
     },
     textHeader1: {
       textAlign: 'center',
@@ -169,7 +171,9 @@ export default class InicioInspeccion extends Component {
     resizeMode: 'contain',
     backgroundColor: 'transparent',
     alignItems:'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    bottom: 0,
+    position: 'absolute'
   },
   title: {
     flex: 1,

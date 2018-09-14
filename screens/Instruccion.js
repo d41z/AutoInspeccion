@@ -133,7 +133,7 @@ export default class Inntruccion extends Component {
 
               {this.state.disabledButton ? <Image source={require('../assets/others/flecha-abajo.png')} 
               style={styles.btnIngresar}/>: <View style={{width: width * 0.8,
-    height: height * 0.10}}></View>}
+    height: height * 0.10, }}></View>}
 
               <TouchableWithoutFeedback
                   onPress={() => this.props.navigation.navigate('inicioins')}
@@ -189,7 +189,9 @@ export default class Inntruccion extends Component {
     resizeMode: 'contain',
     backgroundColor: 'transparent',
     alignItems:'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    bottom: 0,
+    
   },
   iconAuto: {
     height: height * 0.1,
