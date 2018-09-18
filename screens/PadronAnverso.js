@@ -15,7 +15,8 @@ import {
   Modal,
   ScrollView,
   Button,
-  TouchableHighlight
+  TouchableHighlight,
+  BackHandler
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 import ImagePicker from 'react-native-image-picker';
@@ -41,14 +42,23 @@ export default class PadronAnverso extends Component {
     }
   }
 
+  componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+    }
+
   componentWillMount() {
     if (Platform.OS == 'ios') {
       Orientation.lockToLandscapeRight();
     }else{
       Orientation.lockToLandscapeLeft();    
     }
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
     
   }
+
+  handleBackButton() {
+        return true;
+    }
 
   openImagePicker(){
       const options = {
@@ -136,7 +146,7 @@ export default class PadronAnverso extends Component {
                   </Text>
                   <View>
                     <Text style={{fontSize: 18, color: 'black'}}>
-                      Foto 1 de 12
+                      Foto 1 de 13
                     </Text>
                   </View>
                 </View>
@@ -214,7 +224,7 @@ export default class PadronAnverso extends Component {
                   <Text>Si el documento tiene soló una cara, repetir la fotografía en anverso y reverso.</Text>
                 </View>
                   <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('padronA')}
+                        onPress={() => this.props.navigation.navigate('padronR')}
                         disabled={this.state.disabledButton}
                         >
                       {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 

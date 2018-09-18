@@ -21,7 +21,10 @@ export default class InfoCar extends Component {
     super(props)
     this.state = {
       disabledButton: true,
-      openModalMarca: false
+      openModalMarca: false,
+      openModalModelo: false,
+      openModalAno: false,
+      openModalColor: false
     }
   }
 
@@ -80,8 +83,8 @@ export default class InfoCar extends Component {
                         <TextInput
                         editable={false}
                         style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(rut) => this.setState({ rut })}
-                        value={this.state.rut} />
+                        onChangeText={(marca) => this.setState({ marca })}
+                        value={this.state.marca} />
                         <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModalMarca: true })}>
                           <Image source={require('../assets/others/icono-editar.png')}
@@ -93,30 +96,39 @@ export default class InfoCar extends Component {
                         <TextInput
                         editable={false}
                         style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(rut) => this.setState({ rut })}
-                        value={this.state.rut} />
+                        onChangeText={(modelo) => this.setState({ modelo })}
+                        value={this.state.modelo} />
+                        <TouchableWithoutFeedback
+                          onPress={() => this.setState({ openModalModelo: true })}>
                         <Image source={require('../assets/others/icono-editar.png')}
                                style={styles.icon} />
+                        </TouchableWithoutFeedback>
                       </View>
                     <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Año</Text>
                     <View style={{flexDirection: 'row'}}>
                         <TextInput
                         editable={false}
                         style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(rut) => this.setState({ rut })}
-                        value={this.state.rut} />
+                        onChangeText={(ano) => this.setState({ ano })}
+                        value={this.state.ano} />
+                        <TouchableWithoutFeedback
+                          onPress={() => this.setState({ openModalAno: true })}>
                         <Image source={require('../assets/others/icono-editar.png')}
                                style={styles.icon} />
+                        </TouchableWithoutFeedback>
                       </View>
                     <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Color</Text>
                     <View style={{flexDirection: 'row'}}>
                         <TextInput
                         editable={false}
                         style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(rut) => this.setState({ rut })}
-                        value={this.state.rut} />
+                        onChangeText={(color) => this.setState({ color })}
+                        value={this.state.color} />
+                        <TouchableWithoutFeedback
+                          onPress={() => this.setState({ openModalColor: true })}>
                         <Image source={require('../assets/others/icono-editar.png')}
                                style={styles.icon} />
+                        </TouchableWithoutFeedback>
                       </View>
 
                     <TouchableWithoutFeedback
@@ -125,7 +137,7 @@ export default class InfoCar extends Component {
                       style={styles.btnIngresar} />
                     </TouchableWithoutFeedback>
 
-                    <Modal
+                <Modal
                   visible={this.state.openModalMarca}
                   transparent={true}
                   animationType={'fade'}
@@ -146,8 +158,8 @@ export default class InfoCar extends Component {
 
                            <TextInput
                                   style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
-                                  onChangeText={(rut) => this.setState({ rut })}
-                                  value={this.state.rut} />
+                                  onChangeText={(marca) => this.setState({ marca })}
+                                  value={this.state.marca} />
 
                           <TouchableWithoutFeedback
                               onPress={() => this.setState({ openModalMarca: false })}>
@@ -162,6 +174,135 @@ export default class InfoCar extends Component {
                         
                       </View>
                       <TouchableWithoutFeedback onPress={() => this.setState({ openModalMarca: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
+                <Modal
+                  visible={this.state.openModalModelo}
+                  transparent={true}
+                  animationType={'fade'}
+                  onRequestClose={() => this.setState({ openModalModelo: false })}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1, alignItems:'center'}}>
+
+                          <Image  source={require('../assets/others/icono-editar-modal.png')}
+                                  style={{height: height * 0.05, width: width * 0.09}} />
+
+                          <Text style={{paddingVertical: height * 0.01}}>
+                            Modelo del vechículo
+                          </Text>
+
+
+                           <TextInput
+                                  style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
+                                  onChangeText={(modelo) => this.setState({ modelo })}
+                                  value={this.state.modelo} />
+
+                          <TouchableWithoutFeedback
+                              onPress={() => this.setState({ openModalModelo: false })}>
+                              <Image source={require('../assets/images/botones/bt-ok.png')}
+                                  style={styles.btnIngresarModal} />
+                           </TouchableWithoutFeedback>
+
+
+
+                          
+                        </View>
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModalModelo: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
+                <Modal
+                  visible={this.state.openModalAno}
+                  transparent={true}
+                  animationType={'fade'}
+                  onRequestClose={() => this.setState({ openModalAno: false })}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1, alignItems:'center'}}>
+
+                          <Image  source={require('../assets/others/icono-editar-modal.png')}
+                                  style={{height: height * 0.05, width: width * 0.09}} />
+
+                          <Text style={{paddingVertical: height * 0.01}}>
+                            Año del vechículo
+                          </Text>
+
+
+                           <TextInput
+                                  style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
+                                  onChangeText={(ano) => this.setState({ ano })}
+                                  value={this.state.ano} />
+
+                          <TouchableWithoutFeedback
+                              onPress={() => this.setState({ openModalAno: false })}>
+                              <Image source={require('../assets/images/botones/bt-ok.png')}
+                                  style={styles.btnIngresarModal} />
+                           </TouchableWithoutFeedback>
+
+
+
+                          
+                        </View>
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModalAno: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
+                <Modal
+                  visible={this.state.openModalColor}
+                  transparent={true}
+                  animationType={'fade'}
+                  onRequestClose={() => this.setState({ openModalColor: false })}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1, alignItems:'center'}}>
+
+                          <Image  source={require('../assets/others/icono-editar-modal.png')}
+                                  style={{height: height * 0.05, width: width * 0.09}} />
+
+                          <Text style={{paddingVertical: height * 0.01}}>
+                            Color del vechículo
+                          </Text>
+
+
+                           <TextInput
+                                  style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
+                                  onChangeText={(color) => this.setState({ color })}
+                                  value={this.state.color} />
+
+                          <TouchableWithoutFeedback
+                              onPress={() => this.setState({ openModalColor: false })}>
+                              <Image source={require('../assets/images/botones/bt-ok.png')}
+                                  style={styles.btnIngresarModal} />
+                           </TouchableWithoutFeedback>
+
+
+
+                          
+                        </View>
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModalColor: false })}>
                         <Image source={require('../assets/modal/bt-cerrar.png')}
                           style={styles.btnCerrarModal} />
                       </TouchableWithoutFeedback>

@@ -32,6 +32,17 @@ import Motor from './screens/Motor';
 import Chasis from './screens/Chasis';
 import RuedaRepuesto from './screens/RuedaRepuesto';
 import Neumatico from './screens/Neumatico';
+import Parabrisa from './screens/Parabrisa';
+import DamagedScreen from './screens/DamagedScreen';
+import AccesorieScreen from './screens/AccesorieScreen';
+
+import DaSelectionScreen from './screens/DaSelectionScreen';
+import DaPosteriorScreen from './screens/DaPosteriorScreen';
+
+import AccSelectionScreen from './screens/AccSelectionScreen';
+import AccNewSelectionScreen from './screens/AccNewSelectionScreen';
+
+import SendAutoScreen from './screens/SendAutoScreen';
 
 export default class App extends Component{
 
@@ -60,8 +71,6 @@ export default class App extends Component{
       inicioins: {
         screen: InicioInspeccion
       },
-      main: {
-        screen: StackNavigator({
           inspeccion: {
             screen: TabNavigator({
               padronA: {
@@ -100,21 +109,62 @@ export default class App extends Component{
               neumatico: {
                 screen: Neumatico
               },
+              parabrisa: {
+                screen: Parabrisa
+              },
 
             },{
               headerMode: 'none',
+              swipeEnabled: false,
               navigationOptions: {
                 tabBarVisible: false,
               },
             }),
           },
-        },{
-
+      damaged:{
+        screen: StackNavigator({
+          damagedScreen: {
+              screen: DamagedScreen
+          },
+          daSelectionScreen: {
+              screen: DaSelectionScreen
+          },
+          daPosteriorScreen:{
+              screen: DaPosteriorScreen
+          },
+        },
+        {
           headerMode: 'none',
           navigationOptions: {
             tabBarVisible: false,
           },
-        }),
+        },
+        ),
+      },
+      accesories:{
+        screen: StackNavigator({
+          accesorieScreen: {
+            screen: AccesorieScreen
+          },
+          accSelectionScreen:{
+            screen: AccSelectionScreen,
+          },
+          accNewSelectionScreen:{
+            screen: AccNewSelectionScreen,
+          },
+          sendAutoScreen:{
+            screen: SendAutoScreen,
+          },
+
+        },
+        {
+          headerMode: 'none',
+          navigationOptions: {
+            tabBarVisible: false,
+          },
+
+        },
+        ),
       },
     },{
       headerMode: 'none',

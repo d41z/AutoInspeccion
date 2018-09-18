@@ -20,7 +20,7 @@ const isCloseToBottom = ({layoutMeasurement, contentOffset, contentSize}) => {
     contentSize.height - paddingToBottom;
 };
 
-export default class Inntruccion extends Component {
+export default class Instruccion extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -55,10 +55,14 @@ export default class Inntruccion extends Component {
          </ImageBackground>
          <View style={{flex: 1, marginLeft: 30, marginRight: 20, alignItems: 'center', justifyContent:'center'}}>
               <ScrollView
+                  ref={scrollView  => {this.scrollView = scrollView; }}
                   onScroll={({nativeEvent}) => {
                     if (isCloseToBottom(nativeEvent)) {
                       this.setState({disabledButton: false})
+                    }else{
+                      this.setState({disabledButton: true})
                     }
+
                   }}
                   scrollEventThrottle={400}
                   contentContainerStyle={{justifyContent:'center', alignItems: 'center', paddingHorizontal: 20}}
@@ -129,11 +133,16 @@ export default class Inntruccion extends Component {
                       
               </ScrollView>
             </View>
-            <View style={{flex: 0.3}}>
 
+            <View style={{flex: 0.3}}>
+            <TouchableWithoutFeedback
+                  onPress={() => {this.scrollView.scrollToEnd()}}
+                  
+              >
               {this.state.disabledButton ? <Image source={require('../assets/others/flecha-abajo.png')} 
               style={styles.btnIngresar}/>: <View style={{width: width * 0.8,
     height: height * 0.10, }}></View>}
+            </TouchableWithoutFeedback>
 
               <TouchableWithoutFeedback
                   onPress={() => this.props.navigation.navigate('inicioins')}

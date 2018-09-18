@@ -18,7 +18,7 @@ const { width, height } = Dimensions.get('screen');
     super(props)
     this.state = {
       loading: false,
-      openModalLogin: true,
+      openModalLogin: false,
       user: {
         rut: '',
         patente: '',

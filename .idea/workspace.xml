@@ -2,17 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70f7fa87-7c05-4ac3-9b60-909bca2a3466" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/InfoCar.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/InfoCar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/generated/source/r/release/android/support/v7/appcompat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/generated/source/r/release/android/support/v7/appcompat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/autoinspeccion/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/autoinspeccion/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/facebook/react/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/facebook/react/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/github/yamill/orientation/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/github/yamill/orientation/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/imagepicker/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/generated/source/r/release/com/imagepicker/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/android/support/v7/appcompat/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/android/support/v7/appcompat/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$integer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$mipmap.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$mipmap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$xml.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/autoinspeccion/R$xml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/facebook/react/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/facebook/react/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/github/yamill/orientation/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/github/yamill/orientation/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/imagepicker/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/classes/release/com/imagepicker/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/zip-cache/xmuqM4YyzxAIVMWob+ApPJgcanQ=" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/zip-cache/xmuqM4YyzxAIVMWob+ApPJgcanQ=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/pre-dexed/release/release_51beb76bc7708fa3cef5bfd5a64a1150be8199bf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/pre-dexed/release/release_51beb76bc7708fa3cef5bfd5a64a1150be8199bf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btaceptarycontinuar.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btaceptarycontinuar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btconfirmar.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btconfirmar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btcontinuar.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btcontinuar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btsiguiente.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btsiguiente.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/resources-release.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/resources-release.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/symbols/release/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/symbols/release/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/InicioInspeccion.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/InicioInspeccion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Instruccion.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Instruccion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Neumatico.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Neumatico.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/PadronAnverso.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PadronAnverso.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Terms.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Terms.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,19 +60,20 @@
     <session id="-1395130782">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="3" />
+          <entry key="js" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="3" />
+          <entry key="JavaScript" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -55,15 +89,24 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="211" column="67" lean-forward="true" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
+              <caret line="211" column="67" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="118" column="12" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -83,6 +126,7 @@
       <list>
         <option value="$PROJECT_DIR$/screens/InfoCar.js" />
         <option value="$PROJECT_DIR$/screens/PadronAnverso.js" />
+        <option value="$PROJECT_DIR$/App.js" />
       </list>
     </option>
   </component>
@@ -113,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,7 +174,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -159,23 +203,20 @@
       <option name="presentableId" value="Default" />
       <updated>1536960861206</updated>
       <workItem from="1536960864486" duration="594000" />
+      <workItem from="1537063557928" duration="459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="594000" />
+    <option name="totallyTimeSpent" value="1053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -183,6 +224,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -199,9 +244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -209,19 +251,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="96" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="211" column="67" lean-forward="true" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
+          <caret line="211" column="67" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="118" column="12" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
         </state>
       </provider>
     </entry>

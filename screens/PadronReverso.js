@@ -15,7 +15,9 @@ import {
   Modal,
   ScrollView,
   Button,
-  TouchableHighlight
+  TouchableHighlight,
+  BackHandler,
+
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 import ImagePicker from 'react-native-image-picker';
@@ -32,25 +34,32 @@ export default class PadronReverso extends Component {
       loading: false,
       openModal: false,
       imagePath: '',
-      imageHeight: '',
-      imageWidth: '',
       imagenUri: '',
       imageRef: require('../assets/fotoRef/foto2.png'),
       ideaOP: true,
       btnEstado: true,
-      openModal: false
+      imageHeight: height,
+      imageWidth: width,
     }
   }
 
+  componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+    }
+
   componentWillMount() {
-    
     if (Platform.OS == 'ios') {
       Orientation.lockToLandscapeRight();
     }else{
-      Orientation.lockToLandscapeLeft();
+      Orientation.lockToLandscapeLeft();    
     }
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
     
   }
+
+  handleBackButton() {
+        return true;
+    }
 
   openImagePicker(){
       const options = {
@@ -75,12 +84,6 @@ export default class PadronReverso extends Component {
           let source = { uri: response.uri };
           console.log(source)
 
-          if (Platform.OS == 'ios') {
-            Orientation.lockToLandscapeRight();
-          }else{
-            Orientation.lockToLandscapeLeft();    
-          }
-
           this.setState({
             imageRef: source,
             imageHeight: response.height,
@@ -90,8 +93,13 @@ export default class PadronReverso extends Component {
             disabledButton: false
 
           });
-          
-          
+
+          if (Platform.OS == 'ios') {
+            Orientation.lockToLandscapeRight();
+          }else{
+            Orientation.lockToLandscapeLeft();    
+          }
+
         }
       })
   }
@@ -139,7 +147,7 @@ export default class PadronReverso extends Component {
                   </Text>
                   <View>
                     <Text style={{fontSize: 18, color: 'black'}}>
-                      Foto 2 de 12
+                      Foto 2 de 13
                     </Text>
                   </View>
                 </View>
@@ -151,20 +159,16 @@ export default class PadronReverso extends Component {
               
 
               <View style={{flex:0.2}}>
-                <Image source={require('../assets/others/flecha-amarilla.png')} style={styles.flecha} />
+                <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
               </View>
 
               <View style={{flex:0.1}}>
-              <TouchableWithoutFeedback
+                <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModal: true })}>
                 <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
-              </TouchableWithoutFeedback>
+                </TouchableWithoutFeedback>
               </View>
-
-
-              
-
-          
+     
             </View>
 
 
@@ -172,41 +176,54 @@ export default class PadronReverso extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{backgroundColor:'#E3B38D', height: width, width: height*0.5, position: 'absolute'}}>
+            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.65, position: 'absolute'}}>
+               <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                    <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+               </View>
+               <View style={{flex:0.4, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <View style={{flex:1, flexDirection: 'row'}}>
+                   
+                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Ver Referencia</Text> : <Text  style={{paddingTop: width * 0.03}}></Text>}
 
-              <Image style={styles.imagePhoto} source={this.state.imageRef} />
 
-            </View>
-
-            <View style={{backgroundColor:'white', height: width, width: height*0.5, position: 'absolute', left: (height/2), justifyContent: 'center', alignItems: 'center'}}>
-              <View style={{flex: 1, alignItems: 'center', paddingTop: 20}}>
-                <Text>
-                  Padrón Reverso
-                </Text>
-                <Text style={{textAlign: 'center'}}>
-                  Debe poder leerse claramente el texto del documento
-                </Text>
-
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                  <View style={{flexDirection: 'column'}}>
                     <TouchableWithoutFeedback
                         onPress={this.cambioImagen.bind(this)}
                         disabled={this.state.btnEstado}
                       >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
                     </TouchableWithoutFeedback>
+                    </View>
                   </View>
-                  <View style={{flexDirection: 'column'}}>
+
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <View style={{flexDirection: 'row'}}>
+                    
+                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Repetir Foto</Text> : <Text  style={{paddingTop: width * 0.03}}>Tomar Foto</Text>}
+                    
+
                     <TouchableWithoutFeedback
                       onPress={this.openImagePicker.bind(this)}
                       
                     >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
                     </TouchableWithoutFeedback>
-                  </View>
-                </View>
+                    </View>
 
-                <View style={{flex: 1}}>
+                  </View>
+                    
+                    
+               </View>
+            </View>
+
+            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
+              <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
+                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Documento Reverso</Text>
+                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>El documento no debe quedar cortado.</Text>
+                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Debe poder leerse claramente el texto del documento.</Text>
+                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Si el documento tiene solo una cara, repetir la fotografía en anverso y reverso</Text>
+                </View>
                   <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('posteriorS')}
                         disabled={this.state.disabledButton}
@@ -215,7 +232,8 @@ export default class PadronReverso extends Component {
                       style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
                       style={styles.btnSiguiente} />}
                   </TouchableWithoutFeedback>
-                </View>
+
+                
               </View>
               <Modal
                   visible={this.state.openModal}
@@ -237,26 +255,26 @@ export default class PadronReverso extends Component {
                               </Text>
                               <Text></Text>
                               <Text style={{fontSize: 18, color: 'black'}}>
-                                PÁDRON REVERSO
+                                PÁDRON
                               </Text>
                             </View>
 
                           </View>
                           <View style={{flex:1, paddingHorizontal: 20}}>
                             <Text style={{paddingBottom: 10}}>
-                                  -
+                                  Se aceptan los siguientes documentos:
                             </Text>
                             <Text>
-                                  - 
+                                  - Certificado de inscripción registro civil ("padrón")
                             </Text>
                             <Text>
-                                  - 
+                                  - Ceriticado primera inscripción.
                             </Text>
                             <Text>
-                                  - 
+                                  - Certificado de Transferencia.
                             </Text>
                             <Text style={{paddingTop: 10}}>
-                                  
+                                  Asegúrese que se puede leer correctamente el texto del documento fotografiado.
                             </Text>
                           </View>
 
@@ -347,7 +365,6 @@ export default class PadronReverso extends Component {
         height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
-        backgroundColor: 'transparent',
         paddingHorizontal: 20,
         borderColor: 'grey',
         borderBottomWidth: 0,
@@ -376,8 +393,8 @@ export default class PadronReverso extends Component {
         
     },
     iconCam: {
-      width: width * 0.2,
-      height: height * 0.3,
+      width: height * 0.2,
+      height: width * 0.15,
       resizeMode: 'contain',
       
     },
@@ -398,7 +415,7 @@ export default class PadronReverso extends Component {
 
     },
     btnSiguiente: {
-      width: width * 0.8,
+      width: width * 0.5,
       height: height * 0.10,
       resizeMode: 'contain',
       backgroundColor: 'transparent',
@@ -439,13 +456,6 @@ export default class PadronReverso extends Component {
     borderWidth: 0.666,
     backgroundColor: 'white',
   },
-  iconoAyudaModal: {
-    width: width * 0.14,
-    height: height * 0.14,
-    resizeMode: 'contain',
-    marginLeft: width * 0.03,
-
-  },
   iconoConfirmacionModal: {
     width: width * 0.15,
     height: height * 0.15,
@@ -458,6 +468,13 @@ export default class PadronReverso extends Component {
     right: -(width * 0.04),
     width: 50,
     height: 50,
+
+  },
+  iconoAyudaModal: {
+    width: width * 0.14,
+    height: height * 0.14,
+    resizeMode: 'contain',
+    marginLeft: width * 0.03,
 
   },
 

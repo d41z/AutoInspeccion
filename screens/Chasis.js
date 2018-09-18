@@ -32,13 +32,12 @@ export default class Chasis extends Component {
       loading: false,
       openModal: false,
       imagePath: '',
-      imageHeight: '',
-      imageWidth: '',
       imagenUri: '',
       imageRef: require('../assets/fotoRef/foto10.png'),
       ideaOP: true,
       btnEstado: true,
-      openModal: false
+      imageHeight: height,
+      imageWidth: width,
     }
   }
 
@@ -46,8 +45,9 @@ export default class Chasis extends Component {
     if (Platform.OS == 'ios') {
       Orientation.lockToLandscapeRight();
     }else{
-      Orientation.lockToLandscapeLeft();
+      Orientation.lockToLandscapeLeft();    
     }
+    
   }
 
   openImagePicker(){
@@ -73,12 +73,6 @@ export default class Chasis extends Component {
           let source = { uri: response.uri };
           console.log(source)
 
-          if (Platform.OS == 'ios') {
-            Orientation.lockToLandscapeRight();
-          }else{
-            Orientation.lockToLandscapeLeft();    
-          }
-
           this.setState({
             imageRef: source,
             imageHeight: response.height,
@@ -88,6 +82,13 @@ export default class Chasis extends Component {
             disabledButton: false
 
           });
+
+          if (Platform.OS == 'ios') {
+            Orientation.lockToLandscapeRight();
+          }else{
+            Orientation.lockToLandscapeLeft();    
+          }
+
         }
       })
   }
@@ -135,7 +136,7 @@ export default class Chasis extends Component {
                   </Text>
                   <View>
                     <Text style={{fontSize: 18, color: 'black'}}>
-                      Foto 10 de 12
+                      Foto 10 de 13
                     </Text>
                   </View>
                 </View>
@@ -147,20 +148,16 @@ export default class Chasis extends Component {
               
 
               <View style={{flex:0.2}}>
-                <Image source={require('../assets/others/flecha-amarilla.png')} style={styles.flecha} />
+                <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
               </View>
 
               <View style={{flex:0.1}}>
                 <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModal: true })}>
                 <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
-              </TouchableWithoutFeedback>
+                </TouchableWithoutFeedback>
               </View>
-
-
-              
-
-          
+     
             </View>
 
 
@@ -168,41 +165,55 @@ export default class Chasis extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{backgroundColor:'#E3B38D', height: width, width: height*0.5, position: 'absolute'}}>
+            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.65, position: 'absolute'}}>
+               <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                    <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+               </View>
+               <View style={{flex:0.4, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <View style={{flex:1, flexDirection: 'row'}}>
+                   
+                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Ver Referencia</Text> : <Text  style={{paddingTop: width * 0.03}}></Text>}
 
-              <Image style={styles.imagePhoto} source={this.state.imageRef} />
 
-            </View>
-
-            <View style={{backgroundColor:'white', height: width, width: height*0.5, position: 'absolute', left: (height/2), justifyContent: 'center', alignItems: 'center'}}>
-              <View style={{flex: 1, alignItems: 'center', paddingTop: 20}}>
-                <Text>
-                  Chasis
-                </Text>
-                <Text style={{textAlign: 'center'}}>
-                  Debe poder leerse claramente el texto del documento
-                </Text>
-
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                  <View style={{flexDirection: 'column'}}>
                     <TouchableWithoutFeedback
                         onPress={this.cambioImagen.bind(this)}
                         disabled={this.state.btnEstado}
                       >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
                     </TouchableWithoutFeedback>
+                    </View>
                   </View>
-                  <View style={{flexDirection: 'column'}}>
+
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <View style={{flexDirection: 'row'}}>
+                    
+                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Repetir Foto</Text> : <Text  style={{paddingTop: width * 0.03}}>Tomar Foto</Text>}
+                    
+
                     <TouchableWithoutFeedback
                       onPress={this.openImagePicker.bind(this)}
                       
                     >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
                     </TouchableWithoutFeedback>
-                  </View>
-                </View>
+                    </View>
 
-                <View style={{flex: 1}}>
+                  </View>
+                    
+                    
+               </View>
+            </View>
+
+            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
+              <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
+                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>N° de Chasis (o VIN)</Text>
+                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                  
+                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Identificativo único del vehículo de 17 caracteres alfanumérocps.</Text>
+                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Normalmente se úbica en el marco de la puerta del piloto.</Text>
+                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>PUEDE CONSULTAR OTRAS UBICACIONES EN AYUDA (?).</Text>
+
                   <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('ruedaR')}
                         disabled={this.state.disabledButton}
@@ -211,7 +222,11 @@ export default class Chasis extends Component {
                       style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
                       style={styles.btnSiguiente} />}
                   </TouchableWithoutFeedback>
+                  
                 </View>
+                  
+
+                
               </View>
               <Modal
                   visible={this.state.openModal}
@@ -223,88 +238,85 @@ export default class Chasis extends Component {
                   <View style={styles.modalConfirmation}>
                     <View style={styles.containerModal}>
                       <View style={styles.bordeModal}>
+
                         <View style={{flex:1}}>
-                          <View style={{flexDirection:'row', alignItems: 'center'}}>
-                            <Image source={require('../assets/modal/icono-ayuda.png')}
-                              style={styles.iconoAyudaModal} />
-                            <View style={{flex: 1}}>
-                              <Text style={{fontSize: 16, color: 'black'}}>
-                                FOTOS OBLIGATORIAS
-                              </Text>
-                              <Text></Text>
-                              <Text style={{fontSize: 18, color: 'black'}}>
-                                CHASIS
-                              </Text>
-                            </View>
+                          <View style={styles.headerModel}>
+                            <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+                              <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>FOTOS OBLIGATORIAS</Text>
+                                <Text></Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black', fontSize: 18}}>N° CHASIS (O VIN)</Text>
+                              </View>
+                              <View style={{flex: 0.2}}>
+                                <Image source={require('../assets/modal/linea.png')} style={styles.flecha} />
+                              </View>
 
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-telefono-fijo.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>TELÉFONO FIJO</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>22 3262 67 09</Text>
+                                  </View>
+                              </View>
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-whatsapp.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>WHATSAPP</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>+569931300485</Text>
+                                  </View>
+                              </View>
+
+
+                            
                           </View>
-                          <View style={{flex:1, paddingHorizontal: 20}}>
-                            <Text style={{paddingBottom: 10}}>
-                                  -
-                            </Text>
-                            <Text>
-                                  - 
-                            </Text>
-                            <Text>
-                                  - 
-                            </Text>
-                            <Text>
-                                  - 
-                            </Text>
-                            <Text style={{paddingTop: 10}}>
-                                  
-                            </Text>
+                          <View style={styles.BodyModel}>
+                            <ScrollView contentContainerStyle={styles.contentContainer}>
+                              <View style={{flex:1}}>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  Corresponde al identificativo único del vehículo de 17 caracteres alfanuméros, que puede encontrarse grabado directamente en el chasis del vehículo, en una placa metálica o plástica apernada o remachada al vehículo
+
+                                </Text>
+
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  Ubicaciónes más comunes del chasis o VIN:
+                                </Text>
+
+                                <Text>
+                                  <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>1-</Text> <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Marco de la puerta del piloto</Text>
+                                </Text>
+
+                                <Text>
+                                  <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>2-</Text> <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Placa ubicada sobre el panel del piloto, accesible desde afuera del vehículo, mirando hacia adentro a tráves del parabrisas.</Text>
+                                </Text>
+
+                                <Text>
+                                  <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>3-</Text> <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Placa o grabado en chasis junto al motor.</Text>
+                                </Text>
+
+                                <Text>
+                                  <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>3-</Text> <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Bajo el asiento del copiloto, levantando una tapa de la alfombra del piso.</Text>
+                                </Text>
+
+                                <View style={{flex:1, alignItems: 'center'}}>
+                                  <Image source={require('../assets/others/ayuda-chasis.png')} style={styles.ayudaImage} />
+                                </View>
+
+                                <Text>
+                                  <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>Si no encuentra el N° de chasis del vehículo, por favor contáctese con nuetra Mesa de Ayuda.</Text> 
+                                </Text>
+
+                              </View>
+
+                              
+                                
+
+
+                            </ScrollView>
+                            
                           </View>
-
-
-
-                        </View>
-                        <View style={{flex:0.1, paddingVertical: 20}}>
-
-                              <Image source={require('../assets/modal/linea.png')}
-                              style={{height: width * 0.6, width: 10}} />
-
-                        </View>
-                        <View style={{flex:0.7, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center',
-                                      paddingVertical: 20}}>
-                          <Text style={{fontSize: 16, color: 'black'}}>
-                            MESA DE AYUDA
-                          </Text>
-
-                          <View style={{flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
-                            <Image source={require('../assets/modal/icono-telefono-fijo.png')}
-                              style={styles.iconoConfirmacionModal} />
-                            <View style={{flex: 1}}>
-                              <Text style={{color: 'black'}}>
-                                Telefono Fijo
-                              </Text>
-                              <Text></Text>
-                              <Text style={{color: 'black'}}>
-                                22 6565081
-                              </Text>
-                            </View>
-
-
-                          </View>
-
-                          <View style={{flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
-                            <Image source={require('../assets/modal/icono-whatsapp.png')}
-                              style={styles.iconoConfirmacionModal} />
-                            <View style={{flex: 1}}>
-                              <Text style={{color: 'black'}}>
-                                WHATSAPP
-                              </Text>
-                              <Text></Text>
-                              <Text style={{color: 'black'}}>
-                                +569931300485
-                              </Text>
-                            </View>
-
-
-                          </View>
-
-
-
+                          
                         </View>
 
                         
@@ -343,7 +355,6 @@ export default class Chasis extends Component {
         height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
-        backgroundColor: 'transparent',
         paddingHorizontal: 20,
         borderColor: 'grey',
         borderBottomWidth: 0,
@@ -372,8 +383,8 @@ export default class Chasis extends Component {
         
     },
     iconCam: {
-      width: width * 0.2,
-      height: height * 0.3,
+      width: height * 0.2,
+      height: width * 0.15,
       resizeMode: 'contain',
       
     },
@@ -394,10 +405,9 @@ export default class Chasis extends Component {
 
     },
     btnSiguiente: {
-      width: width * 0.8,
-      height: height * 0.10,
+      width: height * 0.25,
+      height: width * 0.15,
       resizeMode: 'contain',
-      backgroundColor: 'transparent',
     },
     imagePhoto: {
       height: width, 
@@ -435,18 +445,10 @@ export default class Chasis extends Component {
     borderWidth: 0.666,
     backgroundColor: 'white',
   },
-  iconoAyudaModal: {
-    width: width * 0.14,
-    height: height * 0.14,
-    resizeMode: 'contain',
-    marginLeft: width * 0.03,
-
-  },
   iconoConfirmacionModal: {
     width: width * 0.15,
     height: height * 0.15,
     resizeMode: 'contain',
-    marginLeft: width * 0.03,
   },
   btnCerrarModal: {
     position: 'absolute',
@@ -455,6 +457,33 @@ export default class Chasis extends Component {
     width: 50,
     height: 50,
 
+  },
+  iconoAyudaModal: {
+    width: width * 0.14,
+    height: height * 0.14,
+    resizeMode: 'contain',
+    marginLeft: width * 0.03,
+
+  },
+  headerModel:{
+    flex:0.4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: height * 0.02
+
+  },
+  BodyModel:{
+    flex:1,
+
+  },
+  contentContainer:{
+    paddingVertical: width * 0.02,
+    paddingHorizontal: height * 0.02
+  },
+  ayudaImage: {
+    height: width * 0.6,
+    width: height * 0.7,
+    resizeMode: 'contain'
   },
 
 

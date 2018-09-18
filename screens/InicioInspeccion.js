@@ -129,6 +129,7 @@ export default class InicioInspeccion extends Component {
         width: width * 0.15,
         height: height * 0.3,
         resizeMode: 'contain',
+        
     },
     textHeader: {
         textAlign: 'left',
