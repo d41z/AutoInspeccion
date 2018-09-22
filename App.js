@@ -43,6 +43,11 @@ import AccSelectionScreen from './screens/AccSelectionScreen';
 import AccNewSelectionScreen from './screens/AccNewSelectionScreen';
 
 import SendAutoScreen from './screens/SendAutoScreen';
+import DaFrontalScreen from "./screens/DaFrontalScreen";
+import DaLateralDScreen from "./screens/DaLateralDScreen";
+import DaLateralIScreen from "./screens/DaLateralIScreen";
+import DaTechoScreen from "./screens/DaTechoScreen";
+
 
 export default class App extends Component{
 
@@ -132,6 +137,18 @@ export default class App extends Component{
           daPosteriorScreen:{
               screen: DaPosteriorScreen
           },
+            daFrontalScreen: {
+              screen: DaFrontalScreen
+            },
+            daLateralDScreen: {
+              screen: DaLateralDScreen
+            },
+            daLateralIScreen: {
+              screen: DaLateralIScreen
+            },
+            daTechoScreen: {
+              screen: DaTechoScreen
+            },
         },
         {
           headerMode: 'none',

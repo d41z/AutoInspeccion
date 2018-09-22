@@ -1,4 +1,4 @@
-#Fri Sep 14 19:40:30 CLST 2018
+#Sat Sep 22 05:57:52 CLST 2018
 base.0=C\:\\Users\\HENRY DIAZ\\Documents\\Proyects\\autoinspeccion\\android\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\HENRY DIAZ\\Documents\\Proyects\\autoinspeccion\\android\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

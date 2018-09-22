@@ -50,7 +50,7 @@ export default class AccesorieScreen extends Component {
     if(this.state.checkedAcces == 4){
       this.props.navigation.navigate('accSelectionScreen')
     }else{
-      Alert.alert('sdds')
+        this.props.navigation.navigate('sendAutoScreen')
     }
 
 

@@ -33,7 +33,7 @@ export default class Frontal extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto5.png'),
+      imageRef: require('../assets/fotoRef/obg-5.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class Frontal extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto1.png'),
+      imageRef: require('../assets/fotoRef/obg-5.jpg'),
       disabledButton: true
     })
     

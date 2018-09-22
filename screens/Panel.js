@@ -33,7 +33,7 @@ export default class Panel extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto7.png'),
+      imageRef: require('../assets/fotoRef/obg-7.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class Panel extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto7.png'),
+      imageRef: require('../assets/fotoRef/obg-7.jpg'),
       disabledButton: true
     })
     

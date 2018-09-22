@@ -33,7 +33,7 @@ export default class RuedaRepuesto extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto11.png'),
+      imageRef: require('../assets/fotoRef/obg-11.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class RuedaRepuesto extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto11.png'),
+      imageRef: require('../assets/fotoRef/obg-11.jpg'),
       disabledButton: true
     })
     

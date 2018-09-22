@@ -33,7 +33,7 @@ export default class Neumatico extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto12.png'),
+      imageRef: require('../assets/fotoRef/obg-12.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class Neumatico extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto12.png'),
+      imageRef: require('../assets/fotoRef/obg-12.jpg'),
       disabledButton: true
     })
     

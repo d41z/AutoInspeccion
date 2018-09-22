@@ -33,7 +33,7 @@ export default class Motor extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto9.png'),
+      imageRef: require('../assets/fotoRef/obg-9.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class Motor extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto9.png'),
+      imageRef: require('../assets/fotoRef/obg-9.jpg'),
       disabledButton: true
     })
     

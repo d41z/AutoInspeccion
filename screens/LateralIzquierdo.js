@@ -33,7 +33,7 @@ export default class LateralIzquierdo extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto6.png'),
+      imageRef: require('../assets/fotoRef/obg-6.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class LateralIzquierdo extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto6.png'),
+      imageRef: require('../assets/fotoRef/obg-6.jpg'),
       disabledButton: true
     })
     

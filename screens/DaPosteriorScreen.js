@@ -27,22 +27,131 @@ let screen = { width, height } = Dimensions.get('screen');
 export default class DaPosteriorScreen extends Component {
   constructor(props) {
     super(props)
-    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-    this.state = {
-      fotoUp1: false,
-      disabledButton: false,
-      loading: false,
-      openModal: false,
-      imagePath: '',
-      imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto1.png'),
-      ideaOP: true,
-      btnEstado: true,
-      imageHeight: height,
-      imageWidth: width,
+      console.log('PROPS constructor')
+
+      console.log('ASDASDASD'+props)
+      console.log(props)
+
+      if(props.navigation.state.params.posterior.listo === true){
+          this.methodGoTo(props)
+      }else{
+
+          this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+          this.state = {
+              openModalImg1: false,
+              openModalImg2: false,
+              openModalImg3: false,
+              openModalImg4: false,
+              openModalImg5: false,
+              fotoUp1: false,
+              fotoUp2: false,
+              fotoUp3: false,
+              fotoUp4: false,
+              fotoUp5: false,
+              disabledButton: false,
+              disabledButton2:false,
+              disabledButton3:false,
+              disabledButton4:false,
+              disabledButton5:false,
+              loading: false,
+              openModal: false,
+              imagePath: '',
+              imagenUri: '',
+              imageRef: require('../assets/fotoRef/obg-13.jpg'),
+              ideaOP: true,
+              btnEstado: true,
+              imageHeight: height,
+              imageWidth: width,
+              date: '',
+              posteriorDa: {
+                  listo: this.props.navigation.state.params.posterior.listo,
+                  pdelantera: false,
+                  ptrasera: false,
+                  chapaM: false,
+                  tapaDelantera: false,
+                  tapaTrasera: false,
+                  imagen: require('../assets/fotoRef/obg-13.jpg'),
+                  imagen2: require('../assets/fotoRef/obg-13.jpg'),
+                  imagen3: require('../assets/fotoRef/obg-13.jpg'),
+                  imagen4: require('../assets/fotoRef/obg-13.jpg'),
+                  imagen5: require('../assets/fotoRef/obg-13.jpg'),
+              },
+
+          }
+
+      }
+
+
+  }
+
+    methodGoTo = (props) => {
+      console.log('propsitosmios')
+        let posterior = props.navigation.state.params.posterior
+        console.log(posterior)
+
+        var aux = false
+        var aux = posterior.pdelantera
+
+        var aux2 = false
+        var aux2 = posterior.ptrasera
+
+        var aux3 = false
+        var aux3 = posterior.chapaM
+
+        var aux4 = false
+        var aux4 = posterior.tapaDelantera
+
+        var aux5 = false
+        var aux5 = posterior.tapaTrasera
+
+        var img = posterior.imagen
+        var img2 = posterior.imagen2
+        var img3 = posterior.imagen3
+        var img4 = posterior.imagen4
+        var img5 = posterior.imagen5
+
+        console.log('asdasdasd'+aux)
+        this.state= {
+            openModalImg1: false,
+            openModalImg2: false,
+            openModalImg3: false,
+            openModalImg4: false,
+            openModalImg5: false,
+            openModalImg6: false,
+            fotoUp1: aux,
+            fotoUp2: aux2,
+            fotoUp3: aux3,
+            fotoUp4: aux4,
+            fotoUp5: aux5,
+            disabledButton: false,
+            loading: false,
+            openModal: false,
+            imagePath: '',
+            imagenUri: '',
+            imageRef: require('../assets/fotoRef/obg-13.jpg'),
+            ideaOP: true,
+            btnEstado: true,
+            imageHeight: height,
+            imageWidth: width,
+            date: '',
+            posteriorDa: {
+                listo: this.props.navigation.state.params.posterior.listo,
+                pdelantera: aux,
+                ptrasera: aux2,
+                chapaM: aux3,
+                tapaDelantera: aux4,
+                tapaTrasera: aux5,
+                imagen:  img,
+                imagen2: img2,
+                imagen3: img3,
+                imagen4: img4,
+                imagen5: img5,
+            },
+        }
+
+
 
     }
-  }
 
   handleBackButtonClick() {
     Orientation.lockToPortrait()
@@ -57,18 +166,35 @@ export default class DaPosteriorScreen extends Component {
     }else{
       Orientation.lockToLandscapeLeft();    
     }
+
+
   }
 
+    componentWillReceiveProps(nextProps) {
+        var props = nextProps.navigation.state.params;
+        console.log('component will receive props')
+
+
+    }
+
   componentWillUnmount() {
+
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
 }
 
 componentDidMount(){
+
+      console.log('variable fotoup1'+this.state.fotoUp1)
+
+
+
   if (Platform.OS == 'ios') {
       Orientation.lockToLandscapeRight();
     }else{
       Orientation.lockToLandscapeLeft();    
     }
+    console.log('DaSelectionScreen: '+this.state.posteriorDa)
+
 }
 
   openImagePicker1(){
@@ -94,13 +220,22 @@ componentDidMount(){
           let source = { uri: response.uri };
           console.log(source)
 
+
+
+            let posteriorDa = Object.assign({}, this.state.posteriorDa);
+            posteriorDa.imagen = { uri: response.uri }
+            posteriorDa.listo = true
+            posteriorDa.pdelantera = true
+
+
           this.setState({
             imageRef: source,
             imageHeight: response.height,
             imageWidth: response.width,
             fotoUp1: true,
             btnEstado: false,
-            disabledButton: true
+            disabledButton: true,
+              posteriorDa: posteriorDa
 
           });
 
@@ -114,10 +249,220 @@ componentDidMount(){
       })
   }
 
+    //                                          PUERTA TRASERA
+
+    openImagePicker2(){
+        const options = {
+            title: 'Select Avatar',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images'
+            }
+        }
+
+        ImagePicker.launchCamera(options, (response) => {
+            if(response.didCancel){
+                console.log('Response = ', response);
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = { uri: response.uri };
+                console.log(source)
+
+
+
+                let posteriorDa = Object.assign({}, this.state.posteriorDa);
+                posteriorDa.listo = true
+                posteriorDa.ptrasera = true
+                posteriorDa.imagen2 = { uri: response.uri }
+
+
+                this.setState({
+                    imageRef: source,
+                    imageHeight: response.height,
+                    imageWidth: response.width,
+                    fotoUp2: true,
+                    disabledButton2: true,
+                    posteriorDa: posteriorDa
+
+                });
+
+                if (Platform.OS == 'ios') {
+                    Orientation.lockToLandscapeRight();
+                }else{
+                    Orientation.lockToLandscapeLeft();
+                }
+
+            }
+        })
+    }
+
+        //                                      CHAPA Y MANILLA
+
+    openImagePicker3(){
+        const options = {
+            title: 'Select Avatar',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images'
+            }
+        }
+
+        ImagePicker.launchCamera(options, (response) => {
+            if(response.didCancel){
+                console.log('Response = ', response);
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = { uri: response.uri };
+                console.log(source)
+
+
+
+                let posteriorDa = Object.assign({}, this.state.posteriorDa);
+                posteriorDa.listo = true
+                posteriorDa.chapaM = true
+                posteriorDa.imagen3 = { uri: response.uri }
+
+                this.setState({
+                    imageRef: source,
+                    imageHeight: response.height,
+                    imageWidth: response.width,
+                    fotoUp3: true,
+                    disabledButton3: true,
+                    posteriorDa: posteriorDa
+
+                });
+
+                if (Platform.OS == 'ios') {
+                    Orientation.lockToLandscapeRight();
+                }else{
+                    Orientation.lockToLandscapeLeft();
+                }
+
+            }
+        })
+    }
+        //                          TAPA BARROS
+    openImagePicker4(){
+        const options = {
+            title: 'Select Avatar',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images'
+            }
+        }
+
+        ImagePicker.launchCamera(options, (response) => {
+            if(response.didCancel){
+                console.log('Response = ', response);
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = { uri: response.uri };
+                console.log(source)
+
+
+
+                let posteriorDa = Object.assign({}, this.state.posteriorDa);
+                posteriorDa.listo = true
+                posteriorDa.tapaDelantera = true
+                posteriorDa.imagen4 = { uri: response.uri }
+
+
+                this.setState({
+                    imageRef: source,
+                    imageHeight: response.height,
+                    imageWidth: response.width,
+                    fotoUp4: true,
+                    disabledButton4: true,
+                    posteriorDa: posteriorDa
+
+                });
+
+                if (Platform.OS == 'ios') {
+                    Orientation.lockToLandscapeRight();
+                }else{
+                    Orientation.lockToLandscapeLeft();
+                }
+
+            }
+        })
+    }
+    //                      TAPA TRASERA
+
+    openImagePicker5(){
+        const options = {
+            title: 'Select Avatar',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images'
+            }
+        }
+
+        ImagePicker.launchCamera(options, (response) => {
+            if(response.didCancel){
+                console.log('Response = ', response);
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = { uri: response.uri };
+                console.log(source)
+
+
+
+                let posteriorDa = Object.assign({}, this.state.posteriorDa);
+                posteriorDa.listo = true
+                posteriorDa.tapaTrasera = true
+                posteriorDa.imagen5 = { uri: response.uri }
+
+
+                this.setState({
+                    imageRef: source,
+                    imageHeight: response.height,
+                    imageWidth: response.width,
+                    fotoUp5: true,
+                    disabledButton5: true,
+                    posteriorDa: posteriorDa
+
+                });
+
+                if (Platform.OS == 'ios') {
+                    Orientation.lockToLandscapeRight();
+                }else{
+                    Orientation.lockToLandscapeLeft();
+                }
+
+            }
+        })
+    }
+
+
+
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto1.png'),
+      imageRef: require('../assets/fotoRef/obg-13.jpg'),
       disabledButton: true
     })
 
@@ -129,7 +474,10 @@ componentDidMount(){
     nextScreen(){
       
       Orientation.lockToPortrait();
-      this.props.navigation.navigate('daSelectionScreen')
+        console.log('......................')
+      console.log(this.state.posteriorDa)
+        console.log('......................')
+      this.props.navigation.navigate('daSelectionScreen', {item: 'DaPosteriorScreen', posterior:this.state.posteriorDa})
       
     
 
@@ -199,11 +547,9 @@ componentDidMount(){
                     <TouchableWithoutFeedback
                       disabled={this.state.disabledButton}
                       onPress={this.openImagePicker1.bind(this)}
-                      
 
                       >
-
-                      {this.state.fotoUp1 ? <Image  source={require('../assets/images/botones/bt-verde-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/>}
+                      {this.state.fotoUp1 ? <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/>}
                     </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback
@@ -214,25 +560,106 @@ componentDidMount(){
                     </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback
-                          onPress={() => this.setState({ openModal: true })}>
+                          onPress={() => this.setState({ openModalImg1: true })}>
                     {this.state.fotoUp1 ? <Image  source={require('../assets/images/fotos-obligatorias/ic-verfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                     </TouchableWithoutFeedback>
 
                   </View>
 
+                <View style={{flexDirection: 'row'}}>
 
-                  <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} 
-                                style={styles.btnSi}/>
+                    <TouchableWithoutFeedback
+                    disabled={this.state.disabledButton2}
+                    onPress={this.openImagePicker2.bind(this)}
 
-                  <Image  source={require('../assets/images/botones/bt-chapamanilla-off.png')} 
-                                style={styles.btnSi}/>
+                    >
+                    {this.state.fotoUp2 ? <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/>}
+                    </TouchableWithoutFeedback>
 
-                  <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} 
-                                style={styles.btnSi}/>
+                    <TouchableWithoutFeedback
+                        disabled={!this.state.disabledButton2}
+                        onPress={this.openImagePicker2.bind(this)}
+                    >
+                        {this.state.fotoUp2 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
 
-                  <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} 
-                                style={styles.btnSi}/>
-                
+                    <TouchableWithoutFeedback
+                        onPress={() => this.setState({ openModalImg2: true })}>
+                        {this.state.fotoUp2 ? <Image  source={require('../assets/images/fotos-obligatorias/ic-verfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+                </View>
+
+                <View style={{flexDirection: 'row'}}>
+                    <TouchableWithoutFeedback
+                        disabled={this.state.disabledButton3}
+                        onPress={this.openImagePicker3.bind(this)}
+
+                    >
+                        {this.state.fotoUp3 ? <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/>}
+                    </TouchableWithoutFeedback>
+
+                    <TouchableWithoutFeedback
+                        disabled={!this.state.disabledButton3}
+                        onPress={this.openImagePicker3.bind(this)}
+                    >
+                        {this.state.fotoUp3 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+
+                    <TouchableWithoutFeedback
+                        onPress={() => this.setState({ openModalImg3: true })}>
+                        {this.state.fotoUp3 ? <Image  source={require('../assets/images/fotos-obligatorias/ic-verfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+
+                </View>
+
+                <View style={{flexDirection: 'row'}}>
+                    <TouchableWithoutFeedback
+                        disabled={this.state.disabledButton4}
+                        onPress={this.openImagePicker4.bind(this)}
+
+                    >
+                        {this.state.fotoUp4 ? <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} style={styles.btnSi}/>}
+                    </TouchableWithoutFeedback>
+
+                    <TouchableWithoutFeedback
+                        disabled={!this.state.disabledButton4}
+                        onPress={this.openImagePicker4.bind(this)}
+                    >
+                        {this.state.fotoUp4 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+
+                    <TouchableWithoutFeedback
+                        onPress={() => this.setState({ openModalImg4: true })}>
+                        {this.state.fotoUp4 ? <Image  source={require('../assets/images/fotos-obligatorias/ic-verfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+
+                </View>
+
+                <View style={{flexDirection: 'row'}}>
+                    <TouchableWithoutFeedback
+                        disabled={this.state.disabledButton5}
+                        onPress={this.openImagePicker5.bind(this)}
+
+                    >
+                        {this.state.fotoUp5 ? <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/>}
+                    </TouchableWithoutFeedback>
+
+                    <TouchableWithoutFeedback
+                        disabled={!this.state.disabledButton5}
+                        onPress={this.openImagePicker4.bind(this)}
+                    >
+                        {this.state.fotoUp5 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+
+                    <TouchableWithoutFeedback
+                        onPress={() => this.setState({ openModalImg5: true })}>
+                        {this.state.fotoUp5 ? <Image  source={require('../assets/images/fotos-obligatorias/ic-verfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                    </TouchableWithoutFeedback>
+
+                </View>
+
+
+
 
                 
 
@@ -263,6 +690,141 @@ componentDidMount(){
                     </View>
                   </View>
                 </Modal>
+
+             <Modal
+                 visible={this.state.openModalImg1}
+                 transparent={true}
+                 animationType={'slide'}
+                 onRequestClose={() => this.setState({ openModalImg1: false })}
+                 supportedOrientations={['landscape']}
+             >
+                 <View style={styles.modalConfirmation}>
+                     <View style={styles.containerModal}>
+                         <View style={styles.bordeModal}>
+                             <View style={{flex:1}}>
+                                 <Image resizeMode='contain' style={{flex:1, height: null, width: null,
+                                     alignItems:'center', justifyContent:'center'}} source={this.state.posteriorDa.imagen} />
+                             </View>
+
+
+
+
+                         </View>
+                         <TouchableWithoutFeedback onPress={() => this.setState({ openModalImg1: false })}>
+                             <Image source={require('../assets/modal/bt-cerrar.png')}
+                                    style={styles.btnCerrarModal} />
+                         </TouchableWithoutFeedback>
+                     </View>
+                 </View>
+             </Modal>
+
+             <Modal
+                 visible={this.state.openModalImg2}
+                 transparent={true}
+                 animationType={'slide'}
+                 onRequestClose={() => this.setState({ openModalImg2: false })}
+                 supportedOrientations={['landscape']}
+             >
+                 <View style={styles.modalConfirmation}>
+                     <View style={styles.containerModal}>
+                         <View style={styles.bordeModal}>
+                             <View style={{flex:1}}>
+                                 <Image resizeMode='contain' style={{flex:1, height: null, width: null,
+                                     alignItems:'center', justifyContent:'center'}} source={this.state.posteriorDa.imagen2} />
+                             </View>
+
+
+
+
+                         </View>
+                         <TouchableWithoutFeedback onPress={() => this.setState({ openModalImg2: false })}>
+                             <Image source={require('../assets/modal/bt-cerrar.png')}
+                                    style={styles.btnCerrarModal} />
+                         </TouchableWithoutFeedback>
+                     </View>
+                 </View>
+             </Modal>
+
+             <Modal
+                 visible={this.state.openModalImg3}
+                 transparent={true}
+                 animationType={'slide'}
+                 onRequestClose={() => this.setState({ openModalImg3: false })}
+                 supportedOrientations={['landscape']}
+             >
+                 <View style={styles.modalConfirmation}>
+                     <View style={styles.containerModal}>
+                         <View style={styles.bordeModal}>
+                             <View style={{flex:1}}>
+                                 <Image resizeMode='contain' style={{flex:1, height: null, width: null,
+                                     alignItems:'center', justifyContent:'center'}} source={this.state.posteriorDa.imagen3} />
+                             </View>
+
+
+
+
+                         </View>
+                         <TouchableWithoutFeedback onPress={() => this.setState({ openModalImg3: false })}>
+                             <Image source={require('../assets/modal/bt-cerrar.png')}
+                                    style={styles.btnCerrarModal} />
+                         </TouchableWithoutFeedback>
+                     </View>
+                 </View>
+             </Modal>
+
+             <Modal
+                 visible={this.state.openModalImg4}
+                 transparent={true}
+                 animationType={'slide'}
+                 onRequestClose={() => this.setState({ openModalImg4: false })}
+                 supportedOrientations={['landscape']}
+             >
+                 <View style={styles.modalConfirmation}>
+                     <View style={styles.containerModal}>
+                         <View style={styles.bordeModal}>
+                             <View style={{flex:1}}>
+                                 <Image resizeMode='contain' style={{flex:1, height: null, width: null,
+                                     alignItems:'center', justifyContent:'center'}} source={this.state.posteriorDa.imagen4} />
+                             </View>
+
+
+
+
+                         </View>
+                         <TouchableWithoutFeedback onPress={() => this.setState({ openModalImg4: false })}>
+                             <Image source={require('../assets/modal/bt-cerrar.png')}
+                                    style={styles.btnCerrarModal} />
+                         </TouchableWithoutFeedback>
+                     </View>
+                 </View>
+             </Modal>
+
+             <Modal
+                 visible={this.state.openModalImg5}
+                 transparent={true}
+                 animationType={'slide'}
+                 onRequestClose={() => this.setState({ openModalImg5: false })}
+                 supportedOrientations={['landscape']}
+             >
+                 <View style={styles.modalConfirmation}>
+                     <View style={styles.containerModal}>
+                         <View style={styles.bordeModal}>
+                             <View style={{flex:1}}>
+                                 <Image resizeMode='contain' style={{flex:1, height: null, width: null,
+                                     alignItems:'center', justifyContent:'center'}} source={this.state.posteriorDa.imagen5} />
+                             </View>
+
+
+
+
+                         </View>
+                         <TouchableWithoutFeedback onPress={() => this.setState({ openModalImg5: false })}>
+                             <Image source={require('../assets/modal/bt-cerrar.png')}
+                                    style={styles.btnCerrarModal} />
+                         </TouchableWithoutFeedback>
+                     </View>
+                 </View>
+             </Modal>
 
          </View>
 

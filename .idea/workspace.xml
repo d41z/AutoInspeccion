@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70f7fa87-7c05-4ac3-9b60-909bca2a3466" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/screens/DaFrontalScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screens/DaLateralDScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screens/DaLateralIScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screens/DaTechoScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterDir="false" />
@@ -34,18 +39,41 @@
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/zip-cache/xmuqM4YyzxAIVMWob+ApPJgcanQ=" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/zip-cache/xmuqM4YyzxAIVMWob+ApPJgcanQ=" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/pre-dexed/release/release_51beb76bc7708fa3cef5bfd5a64a1150be8199bf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/pre-dexed/release/release_51beb76bc7708fa3cef5bfd5a64a1150be8199bf.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btaceptarycontinuar.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btaceptarycontinuar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btconfirmar.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btconfirmar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btcontinuar.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btcontinuar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btsiguiente.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_botones_btsiguiente.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/resources-release.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/resources-release.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/symbols/release/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/symbols/release/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/InicioInspeccion.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/InicioInspeccion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Instruccion.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Instruccion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fotoRef/foto9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/AccSelectionScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccSelectionScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/AccesorieScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccesorieScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Chasis.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Chasis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/DaPosteriorScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaPosteriorScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/DaSelectionScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaSelectionScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Frontal.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Frontal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Kilometraje.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Kilometraje.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/LateralDerecho.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LateralDerecho.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/LateralIzquierdo.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LateralIzquierdo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Motor.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Motor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Neumatico.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Neumatico.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/PadronAnverso.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PadronAnverso.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/PadronReverso.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PadronReverso.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Panel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Parabrisa.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Parabrisa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Posterior.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Posterior.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/RuedaRepuesto.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/RuedaRepuesto.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,30 +88,32 @@
     <session id="-1395130782">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.29" value="2" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="4" />
+          <entry key="js" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="4" />
+          <entry key="JavaScript" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="18" />
+          <entry key="js" value="7129" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="18" />
+          <entry key="JavaScript" value="7129" />
         </counts>
       </usages-collector>
     </session>
@@ -91,10 +121,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
+        <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="211" column="67" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
+            <state relative-caret-position="330">
+              <caret line="171" column="24" selection-start-line="171" selection-start-column="10" selection-end-line="171" selection-end-column="24" />
+              <folding>
+                <element signature="e#89#130#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/LoginForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2141">
+              <caret line="85" column="52" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -102,20 +144,137 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/AccesorieScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="118" column="12" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+            <state relative-caret-position="143">
+              <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/DaSelectionScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/AccSelectionScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="60" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/screens/DaLateralIScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="828" column="35" lean-forward="true" selection-start-line="828" selection-start-column="35" selection-end-line="828" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/DaLateralDScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="827" column="28" selection-start-line="694" selection-start-column="20" selection-end-line="827" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/DaFrontalScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="919" column="28" selection-start-line="786" selection-start-column="20" selection-end-line="919" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/DaPosteriorScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="813" column="71" selection-start-line="813" selection-start-column="71" selection-end-line="813" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>documento</find>
+      <find>techo</find>
+      <find>imageRef</find>
+      <find>variable</find>
+      <find>asdasd</find>
+      <find>openimage</find>
+      <find>saveme5</find>
+      <find>disabledButton</find>
+      <find>openImagePicker1</find>
+      <find>posterior</find>
+      <find>imagen2</find>
+      <find>openModalImg5</find>
+      <find>this.state.enviar4</find>
+      <find>DaLateralDScreen</find>
+      <find>componentDid</find>
+      <find>nextScreen</find>
+      <find>saveme2</find>
+      <find>methodGoTo</find>
+      <find>enviar3</find>
+      <find>enviar2</find>
+      <find>posteriorDa</find>
+      <find>imagen</find>
+      <find>openModalImg1</find>
+      <find>openModalImg</find>
+      <find>openModal</find>
+      <find>enviar</find>
+      <find>didMount</find>
+      <find>registre</find>
+      <find>Techo</find>
+      <find>willMount</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,8 +284,29 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/screens/InfoCar.js" />
+        <option value="$PROJECT_DIR$/screens/Kilometraje.js" />
+        <option value="$PROJECT_DIR$/screens/LateralDerecho.js" />
+        <option value="$PROJECT_DIR$/screens/Parabrisa.js" />
+        <option value="$PROJECT_DIR$/screens/Panel.js" />
+        <option value="$PROJECT_DIR$/screens/PadronReverso.js" />
         <option value="$PROJECT_DIR$/screens/PadronAnverso.js" />
+        <option value="$PROJECT_DIR$/screens/Neumatico.js" />
+        <option value="$PROJECT_DIR$/screens/Motor.js" />
+        <option value="$PROJECT_DIR$/screens/LateralIzquierdo.js" />
+        <option value="$PROJECT_DIR$/screens/Posterior.js" />
+        <option value="$PROJECT_DIR$/screens/RuedaRepuesto.js" />
+        <option value="$PROJECT_DIR$/screens/Frontal.js" />
+        <option value="$PROJECT_DIR$/screens/Chasis.js" />
+        <option value="$PROJECT_DIR$/screens/AccSelectionScreen.js" />
         <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/screens/DaTechoScreen.js" />
+        <option value="$PROJECT_DIR$/screens/DaLateralDScreen.js" />
+        <option value="$PROJECT_DIR$/screens/DaFrontalScreen.js" />
+        <option value="$PROJECT_DIR$/screens/DaLateralIScreen.js" />
+        <option value="$PROJECT_DIR$/screens/DaPosteriorScreen.js" />
+        <option value="$PROJECT_DIR$/screens/DaSelectionScreen.js" />
+        <option value="$PROJECT_DIR$/screens/AccesorieScreen.js" />
+        <option value="$PROJECT_DIR$/components/LoginForm.js" />
       </list>
     </option>
   </component>
@@ -157,7 +337,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,17 +347,24 @@
             <path>
               <item name="autoinspeccion" type="b2602c69:ProjectViewProjectNode" />
               <item name="autoinspeccion" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="autoinspeccion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autoinspeccion" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.protractor.protractor_package" value="" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,6 +378,19 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ReactNative" factoryName="React Native">
+      <node-interpreter value="project" />
+      <react-native value="$USER_HOME$/AppData/Roaming/npm/node_modules/react-native-cli" />
+      <platform value="ANDROID" />
+      <envs />
+      <only-packager />
+      <browser value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -204,11 +403,14 @@
       <updated>1536960861206</updated>
       <workItem from="1536960864486" duration="594000" />
       <workItem from="1537063557928" duration="459000" />
+      <workItem from="1537450508730" duration="15813000" />
+      <workItem from="1537481667706" duration="11118000" />
+      <workItem from="1537571826759" duration="28122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1053000" />
+    <option name="totallyTimeSpent" value="56106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -254,20 +456,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
+    <entry file="file://$PROJECT_DIR$/screens/Parabrisa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="211" column="67" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
+        <state relative-caret-position="245">
+          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/PadronReverso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/LateralIzquierdo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-826">
+          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Kilometraje.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-775">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Motor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Neumatico.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Posterior.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="93" column="3" lean-forward="true" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/RuedaRepuesto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Chasis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Frontal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/AccNewSelectionScreen.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaTechoScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="307" column="76" selection-start-line="307" selection-start-column="63" selection-end-line="307" selection-end-column="76" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaFrontalScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="919" column="28" selection-start-line="786" selection-start-column="20" selection-end-line="919" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaLateralDScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="827" column="28" selection-start-line="694" selection-start-column="20" selection-end-line="827" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaPosteriorScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="813" column="71" selection-start-line="813" selection-start-column="71" selection-end-line="813" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/AccSelectionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="118" column="12" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+        <state relative-caret-position="330">
+          <caret line="171" column="24" selection-start-line="171" selection-start-column="10" selection-end-line="171" selection-end-column="24" />
+          <folding>
+            <element signature="e#89#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaSelectionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/AccesorieScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2141">
+          <caret line="85" column="52" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaLateralIScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="828" column="35" lean-forward="true" selection-start-line="828" selection-start-column="35" selection-end-line="828" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

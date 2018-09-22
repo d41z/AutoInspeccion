@@ -34,7 +34,7 @@ export default class AccSelectionScreen extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto1.png'),
+      imageRef: require('../assets/fotoRef/obg-13.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -108,7 +108,7 @@ export default class AccSelectionScreen extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto1.png'),
+      imageRef: require('../assets/fotoRef/obg-13.jpg'),
       disabledButton: true
     })
     

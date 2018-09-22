@@ -33,7 +33,7 @@ export default class Chasis extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto10.png'),
+      imageRef: require('../assets/fotoRef/obg-10.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class Chasis extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto10.png'),
+      imageRef: require('../assets/fotoRef/obg-10.jpg'),
       disabledButton: true
     })
     

@@ -33,7 +33,7 @@ export default class Kilometraje extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto8.png'),
+      imageRef: require('../assets/fotoRef/obg-8.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -96,7 +96,7 @@ export default class Kilometraje extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto8.png'),
+      imageRef: require('../assets/fotoRef/obg-8.jpg'),
       disabledButton: true
     })
     

@@ -35,7 +35,7 @@ export default class PadronReverso extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/foto2.png'),
+      imageRef: require('../assets/fotoRef/obg-2.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
@@ -107,7 +107,7 @@ export default class PadronReverso extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/foto2.png'),
+      imageRef: require('../assets/fotoRef/obg-2.jpg'),
       disabledButton: true
     })
     
