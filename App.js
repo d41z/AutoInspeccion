@@ -47,6 +47,7 @@ import DaFrontalScreen from "./screens/DaFrontalScreen";
 import DaLateralDScreen from "./screens/DaLateralDScreen";
 import DaLateralIScreen from "./screens/DaLateralIScreen";
 import DaTechoScreen from "./screens/DaTechoScreen";
+import AccContinueAccesorieScreen from "./screens/AccContinueAccesorieScreen";
 
 
 export default class App extends Component{
@@ -169,6 +170,9 @@ export default class App extends Component{
           accNewSelectionScreen:{
             screen: AccNewSelectionScreen,
           },
+                accContinueAccesorieScreen: {
+            screen: AccContinueAccesorieScreen,
+            },
           sendAutoScreen:{
             screen: SendAutoScreen,
           },

@@ -79,57 +79,69 @@ export default class InfoCar extends Component {
             
             <View style={styles.groupForm}>
                     <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Marca</Text>
-                      <View style={{flexDirection: 'row'}}>
-                        <TextInput
-                        editable={false}
-                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(marca) => this.setState({ marca })}
-                        value={this.state.marca} />
-                        <TouchableWithoutFeedback
+                          <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModalMarca: true })}>
-                          <Image source={require('../assets/others/icono-editar.png')}
-                                 style={styles.icon} />
-                        </TouchableWithoutFeedback>
-                      </View>
+                              <View style={{flexDirection: 'row'}}>      
+                                <TextInput
+                                underlineColorAndroid='transparent'
+                                editable={false}
+                                style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                                onChangeText={(marca) => this.setState({ marca })}
+                                value={this.state.marca} />
+                                  <Image source={require('../assets/others/icono-editar.png')}
+                                         style={styles.icon} />
+                                
+                              </View>
+                          </TouchableWithoutFeedback>
                     <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Modelo</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <TextInput
-                        editable={false}
-                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(modelo) => this.setState({ modelo })}
-                        value={this.state.modelo} />
-                        <TouchableWithoutFeedback
+                          <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModalModelo: true })}>
-                        <Image source={require('../assets/others/icono-editar.png')}
-                               style={styles.icon} />
-                        </TouchableWithoutFeedback>
-                      </View>
+                              <View style={{flexDirection: 'row'}}>
+
+                                  <TextInput
+                                  underlineColorAndroid='transparent'
+                                  editable={false}
+                                  style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                                  onChangeText={(modelo) => this.setState({ modelo })}
+                                  value={this.state.modelo} />
+                                  
+                                  <Image source={require('../assets/others/icono-editar.png')}
+                                         style={styles.icon} />
+                                  
+                                </View>
+                          </TouchableWithoutFeedback>
                     <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Año</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <TextInput
-                        editable={false}
-                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(ano) => this.setState({ ano })}
-                        value={this.state.ano} />
-                        <TouchableWithoutFeedback
+                          <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModalAno: true })}>
-                        <Image source={require('../assets/others/icono-editar.png')}
-                               style={styles.icon} />
-                        </TouchableWithoutFeedback>
-                      </View>
+                              <View style={{flexDirection: 'row'}}>
+                                  <TextInput
+                                  underlineColorAndroid='transparent'
+                                  editable={false}
+                                  style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                                  onChangeText={(ano) => this.setState({ ano })}
+                                  value={this.state.ano} />
+                                  
+                                  <Image source={require('../assets/others/icono-editar.png')}
+                                         style={styles.icon} />
+                        
+                              </View>
+                          </TouchableWithoutFeedback>
                     <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Color</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <TextInput
-                        editable={false}
-                        style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
-                        onChangeText={(color) => this.setState({ color })}
-                        value={this.state.color} />
-                        <TouchableWithoutFeedback
+                          <TouchableWithoutFeedback
                           onPress={() => this.setState({ openModalColor: true })}>
-                        <Image source={require('../assets/others/icono-editar.png')}
-                               style={styles.icon} />
-                        </TouchableWithoutFeedback>
-                      </View>
+                              <View style={{flexDirection: 'row'}}>
+                                  <TextInput
+                                  underlineColorAndroid='transparent'
+                                  editable={false}
+                                  style={[styles.input, styles.textAreaRut]} placeholderTextColor='white'
+                                  onChangeText={(color) => this.setState({ color })}
+                                  value={this.state.color} />
+                                  
+                                  <Image source={require('../assets/others/icono-editar.png')}
+                                         style={styles.icon} />
+                                  
+                                </View>
+                         </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback
                       onPress={() => this.props.navigation.navigate('instru')}>
@@ -157,6 +169,7 @@ export default class InfoCar extends Component {
 
 
                            <TextInput
+                                  underlineColorAndroid='transparent'
                                   style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
                                   onChangeText={(marca) => this.setState({ marca })}
                                   value={this.state.marca} />
@@ -200,6 +213,7 @@ export default class InfoCar extends Component {
 
 
                            <TextInput
+                                  underlineColorAndroid='transparent'
                                   style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
                                   onChangeText={(modelo) => this.setState({ modelo })}
                                   value={this.state.modelo} />
@@ -243,6 +257,7 @@ export default class InfoCar extends Component {
 
 
                            <TextInput
+                                  underlineColorAndroid='transparent'
                                   style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
                                   onChangeText={(ano) => this.setState({ ano })}
                                   value={this.state.ano} />
@@ -286,6 +301,7 @@ export default class InfoCar extends Component {
 
 
                            <TextInput
+                                  underlineColorAndroid='transparent'
                                   style={[styles.inputModal, styles.textAreaRutModal]} placeholderTextColor='white'
                                   onChangeText={(color) => this.setState({ color })}
                                   value={this.state.color} />

@@ -38,6 +38,7 @@ export default class RuedaRepuesto extends Component {
       btnEstado: true,
       imageHeight: height,
       imageWidth: width,
+      openModalRef: false
     }
   }
 
@@ -96,8 +97,7 @@ export default class RuedaRepuesto extends Component {
   cambioImagen=()=>{
    
     this.setState({
-      imageRef: require('../assets/fotoRef/obg-11.jpg'),
-      disabledButton: true
+      openModalRef: true
     })
     
     
@@ -147,8 +147,11 @@ export default class RuedaRepuesto extends Component {
 
               
 
-              <View style={{flex:0.2}}>
+              <View style={{flex:0.3, flexDirection: 'row', alignItems: 'center'}}>
                 <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
+                <Text style={{textAlign: 'center'}}>
+                  00:00
+                </Text>
               </View>
 
               <View style={{flex:0.1}}>
@@ -169,11 +172,11 @@ export default class RuedaRepuesto extends Component {
                <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
                     <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
                </View>
-               <View style={{flex:0.4, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10}}>
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
-                    <View style={{flex:1, flexDirection: 'row'}}>
+               <View style={{flex:0.2, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10,  paddingBottom: height * 0.05}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end',  backgroundColor: 'white', alignItems: 'center'}}>
+                    
                    
-                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Ver Referencia</Text> : <Text  style={{paddingTop: width * 0.03}}></Text>}
+                    {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
 
 
                     <TouchableWithoutFeedback
@@ -182,13 +185,13 @@ export default class RuedaRepuesto extends Component {
                       >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
                     </TouchableWithoutFeedback>
-                    </View>
+                    
                   </View>
 
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end'}}>
-                    <View style={{flexDirection: 'row'}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end',  backgroundColor: 'white', alignItems: 'center'}}>
                     
-                    {this.state.fotoUp ? <Text  style={{paddingTop: width * 0.035}}>Repetir Foto</Text> : <Text  style={{paddingTop: width * 0.03}}>Tomar Foto</Text>}
+                    
+                    {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}
                     
 
                     <TouchableWithoutFeedback
@@ -197,7 +200,7 @@ export default class RuedaRepuesto extends Component {
                     >
                     {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
                     </TouchableWithoutFeedback>
-                    </View>
+                    
 
                   </View>
                     
@@ -251,6 +254,34 @@ export default class RuedaRepuesto extends Component {
                   </View>
                 </Modal>
 
+                <Modal
+                  visible={this.state.openModalRef}
+                  transparent={true}
+                  animationType={'slide'}
+                  onRequestClose={() => this.setState({ openModalRef: false })}
+                  supportedOrientations={['landscape']}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1}}>
+                          
+                          <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={require('../assets/fotoRef/obg-11.jpg')} />
+
+
+                        </View>
+                        
+
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModalRef: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
+
 
             </View>
 
@@ -282,7 +313,7 @@ export default class RuedaRepuesto extends Component {
         borderBottomWidth: 0,
     },
     fondoHeader: {
-        width: height,
+        flex: 0.2,
         height: width * 0.15,
         backgroundColor: 'transparent',
     },
@@ -305,8 +336,8 @@ export default class RuedaRepuesto extends Component {
         
     },
     iconCam: {
-      width: height * 0.2,
-      height: width * 0.15,
+      width: height * 0.1,
+      height: width * 0.12,
       resizeMode: 'contain',
       
     },
@@ -319,7 +350,7 @@ export default class RuedaRepuesto extends Component {
     containFotoObligatoria: {
         flex:1,
         flexDirection: 'row',
-        width: height * 0.3,
+        width: height * 0.2,
         height: width * 0.15,
         borderColor: 'grey',
         borderBottomWidth: 0,

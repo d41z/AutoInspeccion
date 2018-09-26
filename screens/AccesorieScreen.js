@@ -12,7 +12,8 @@ import {
   Alert,
   Modal,
   Picker,
-  TouchableOpacity 
+  TouchableOpacity,
+
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 
@@ -36,6 +37,12 @@ export default class AccesorieScreen extends Component {
       checkedImporta: 0,
       radioBtnsAcces: ['Alarma', 'Aire Acondicionado', 'AirBags', 'Frenos ABS', 'Otro',],
       checkedAcces: 0,
+      checkedAlarma:false,
+      checkedAire: false,
+      checkedAirbags: false,
+      checkedFrenos:false,
+      checkedOtro: false,
+
       
 
     }
@@ -47,7 +54,7 @@ export default class AccesorieScreen extends Component {
   }
 
   goToScreen(){
-    if(this.state.checkedAcces == 4){
+    if(this.state.checkedOtro){
       this.props.navigation.navigate('accSelectionScreen')
     }else{
         this.props.navigation.navigate('sendAutoScreen')
@@ -58,7 +65,9 @@ export default class AccesorieScreen extends Component {
     
   }
 
- 
+ checkMethod(){
+
+ }
 
 
   render() {
@@ -84,7 +93,7 @@ export default class AccesorieScreen extends Component {
          <ImageBackground source={require('../assets/fondo-danos.jpg')}
           style={styles.fondoBody}> 
             <View style={styles.Body}>
-                <View style={{flex:1, paddingHorizontal: width * 0.05, paddingVertical: height * 0.05}}>
+                <View style={{flex:1, paddingHorizontal: width * 0.03, paddingVertical: height * 0.05}}>
                   <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Medium', color: 'black'}}>
                   Registre las características y accesorios del autómovil.
                   </Text>
@@ -92,30 +101,38 @@ export default class AccesorieScreen extends Component {
                   CARACTERÍSTICAS
                   </Text>
                 <View style={{flex:1, alignItems:'center'}}>
-                  <Picker
-                    mode='dropdown'
-                    selectedValue={this.state.useCar}
-                    style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue, itemIndex) => this.setState({useCar: itemValue})}>
-                    <Picker.Item label="Particular" value="particular" />
-                    <Picker.Item label="Comercial" value="comercial" />
-                    <Picker.Item label="Deportivo" value="deportivo" />
-                  </Picker>
-
-                  <Picker
-                    mode='dropdown'
-                    selectedValue={this.state.combustible}
-                    style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue, itemIndex) => this.setState({combustible: itemValue})}>
-                    <Picker.Item label="Bencina" value="bencina" />
-                    <Picker.Item label="Diesel" value="diesel" />
-                    <Picker.Item label="Eléctrico" value="eléctrico" />
-                    <Picker.Item label="Híbrido" value="híbrido" />
-                    <Picker.Item label="Gas Licuado" value="gaslicuado" />
-                  </Picker>
-                  <View style={{flexDirection: 'row', alignItems:'center'}}>
+                  <View style={{flex:1, backgroundColor: '#DCDCDC', borderRadius: 30, height: height * 0.02, width: width * 0.7}}>
+                    <Picker
+                      mode='dropdown'
+                      selectedValue={this.state.useCar}
+                      style={{ flex:1 }}
+                      onValueChange={(itemValue, itemIndex) => this.setState({useCar: itemValue})}>
+                      <Picker.Item label="Particular" value="particular" />
+                      <Picker.Item label="Comercial" value="comercial" />
+                      <Picker.Item label="Deportivo" value="deportivo" />
+                    </Picker>
+                  </View>
+                  <View style={{height: height * 0.02}}>
+                  </View>
+                  <View style={{flex:1, backgroundColor: '#DCDCDC', borderRadius: 30,  height: height * 0.02, width: width * 0.7}}>
+                    <Picker
+                      mode='dropdown'
+                      selectedValue={this.state.combustible}
+                      style={{ flex:1 }}
+                      onValueChange={(itemValue, itemIndex) => this.setState({combustible: itemValue})}>
+                      <Picker.Item label="Bencina" value="bencina" />
+                      <Picker.Item label="Diesel" value="diesel" />
+                      <Picker.Item label="Eléctrico" value="eléctrico" />
+                      <Picker.Item label="Híbrido" value="híbrido" />
+                      <Picker.Item label="Gas Licuado" value="gaslicuado" />
+                    </Picker>
+                  </View>
+                  <View style={{flexDirection: 'row', alignItems:'center', paddingTop: height * 0.02}}>
                     <Text>Vehículo de importación directa</Text>
+                    <TouchableWithoutFeedback
+                                onPress={() => this.setState({openModal: true})}>
                     <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+                    </TouchableWithoutFeedback>
                   </View>
                   
                     <View style={{flex:1, flexDirection: 'row'}}>
@@ -147,29 +164,61 @@ export default class AccesorieScreen extends Component {
                   ACCESORIOS
                   </Text>
               <View style={{flex:1}}>
-                {this.state.radioBtnsAcces.map((data, key) => {
-                      return (
-                        <View key={key}>
-                          {this.state.checkedAcces == key ?
-                            <TouchableOpacity style={styles.btn}>
-                              <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/>
-                                <Text style={{textAlign: 'center'}}>{data}</Text>
-                             </TouchableOpacity>
-                                        :
-                              <TouchableOpacity onPress={()=>{this.setState({checkedAcces: key})}} style={styles.btn}>
-                                <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')} />
-                                <Text style={{textAlign: 'center'}}>{data}</Text>
-                              </TouchableOpacity>
-                            }
-                        </View>
-                            )
-                    })}
+
+                <TouchableOpacity style={styles.btn}
+                              onPress={() => this.setState(previousState => {
+                                return { checkedAlarma: !previousState.checkedAlarma };
+                              })}>
+
+                {this.state.checkedAlarma ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                <Text style={{textAlign: 'center'}}>Alarma</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.btn}
+                              onPress={() => this.setState(previousState => {
+                                return { checkedAire: !previousState.checkedAire };
+                              })}>
+
+                {this.state.checkedAire ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                <Text style={{textAlign: 'center'}}>Aire</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.btn}
+                              onPress={() => this.setState(previousState => {
+                                return { checkedAirbags: !previousState.checkedAirbags };
+                              })}>
+
+                {this.state.checkedAirbags ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                <Text style={{textAlign: 'center'}}>AirBags</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.btn}
+                              onPress={() => this.setState(previousState => {
+                                return { checkedFrenos: !previousState.checkedFrenos };
+                              })}>
+
+                {this.state.checkedFrenos ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                <Text style={{textAlign: 'center'}}>Frenos ABS</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity style={styles.btn}
+                              onPress={() => this.setState(previousState => {
+                                return { checkedOtro: !previousState.checkedOtro };
+                              })}>
+
+                {this.state.checkedOtro ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                <Text style={{textAlign: 'center'}}>Otro(deberá fotografiarlo en el próximo paso)</Text>
+                </TouchableOpacity>
+                
+
+
+
+                              
 
                 <TouchableWithoutFeedback
                       onPress={() => this.goToScreen()}>
-                  <Image source={require('../assets/images/botones/bt-continuar.png')}
-                      style={styles.btnIngresar} />
-                   </TouchableWithoutFeedback>
+                  <Image source={require('../assets/images/botones/bt-continuar.png')} style={styles.btnIngresar} />
+                </TouchableWithoutFeedback>
 
               </View>
 
@@ -192,18 +241,20 @@ export default class AccesorieScreen extends Component {
                   <View style={styles.modalConfirmation}>
                     <View style={styles.containerModal}>
                       <View style={styles.bordeModal}>
-                        <View style={{flex:1, alignItems:'center', paddingHorizontal: width * 0.05}}>
+                        <View style={{flex:1, alignItems:'center'}}>
                           
                           <Image  source={require('../assets/others/icono-titulos.png')} 
                                 style={styles.logitoLet}/>
 
+                          <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>
+                          Importación Directa:
+                          </Text>
                           <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Regular', color: 'black'}}>
-                          Presiona el botón de la zona afectada y sube la foto. Presiona Continuar sólo cuando 
-                          termines de sacar las fotos.
+                          Vehículo ingresado al país por gestión particular.
                           </Text>
 
                           <TouchableWithoutFeedback
-                                onPress={() => this.goToScreen()}>
+                                onPress={() => this.setState({ openModal: false })}>
                           <Image  source={require('../assets/images/botones/bt-ok.png')} 
                                 style={styles.btOk}/>
                           </TouchableWithoutFeedback>
@@ -314,14 +365,17 @@ export default class AccesorieScreen extends Component {
     width: width*0.8,
     backgroundColor: 'white',
     borderRadius: 20
+
   },
   img:{
         height:height * 0.04,
-        width: width * 0.2,
+        width: width * 0.1,
         resizeMode: 'contain'
     },
   btn:{
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems:'center',
+
   },
   flecha: {
       width: width * 0.1,
@@ -329,10 +383,21 @@ export default class AccesorieScreen extends Component {
       resizeMode: 'contain',
   },
   btnIngresar: {
-    paddingTop: height * 0.15,
+    paddingTop: height * 0.1,
     width: width * 0.7,
     height: height * 0.09,
     resizeMode: 'contain'
+  },
+  picker: {
+    width: 200,
+    backgroundColor: '#fff',
+    borderColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 10,
+    borderWidth: 1
+  },
+  pickerItem: {
+    color: 'red'
   },
 
 

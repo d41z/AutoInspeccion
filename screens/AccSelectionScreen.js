@@ -96,7 +96,7 @@ export default class AccSelectionScreen extends Component {
           if (Platform.OS == 'ios') {
             Orientation.lockToLandscapeRight();
           }else{
-            Orientation.lockToLandscapeLeft();    
+            Orientation.lockToLandscapeLeft();
           }
 
         }
@@ -114,6 +114,15 @@ export default class AccSelectionScreen extends Component {
     
     
   }
+
+    goToScreen(){
+        if (Platform.OS == 'ios') {
+            Orientation.lockToPortrait();
+        }else{
+            Orientation.lockToPortrait();
+        }
+        this.props.navigation.navigate('accNewSelectionScreen')
+    }
 
 
   render(){
@@ -151,7 +160,7 @@ export default class AccSelectionScreen extends Component {
 
               <View style={{flex:0.25}}>
               <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('accNewSelectionScreen')}
+                        onPress={() => this.goToScreen()}
                         >
                 <View style={{flex:1, backgroundColor: 'orange', alignItems:'center', justifyContent:'center'}}>
                   <Text style={{textAlign: 'center', color: 'white', alignItems:'center'}}>

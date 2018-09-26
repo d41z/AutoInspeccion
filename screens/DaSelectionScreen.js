@@ -329,6 +329,27 @@ export default class DaSelectionScreen extends Component {
 
     }
 
+    nextScreenPosterior(){
+
+      this.props.navigation.navigate('daPosteriorScreen', {item: 'daSelectionScreen', posterior:this.state.enviar})
+    }
+
+    nextScreenFrontal(){
+      this.props.navigation.navigate('daFrontalScreen', {item: 'daSelectionScreen', frontal:this.state.enviar2})
+    }
+    nextScreenLateralDerecho(){
+      this.props.navigation.navigate('daLateralDScreen', {item: 'daSelectionScreen', lderecho:this.state.enviar3})
+    }
+    nextScreenLateralIzquierdo(){
+      this.props.navigation.navigate('daLateralIScreen', {item: 'daSelectionScreen', lizquierdo:this.state.enviar4})
+
+    }
+    nextScreenTecho(){
+      this.props.navigation.navigate('daTechoScreen', {item: 'daSelectionScreen', techo:this.state.enviar5})
+    }
+
+
+
 
 
 
@@ -365,14 +386,14 @@ export default class DaSelectionScreen extends Component {
                   </Text>
 
                   <TouchableWithoutFeedback
-                      onPress={() => this.props.navigation.navigate('daPosteriorScreen', {item: 'daSelectionScreen', posterior:this.state.enviar})}
+                      onPress={() => this.nextScreenPosterior()}
                   >
                       {this.state.posterior ? <Image  source={require('../assets/images/botones/bt-posterior-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-posterior-off.png')} style={styles.btnSi}/>}
                   </TouchableWithoutFeedback>
 
 
                     <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('daFrontalScreen', {item: 'daSelectionScreen', frontal:this.state.enviar2})}
+                        onPress={() => this.nextScreenFrontal()}
                     >
 
                         {this.state.frontal ? <Image  source={require('../assets/images/botones/bt-frontal-on.png')}  style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-frontal-off.png')}  style={styles.btnSi}/>}
@@ -381,7 +402,7 @@ export default class DaSelectionScreen extends Component {
 
 
                     <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('daLateralDScreen', {item: 'daSelectionScreen', lderecho:this.state.enviar3})}
+                        onPress={() => this.nextScreenLateralDerecho()}
                     >
 
                         {this.state.lderecho ? <Image  source={require('../assets/images/botones/bt-lateral-der-on.png')}  style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-lateral-der-off.png')}   style={styles.btnSi}/>}
@@ -390,7 +411,7 @@ export default class DaSelectionScreen extends Component {
 
 
                     <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('daLateralIScreen', {item: 'daSelectionScreen', lizquierdo:this.state.enviar4})}
+                        onPress={() => this.nextScreenLateralIzquierdo()}
                     >
 
                         {this.state.lizquierdo ? <Image  source={require('../assets/images/botones/bt-lateral-izq-on.png')}   style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-lateral-izq-off.png')}    style={styles.btnSi}/>}
@@ -399,7 +420,7 @@ export default class DaSelectionScreen extends Component {
 
 
                     <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('daTechoScreen', {item: 'daSelectionScreen', techo:this.state.enviar5})}
+                        onPress={() => this.nextScreenTecho()}
                     >
 
                         {this.state.techo ? <Image  source={require('../assets/images/botones/bt-techo-on.png')}   style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-techo-off.png')}    style={styles.btnSi}/>}
