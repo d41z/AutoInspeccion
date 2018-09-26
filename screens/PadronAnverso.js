@@ -178,7 +178,7 @@ export default class PadronAnverso extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.65, position: 'absolute'}}>
+            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.6, position: 'absolute'}}>
                <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
                     <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
                </View>
@@ -388,10 +388,8 @@ export default class PadronAnverso extends Component {
         flex: 1
     },
     containHeader: {
-      flex:1,
+        flex:1,
         flexDirection: 'row',
-        width: height,
-        height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
         paddingHorizontal: 20,
@@ -434,7 +432,7 @@ export default class PadronAnverso extends Component {
       textAlignVertical: 'center'
     },
     containFotoObligatoria: {
-        flex:1,
+        flex:1.2,
         flexDirection: 'row',
         width: height * 0.2,
         height: width * 0.15,

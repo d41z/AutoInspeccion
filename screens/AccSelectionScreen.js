@@ -147,8 +147,11 @@ export default class AccSelectionScreen extends Component {
               </View>
               
               
-              <View style={{flex:0.25}}>
+              <View style={{flex:0.25, flexDirection: 'row', alignItems: 'center'}}>
                 <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
+                <Text style={{textAlign: 'center'}}>
+                  00:00
+                </Text>
               </View>
 
               <View style={{flex:0.25}}>
@@ -212,11 +215,9 @@ export default class AccSelectionScreen extends Component {
     containHeader: {
       flex:1,
         flexDirection: 'row',
-        width: height,
         height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
-        paddingHorizontal: 20,
         borderColor: 'grey',
         borderBottomWidth: 0,
     },
