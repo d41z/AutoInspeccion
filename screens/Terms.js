@@ -56,7 +56,7 @@ export default class Terms extends Component {
 
 
          </ImageBackground>
-         <View style={{flex: 1, marginLeft: 30, marginRight: 20}}>
+         <View style={{flex: 1, marginLeft: 30, marginRight: 20, backgroundColor:'white'}}>
               <ScrollView
                   ref={scrollView  => {this.scrollView = scrollView; }}
                   onScroll={({nativeEvent}) => {
@@ -196,7 +196,7 @@ export default class Terms extends Component {
                       
               </ScrollView>
             </View>
-            <View style={{flex: 0.3}}>
+            
 
               <TouchableWithoutFeedback
                   onPress={() => {this.scrollView.scrollToEnd()}}
@@ -216,7 +216,7 @@ export default class Terms extends Component {
               style={styles.btnIngresar} />}
 
               </TouchableWithoutFeedback>
-            </View>
+            
         
       </View>
 
@@ -227,7 +227,7 @@ export default class Terms extends Component {
  const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        backgroundColor: 'transparent',
+        backgroundColor: 'white',
         flex: 1,
         alignItems: 'center'
     },

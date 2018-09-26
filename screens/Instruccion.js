@@ -47,13 +47,13 @@ export default class Instruccion extends Component {
                <Image source={require('../assets/others/icono-titulos.png')}
                 style={styles.logoLet} />
                 <Text style={styles.textHeader}>
-                  INSTRUCCIÓNES
+                  INSTRUCCIONES
                 </Text>
             </View>
 
 
          </ImageBackground>
-         <View style={{flex: 1, marginLeft: 30, marginRight: 20, alignItems: 'center', justifyContent:'center'}}>
+         <View style={{flex: 1, marginLeft: 30, marginRight: 20, alignItems: 'center', justifyContent:'center', backgroundColor: 'white'}}>
               <ScrollView
                   ref={scrollView  => {this.scrollView = scrollView; }}
                   onScroll={({nativeEvent}) => {
@@ -145,7 +145,7 @@ export default class Instruccion extends Component {
             </TouchableWithoutFeedback>
 
               <TouchableWithoutFeedback
-                  onPress={() => this.props.navigation.navigate('inicioins')}
+                  onPress={() => this.props.navigation.navigate('padronA')}
                   disabled={this.state.disabledButton}
               >
               {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-aceptarycontinuar-off.png')} 
@@ -164,7 +164,7 @@ export default class Instruccion extends Component {
  const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        backgroundColor: 'transparent',
+        backgroundColor: 'white',
         flex: 1,
         alignItems: 'center'
     },

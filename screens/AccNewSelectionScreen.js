@@ -79,38 +79,25 @@ export default class AccNewSelectionScreen extends Component {
                   Describe el accesorio adicional fotografíado.
                   </Text>
                   <TextInput
+
                         style={{height: height * 0.2, width: width * 0.4}}
                         multiline={true}
                         numberOfLines={4}
                         onChangeText={(text) => this.setState({text})}
                         value={this.state.text}/>
-                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Medium', color: 'black', paddingTop:10}}>
-                  ¿Desea integrar otro accesorio?
-                  </Text>
 
 
-                    <View style={{flex:1, flexDirection: 'row'}}>
-                        
-                        <TouchableWithoutFeedback
-                                onPress={() => this.goToScreen()}>
+                    <TouchableWithoutFeedback
+                        onPress={() => this.props.navigation.navigate('accContinueAccesorieScreen')}>
+                        <Image source={require('../assets/images/botones/bt-continuar.png')}
+                               style={styles.btnIngresar} />
+                    </TouchableWithoutFeedback>
 
-                        <Image  source={require('../assets/images/botones/bt-si.png')} 
-                                style={styles.btnSi}/>
-
-                        </TouchableWithoutFeedback>
-
-                        <TouchableWithoutFeedback
-                                onPress={() => this.props.navigation.navigate('sendAutoScreen')}>
-                        <Image  source={require('../assets/images/botones/bt-no.png')} 
-                                style={styles.btnSi}/>
-                        </TouchableWithoutFeedback>
-                    </View>
                 </View>
 
             </View>
 
-
-
+          
           </ImageBackground>
           <Modal
                   visible={this.state.openModal}
@@ -243,7 +230,13 @@ export default class AccNewSelectionScreen extends Component {
     width: width*0.8,
     backgroundColor: 'white',
     borderRadius: 20
-  }
+  },
+     btnIngresar: {
+         paddingTop: height * 0.15,
+         width: width * 0.7,
+         height: height * 0.09,
+         resizeMode: 'contain'
+     },
 
   
   

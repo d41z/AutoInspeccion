@@ -96,7 +96,7 @@ export default class AccSelectionScreen extends Component {
           if (Platform.OS == 'ios') {
             Orientation.lockToLandscapeRight();
           }else{
-            Orientation.lockToLandscapeLeft();    
+            Orientation.lockToLandscapeLeft();
           }
 
         }
@@ -114,6 +114,15 @@ export default class AccSelectionScreen extends Component {
     
     
   }
+
+    goToScreen(){
+        if (Platform.OS == 'ios') {
+            Orientation.lockToPortrait();
+        }else{
+            Orientation.lockToPortrait();
+        }
+        this.props.navigation.navigate('accNewSelectionScreen')
+    }
 
 
   render(){
@@ -138,8 +147,11 @@ export default class AccSelectionScreen extends Component {
               </View>
               
               
-              <View style={{flex:0.25}}>
+              <View style={{flex:0.25, flexDirection: 'row', alignItems: 'center'}}>
                 <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
+                <Text style={{textAlign: 'center'}}>
+                  00:00
+                </Text>
               </View>
 
               <View style={{flex:0.25}}>
@@ -151,7 +163,7 @@ export default class AccSelectionScreen extends Component {
 
               <View style={{flex:0.25}}>
               <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('accNewSelectionScreen')}
+                        onPress={() => this.goToScreen()}
                         >
                 <View style={{flex:1, backgroundColor: 'orange', alignItems:'center', justifyContent:'center'}}>
                   <Text style={{textAlign: 'center', color: 'white', alignItems:'center'}}>
@@ -203,11 +215,9 @@ export default class AccSelectionScreen extends Component {
     containHeader: {
       flex:1,
         flexDirection: 'row',
-        width: height,
         height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
-        paddingHorizontal: 20,
         borderColor: 'grey',
         borderBottomWidth: 0,
     },

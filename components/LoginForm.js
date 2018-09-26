@@ -73,12 +73,15 @@ const { width, height } = Dimensions.get('screen');
               RUT Asegurado:
             </Text> 
             <TextInput
+              underlineColorAndroid="transparent"
               style={styles.input} 
+
             /> 
             <Text style={styles.textoPatente}>
               Patente:
             </Text> 
             <TextInput
+              underlineColorAndroid="transparent"
               style={styles.input} 
             /> 
 

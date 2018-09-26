@@ -88,6 +88,7 @@ export default class SendAutoScreen extends Component {
                   </Text>
                   <TextInput
                         style={[styles.input, styles.textAreaInput]} placeholderTextColor='white'
+                        underlineColorAndroid="transparent"
                         onChangeText={(email) => this.setState({ email })}
                         value={this.state.rut} />
 
@@ -95,28 +96,31 @@ export default class SendAutoScreen extends Component {
                   Reingresa tu mail
                   </Text>
                   <TextInput
+                        underlineColorAndroid="transparent"
                         style={[styles.input, styles.textAreaInput]} placeholderTextColor='white'
                         onChangeText={(email2) => this.setState({ email2 })}
                         value={this.state.rut} />
 
-                  <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                  <View style={{flex:1, flexDirection: 'row', alignItems: 'center', paddingTop: height * 0.04}}>
                   <TouchableWithoutFeedback
                       onPress={() => this.setState({acuerdo: true})}>
                     {this.state.acuerdo ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')} /> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')} />}
                   </TouchableWithoutFeedback>
-                    <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                    <Text style={{textAlign: 'left', fontFamily: 'FiraSans-Regular', color: 'black'}}>
                      Declaro que toda la información proporcionada por mi es correcta y verdadera. Declaro ser responsable de la veracidad de mis afirmaciónes.
                     </Text>
                   </View>
-                  <TouchableWithoutFeedback
+                  
+                    
+                  
+
+                </View>
+                <TouchableWithoutFeedback
                       onPress={() => this.props.navigation.navigate('xxx')}>
                     <Image source={require('../assets/images/botones/bt-confirmar.png')}
                       style={styles.btnIngresar} />
                   </TouchableWithoutFeedback>
 
-                  
-
-                </View>
 
             </View>
 
@@ -253,7 +257,8 @@ export default class SendAutoScreen extends Component {
     height: height * 0.7,
     width: width*0.8,
     backgroundColor: 'white',
-    borderRadius: 20
+    borderRadius: 20,
+    alignItems: 'center'
   },
   input: {
     height: height * 0.2,

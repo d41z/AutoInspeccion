@@ -43,6 +43,7 @@ export default class DaPosteriorScreen extends Component {
               openModalImg3: false,
               openModalImg4: false,
               openModalImg5: false,
+              openModalInstru: false,
               fotoUp1: false,
               fotoUp2: false,
               fotoUp3: false,
@@ -118,6 +119,7 @@ export default class DaPosteriorScreen extends Component {
             openModalImg4: false,
             openModalImg5: false,
             openModalImg6: false,
+            openModalInstru: false,
             fotoUp1: aux,
             fotoUp2: aux2,
             fotoUp3: aux3,
@@ -506,13 +508,16 @@ componentDidMount(){
               </View>
               
               
-              <View style={{flex:0.25}}>
+              <View style={{flex:0.25, flexDirection: 'row', alignItems: 'center'}}>
                 <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
+                <Text style={{textAlign: 'center'}}>
+                  00:00
+                </Text>
               </View>
 
               <View style={{flex:0.25}}>
                 <TouchableWithoutFeedback
-                          onPress={() => this.setState({ openModal: true })}>
+                          onPress={() => this.setState({ openModalInstru: true })}>
                 <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
                 </TouchableWithoutFeedback>
               </View>
@@ -665,28 +670,38 @@ componentDidMount(){
 
            </View>
            <Modal
-                  visible={this.state.openModal}
+                  visible={this.state.openModalInstru}
                   transparent={true}
                   animationType={'slide'}
-                  onRequestClose={() => this.setState({ openModal: false })}
+                  onRequestClose={() => this.setState({ openModalInstru: false })}
                   supportedOrientations={['landscape']}
                 >
-                  <View style={styles.modalConfirmation}>
-                    <View style={styles.containerModal}>
-                      <View style={styles.bordeModal}>
-                        <View style={{flex:1}}>
-                          <Image resizeMode='contain' style={{flex:1, height: null, width: null,
-                           alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+                  <View style={styles.modalConfirmationInstru}>
+                    <View style={styles.containerModalInstru}>
+                      <View style={styles.bordeModalInstru}>
+                        <View style={{flex:1, alignItems:'center', paddingHorizontal: width * 0.05}}>
+                          
+                          <Image  source={require('../assets/others/icono-titulos.png')} 
+                                style={styles.logitoLet}/>
+
+                          <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black', paddingBottom: width * 0.03}}>
+                          Seleccione el lugar exacto y en donde se encuentra el daño y toma la fotografía.
+                          Para continuar presiona siguiente.
+                          </Text>
+
+                          <TouchableWithoutFeedback onPress={() => this.setState({ openModalInstru: false })}>
+                          <Image  source={require('../assets/images/botones/bt-ok.png')} 
+                                style={styles.btOk}/>
+                          </TouchableWithoutFeedback>
+
+                          
                         </View>
 
                         
 
                         
                       </View>
-                      <TouchableWithoutFeedback onPress={() => this.setState({ openModal: false })}>
-                        <Image source={require('../assets/modal/bt-cerrar.png')}
-                          style={styles.btnCerrarModal} />
-                      </TouchableWithoutFeedback>
+                      
                     </View>
                   </View>
                 </Modal>
@@ -853,7 +868,7 @@ componentDidMount(){
         borderBottomWidth: 0,
     },
     fondoHeader: {
-        width: height,
+        flex: 0.2,
         height: width * 0.15,
         backgroundColor: 'transparent',
     },
@@ -973,6 +988,38 @@ componentDidMount(){
     height: width * 0.1,
     resizeMode: 'contain',
 
+  },
+  modalConfirmationInstru: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
+  containerModalInstru: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bordeModalInstru: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    height: width * 0.5,
+    width: height * 0.5,
+    borderRadius: width * 0.02,
+    borderColor: 'white',
+    borderWidth: 0.666,
+    backgroundColor: 'white',
+  },
+  logitoLet:{
+    width: height * 0.25,
+    height: width * 0.15,
+    resizeMode: 'contain',
+  },
+  btOk: {
+    width: height * 0.25,
+    height: width * 0.13,
+    resizeMode: 'contain'
   },
 
 
