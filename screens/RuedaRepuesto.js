@@ -241,7 +241,66 @@ export default class RuedaRepuesto extends Component {
                   <View style={styles.modalConfirmation}>
                     <View style={styles.containerModal}>
                       <View style={styles.bordeModal}>
+                        <View style={{flex:1}}>
+                          <View style={styles.headerModel}>
+                            <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+                              <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>FOTOS OBLIGATORIAS</Text>
+                                <Text></Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black', fontSize: 18}}>Rueda de Repuesto</Text>
+                              </View>
+                              <View style={{flex: 0.2}}>
+                                <Image source={require('../assets/modal/linea.png')} style={styles.flecha} />
+                              </View>
 
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-telefono-fijo.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>TELÉFONO FIJO</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>22 3262 67 09</Text>
+                                  </View>
+                              </View>
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-whatsapp.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>WHATSAPP</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>+569931300485</Text>
+                                  </View>
+                              </View>
+
+
+                            
+                          </View>
+                          <View style={styles.BodyModel}>
+                            <ScrollView contentContainerStyle={styles.contentContainer}>
+                              <View style={{flex:1, alignItems: 'center'}}>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  Asegúrese de que la rueda no esté cubierta; debe verse la llanta. Si la rueda de repuesta está ubicada en el exterior del vehículo bajo una cubierta (normalmente, los jeeps), debe quitar dicha cubierta antes de tomar esta fotografía.
+                                  Si el vehículo no tiene rueda de repuesto, informe dicha situación marcando la opción que corresponda (no deberá tomar esta fotografía):
+
+
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  - Vehículo no usa rueda de repuesto: tiene sistema runflat o kit de pinchado. No es que falte la rueda de repuesto, sino que el vehículo no requiere una.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  - La rueda de repuesto no está disponible para ser fotografiada, ya sea porque no se tiene acceso a ella en el momento de la autoinspección o porque fue robada.
+                                </Text>
+                                
+
+                              </View>
+
+                              
+                                
+
+
+                            </ScrollView>
+                            
+                          </View>
+                          
+                        </View>
                         
 
                         
@@ -437,6 +496,21 @@ export default class RuedaRepuesto extends Component {
     height: width * 0.6,
     width: height * 0.7,
     resizeMode: 'contain'
+  },
+  headerModel:{
+    flex:0.4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: height * 0.02
+
+  },
+  BodyModel:{
+    flex:1,
+
+  },
+  contentContainer:{
+    paddingVertical: width * 0.02,
+    paddingHorizontal: height * 0.02
   },
 
 

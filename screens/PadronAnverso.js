@@ -21,7 +21,7 @@ import {
 import Orientation from 'react-native-orientation';
 import ImagePicker from 'react-native-image-picker';
 
-let screen = { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get('window')
 
 
 export default class PadronAnverso extends Component {
@@ -138,6 +138,7 @@ export default class PadronAnverso extends Component {
               
 
                 <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
+                                  resizeMode= 'contain'
                                  style={styles.containFotoObligatoria}>
                   
                 <View style={{flexDirection: 'column'}}>
@@ -178,66 +179,59 @@ export default class PadronAnverso extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.6, position: 'absolute'}}>
-               <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
-                    <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
-               </View>
-               <View style={{flex:0.2, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10, paddingBottom: height * 0.05}}>
+            <View style={styles.Body1}>
+              <View style={{flex:1, backgroundColor:'white'}}>  
+                <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                  <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+                </View>
+
+
+              </View>
+                <View style={{flex:0.3, backgroundColor:'orange', flexDirection: 'row'}}>
                   <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'white', alignItems: 'center'}}>
-                    
-                   
                     {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
-
-
-                    <TouchableWithoutFeedback
-                        onPress={this.cambioImagen.bind(this)}
-                        disabled={this.state.btnEstado}
-                      >
-                    {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
-                    </TouchableWithoutFeedback>
-                    
+                      <TouchableWithoutFeedback
+                                onPress={this.cambioImagen.bind(this)}
+                                disabled={this.state.btnEstado}
+                                    >
+                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
+                      </TouchableWithoutFeedback>               
                   </View>
-
-                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>
-                    
-                    
-                    {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}
-                    
-
-                    <TouchableWithoutFeedback
-                      onPress={this.openImagePicker.bind(this)}
-                      
-                    >
-                    {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
-                    </TouchableWithoutFeedback>
-                    
-
+                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>                           
+                      {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}                                 
+                      <TouchableWithoutFeedback
+                                onPress={this.openImagePicker.bind(this)}  
+                                  >
+                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
+                      </TouchableWithoutFeedback>        
                   </View>
-                    
-                    
-               </View>
+                </View>
             </View>
 
-            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
+            <View style={{flex:0.05}}>
+
+            </View>
+
+            <View style={styles.Body2}>
               <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
-                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Documento Anverso</Text>
-                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
-                  <Text>El documento no debe quedar cortado.</Text>
-                  <Text>Debe poder leerse claramente el texto del documento</Text>
-                  <Text>Si el documento tiene soló una cara, repetir la fotografía en anverso y reverso.</Text>
-                </View>
-                  <TouchableWithoutFeedback
+                <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Documento Anverso</Text>
+                  <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                    <Text>El documento no debe quedar cortado.</Text>
+                    <Text>Debe poder leerse claramente el texto del documento</Text>
+                    <Text>Si el documento tiene soló una cara, repetir la fotografía en anverso y reverso.</Text>
+                  </View>
+                    <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('padronR')}
                         disabled={this.state.disabledButton}
                         >
                       {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
                       style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
                       style={styles.btnSiguiente} />}
-                  </TouchableWithoutFeedback>
-
-                
-              </View>
-              <Modal
+                    </TouchableWithoutFeedback>
+              </View>  
+            </View>
+            
+            <Modal
                   visible={this.state.openModal}
                   transparent={true}
                   animationType={'slide'}
@@ -248,88 +242,74 @@ export default class PadronAnverso extends Component {
                     <View style={styles.containerModal}>
                       <View style={styles.bordeModal}>
                         <View style={{flex:1}}>
-                          <View style={{flexDirection:'row', alignItems: 'center'}}>
-                            <Image source={require('../assets/modal/icono-ayuda.png')}
-                              style={styles.iconoAyudaModal} />
-                            <View style={{flex: 1}}>
-                              <Text style={{fontSize: 16, color: 'black'}}>
-                                FOTOS OBLIGATORIAS
-                              </Text>
-                              <Text></Text>
-                              <Text style={{fontSize: 18, color: 'black'}}>
-                                PÁDRON
-                              </Text>
-                            </View>
+                          <View style={styles.headerModel}>
+                            <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+                              <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>FOTOS OBLIGATORIAS</Text>
+                                <Text></Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black', fontSize: 18}}>DOCUMENTO</Text>
+                              </View>
+                              <View style={{flex: 0.2}}>
+                                <Image source={require('../assets/modal/linea.png')} style={styles.flecha} />
+                              </View>
 
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-telefono-fijo.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>TELÉFONO FIJO</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>22 3262 67 09</Text>
+                                  </View>
+                              </View>
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-whatsapp.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>WHATSAPP</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>+569931300485</Text>
+                                  </View>
+                              </View>
+
+
+                            
                           </View>
-                          <View style={{flex:1, paddingHorizontal: 20}}>
-                            <Text style={{paddingBottom: 10}}>
-                                  Se aceptan los siguientes documentos:
-                            </Text>
-                            <Text>
-                                  - Certificado de inscripción registro civil ("padrón")
-                            </Text>
-                            <Text>
-                                  - Ceriticado primera inscripción.
-                            </Text>
-                            <Text>
-                                  - Certificado de Transferencia.
-                            </Text>
-                            <Text style={{paddingTop: 10}}>
-                                  Asegúrese que se puede leer correctamente el texto del documento fotografiado.
-                            </Text>
+                          <View style={styles.BodyModel}>
+                            <ScrollView contentContainerStyle={styles.contentContainer}>
+                              <View style={{flex:1}}>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de inscripción en el RVM (”padrón”).
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de primera inscripción.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de transferencia.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de anotaciones vigentes.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Permiso de circulación.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Factura de compraventa.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  Asegúrese que se pueda leer correctamente el texto del documento fotografiado.
+                                </Text>
+                              </View>
+
+                              
+                                
+
+
+                            </ScrollView>
+                            
                           </View>
-
-
-
+                          
                         </View>
-                        <View style={{flex:0.1, paddingVertical: 20}}>
-
-                              <Image source={require('../assets/modal/linea.png')}
-                              style={{height: width * 0.6, width: 10}} />
-
-                        </View>
-                        <View style={{flex:0.7, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center',
-                                      paddingVertical: 20}}>
-                          <Text style={{fontSize: 16, color: 'black'}}>
-                            MESA DE AYUDA
-                          </Text>
-
-                          <View style={{flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
-                            <Image source={require('../assets/modal/icono-telefono-fijo.png')}
-                              style={styles.iconoConfirmacionModal} />
-                            <View style={{flex: 1}}>
-                              <Text style={{color: 'black'}}>
-                                Telefono Fijo
-                              </Text>
-                              <Text></Text>
-                              <Text style={{color: 'black'}}>
-                                22 6565081
-                              </Text>
-                            </View>
-
-
-                          </View>
-
-                          <View style={{flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
-                            <Image source={require('../assets/modal/icono-whatsapp.png')}
-                              style={styles.iconoConfirmacionModal} />
-                            <View style={{flex: 1}}>
-                              <Text style={{color: 'black'}}>
-                                WHATSAPP
-                              </Text>
-                              <Text></Text>
-                              <Text style={{color: 'black'}}>
-                                +569931300485
-                              </Text>
-                            </View>
-
-
-                          </View>
-
-
-
-                        </View>
+                        
+                        
 
                         
                       </View>
@@ -368,9 +348,6 @@ export default class PadronAnverso extends Component {
                   </View>
                 </Modal>
 
-
-            </View>
-
          </View>
 
 
@@ -398,12 +375,11 @@ export default class PadronAnverso extends Component {
     },
     fondoHeader: {
         flex:0.2,
-        height: width * 0.15,
         backgroundColor: 'transparent',
     },
     logoLet: {
-        width: width * 0.15,
-        height: height * 0.3,
+        width: height * 0.1,
+        height: height * 0.1,
         resizeMode: 'contain',
     },
     textHeader: {
@@ -439,6 +415,7 @@ export default class PadronAnverso extends Component {
         borderColor: 'grey',
         borderBottomWidth: 0,
         justifyContent:'center',
+
 
     },
     btnSiguiente: {
@@ -503,6 +480,32 @@ export default class PadronAnverso extends Component {
     resizeMode: 'contain',
     marginLeft: width * 0.03,
 
+  },
+  headerModel:{
+    flex:0.4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: height * 0.02
+
+  },
+  BodyModel:{
+    flex:1,
+
+  },
+  contentContainer:{
+    paddingVertical: width * 0.02,
+    paddingHorizontal: height * 0.02
+  },
+  Body1:{
+    flex:1, 
+    backgroundColor:'blue', 
+
+  },
+  Body2:{
+    flex:0.6,  
+    borderRadius: 20,
+    paddingVertical: 10
+    
   },
 
 

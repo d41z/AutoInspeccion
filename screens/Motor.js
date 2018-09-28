@@ -273,7 +273,7 @@ export default class Motor extends Component {
                           <View style={styles.BodyModel}>
                             <ScrollView contentContainerStyle={styles.contentContainer}>
                               <View style={{flex:1, alignItems: 'center'}}>
-                                <Text>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
                                   Debe mostrar tanto el motor como la parte inferior del capot(cubierta que cubre el motor), además de la patente frontal del vehículo. Para lograr una buena fotografía, debe ubicar la cámara en un ángulo diagonal desde arriba, como muestra la siguiente imagen:
 
                                 </Text>

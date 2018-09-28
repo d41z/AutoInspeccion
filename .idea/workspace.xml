@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70f7fa87-7c05-4ac3-9b60-909bca2a3466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/screens/AccContinueAccesorieScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterDir="false" />
@@ -12,30 +12,10 @@
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/zip-cache/xmuqM4YyzxAIVMWob+ApPJgcanQ=" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/zip-cache/xmuqM4YyzxAIVMWob+ApPJgcanQ=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_fotosobligatorias_btrepetirfoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_fotosobligatorias_btrepetirfoto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_fotosobligatorias_bttomarfoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_fotosobligatorias_bttomarfoto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_fotosobligatorias_btverreferencia.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/merged/release/drawable-mdpi/assets_images_fotosobligatorias_btverreferencia.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/res/resources-release.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/res/resources-release.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/fotos-obligatorias/bt-repetirfoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/fotos-obligatorias/bt-repetirfoto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/fotos-obligatorias/bt-tomar-foto.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/fotos-obligatorias/bt-tomar-foto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/fotos-obligatorias/bt-ver-referencia.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/fotos-obligatorias/bt-ver-referencia.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/AccNewSelectionScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccNewSelectionScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/AccSelectionScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccSelectionScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/AccesorieScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccesorieScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Chasis.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Chasis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/DaFrontalScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaFrontalScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/DaLateralDScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaLateralDScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/DaLateralIScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaLateralIScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/DaPosteriorScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaPosteriorScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/DaSelectionScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaSelectionScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/DaTechoScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DaTechoScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Frontal.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Frontal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/InfoCar.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/InfoCar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Instruccion.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Instruccion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Kilometraje.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Kilometraje.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/LateralDerecho.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LateralDerecho.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/LateralIzquierdo.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LateralIzquierdo.js" afterDir="false" />
@@ -47,8 +27,6 @@
       <change beforePath="$PROJECT_DIR$/screens/Parabrisa.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Parabrisa.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Posterior.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Posterior.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/RuedaRepuesto.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/RuedaRepuesto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/SendAutoScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SendAutoScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Terms.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Terms.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,30 +44,31 @@
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.29" value="2" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="46" />
+          <entry key="js" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="46" />
+          <entry key="JavaScript" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="7235" />
+          <entry key="js" value="7255" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="7235" />
+          <entry key="JavaScript" value="7255" />
         </counts>
       </usages-collector>
     </session>
@@ -99,31 +78,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1902">
-              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/AccContinueAccesorieScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="226" column="11" lean-forward="true" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
+            <state relative-caret-position="155">
+              <caret line="93" column="22" selection-start-line="93" selection-start-column="14" selection-end-line="93" selection-end-column="22" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/AccNewSelectionScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="121" column="64" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#89#130#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,7 +90,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="258">
               <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -142,19 +100,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/AccSelectionScreen.js">
+        <entry file="file://$PROJECT_DIR$/screens/Testing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="121" column="41" lean-forward="true" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/DaSelectionScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="567" column="2" selection-start-line="567" selection-start-column="2" selection-end-line="572" selection-end-column="4" />
+            <state relative-caret-position="-933">
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -163,37 +111,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/DaLateralIScreen.js">
+        <entry file="file://$PROJECT_DIR$/screens/Frontal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2166">
-              <caret line="816" column="35" selection-start-line="816" selection-start-column="35" selection-end-line="816" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1326">
+              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/DaLateralDScreen.js">
+        <entry file="file://$PROJECT_DIR$/screens/Kilometraje.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13957">
-              <caret line="842" column="28" selection-start-line="842" selection-start-column="28" selection-end-line="842" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="6579">
+              <caret line="558" column="36" selection-start-line="558" selection-start-column="36" selection-end-line="558" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screens/DaFrontalScreen.js">
+        <entry file="file://$PROJECT_DIR$/screens/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15521">
-              <caret line="934" column="28" selection-start-line="934" selection-start-column="28" selection-end-line="934" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="211">
+              <caret line="220" column="25" selection-start-line="220" selection-start-column="25" selection-end-line="220" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-875">
+              <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -209,8 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>imagen2</find>
-      <find>openModalImg5</find>
       <find>this.state.enviar4</find>
       <find>DaLateralDScreen</find>
       <find>componentDid</find>
@@ -239,6 +185,8 @@
       <find>gotoscreen</find>
       <find>Body</find>
       <find>goToScreen</find>
+      <find>gotoNext</find>
+      <find>lateral</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -249,7 +197,6 @@
       <list>
         <option value="$PROJECT_DIR$/screens/InfoCar.js" />
         <option value="$PROJECT_DIR$/screens/Kilometraje.js" />
-        <option value="$PROJECT_DIR$/screens/LateralDerecho.js" />
         <option value="$PROJECT_DIR$/screens/Parabrisa.js" />
         <option value="$PROJECT_DIR$/screens/Panel.js" />
         <option value="$PROJECT_DIR$/screens/PadronReverso.js" />
@@ -272,6 +219,7 @@
         <option value="$PROJECT_DIR$/screens/AccNewSelectionScreen.js" />
         <option value="$PROJECT_DIR$/screens/AccContinueAccesorieScreen.js" />
         <option value="$PROJECT_DIR$/screens/AccSelectionScreen.js" />
+        <option value="$PROJECT_DIR$/screens/LateralDerecho.js" />
         <option value="$PROJECT_DIR$/components/LoginForm.js" />
       </list>
     </option>
@@ -303,7 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -325,6 +272,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,16 +321,18 @@
       <workItem from="1537481667706" duration="11118000" />
       <workItem from="1537571826759" duration="28122000" />
       <workItem from="1537998955602" duration="2140000" />
+      <workItem from="1538115469536" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58246000" />
+    <option name="totallyTimeSpent" value="58852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -430,41 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/PadronReverso.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/LateralIzquierdo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-826">
-          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Kilometraje.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775">
-          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screens/Motor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -476,13 +391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Posterior.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="93" column="3" lean-forward="true" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -500,13 +408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Frontal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screens/DaTechoScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -518,23 +419,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaPosteriorScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13719">
+          <caret line="828" column="71" selection-start-line="828" selection-start-column="71" selection-end-line="828" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/AccContinueAccesorieScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3587">
+          <caret line="226" column="11" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
+    <entry file="file://$PROJECT_DIR$/screens/AccNewSelectionScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+        <state relative-caret-position="1802">
+          <caret line="121" column="64" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/DaLateralDScreen.js">
+    <entry file="file://$PROJECT_DIR$/screens/AccSelectionScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13957">
-          <caret line="842" column="28" selection-start-line="842" selection-start-column="28" selection-end-line="842" selection-end-column="28" />
+        <state relative-caret-position="1700">
+          <caret line="121" column="41" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaSelectionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9401">
+          <caret line="567" column="2" selection-start-line="567" selection-start-column="2" selection-end-line="572" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DaLateralIScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13515">
+          <caret line="816" column="35" selection-start-line="816" selection-start-column="35" selection-end-line="816" selection-end-column="35" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -551,73 +486,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/DaPosteriorScreen.js">
+    <entry file="file://$PROJECT_DIR$/screens/Testing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13719">
-          <caret line="828" column="71" selection-start-line="828" selection-start-column="71" selection-end-line="828" selection-end-column="71" />
+        <state relative-caret-position="-933">
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/DaLateralIScreen.js">
+    <entry file="file://$PROJECT_DIR$/screens/DaLateralDScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="816" column="35" selection-start-line="816" selection-start-column="35" selection-end-line="816" selection-end-column="35" />
+        <state relative-caret-position="528">
+          <caret line="842" column="28" selection-start-line="842" selection-start-column="28" selection-end-line="842" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/PadronReverso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/PadronAnverso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Posterior.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="93" column="3" lean-forward="true" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/LateralIzquierdo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Frontal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="220" column="25" selection-start-line="220" selection-start-column="25" selection-end-line="220" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Kilometraje.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6579">
+          <caret line="558" column="36" selection-start-line="558" selection-start-column="36" selection-end-line="558" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1902">
-          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/DaSelectionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="567" column="2" selection-start-line="567" selection-start-column="2" selection-end-line="572" selection-end-column="4" />
+        <state relative-caret-position="155">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="14" selection-end-line="93" selection-end-column="22" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#89#130#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/AccNewSelectionScreen.js">
+    <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="121" column="64" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/AccContinueAccesorieScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="226" column="11" lean-forward="true" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/AccSelectionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="121" column="41" lean-forward="true" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+        <state relative-caret-position="-875">
+          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="258">
           <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />

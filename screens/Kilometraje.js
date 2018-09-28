@@ -254,7 +254,60 @@ export default class Kilometraje extends Component {
                   <View style={styles.modalConfirmation}>
                     <View style={styles.containerModal}>
                       <View style={styles.bordeModal}>
-                        
+                        <View style={{flex:1}}>
+                          <View style={styles.headerModel}>
+                            <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+                              <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>FOTOS OBLIGATORIAS</Text>
+                                <Text></Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black', fontSize: 18}}>KILOMETRAJE</Text>
+                              </View>
+                              <View style={{flex: 0.2}}>
+                                <Image source={require('../assets/modal/linea.png')} style={styles.flecha} />
+                              </View>
+
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-telefono-fijo.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>TELÉFONO FIJO</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>22 3262 67 09</Text>
+                                  </View>
+                              </View>
+                              <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/modal/icono-whatsapp.png')} style={styles.flecha} />
+                                  <View style={{flex: 1, paddingLeft: height * 0.015}}>
+                                    <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>WHATSAPP</Text>
+                                    <Text></Text>
+                                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>+569931300485</Text>
+                                  </View>
+                              </View>
+
+
+                            
+                          </View>
+                          <View style={styles.BodyModel}>
+                            <ScrollView contentContainerStyle={styles.contentContainer}>
+                              <View style={{flex:1, alignItems: 'center'}}>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  Es muy importante que el kilometraje pueda leerse claramente.
+                                  Debe mostrar el kilometraje total acumulado del vehículo, que normalmente corresponde a la opción “ODO” (odómetro). Asegúrese de que no está fotografiando las opciones trip A, trip B ni range, que no corresponden al kilometraje total acumulado.
+
+
+                                </Text>
+                                
+
+                              </View>
+
+                              
+                                
+
+
+                            </ScrollView>
+                            
+                          </View>
+                          
+                        </View>
 
                         
                       </View>
@@ -498,6 +551,21 @@ export default class Kilometraje extends Component {
     width: height * 0.25,
     height: width * 0.13,
     resizeMode: 'contain'
+  },
+  headerModel:{
+    flex:0.4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: height * 0.02
+
+  },
+  BodyModel:{
+    flex:1,
+
+  },
+  contentContainer:{
+    paddingVertical: width * 0.02,
+    paddingHorizontal: height * 0.02
   },
 
 

@@ -35,6 +35,7 @@ import Neumatico from './screens/Neumatico';
 import Parabrisa from './screens/Parabrisa';
 import DamagedScreen from './screens/DamagedScreen';
 import AccesorieScreen from './screens/AccesorieScreen';
+import Testing from './screens/Testing';
 
 import DaSelectionScreen from './screens/DaSelectionScreen';
 import DaPosteriorScreen from './screens/DaPosteriorScreen';
@@ -48,6 +49,8 @@ import DaLateralDScreen from "./screens/DaLateralDScreen";
 import DaLateralIScreen from "./screens/DaLateralIScreen";
 import DaTechoScreen from "./screens/DaTechoScreen";
 import AccContinueAccesorieScreen from "./screens/AccContinueAccesorieScreen";
+
+
 
 
 export default class App extends Component{
@@ -117,6 +120,9 @@ export default class App extends Component{
               },
               parabrisa: {
                 screen: Parabrisa
+              },
+              testing: {
+                screen: Testing
               },
 
             },{

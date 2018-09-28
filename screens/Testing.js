@@ -15,15 +15,16 @@ import {
   Modal,
   ScrollView,
   Button,
-  TouchableHighlight
+  TouchableHighlight,
+  BackHandler
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 import ImagePicker from 'react-native-image-picker';
 
-let screen = { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get('window')
 
 
-export default class Frontal extends Component {
+export default class Testing extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -33,14 +34,18 @@ export default class Frontal extends Component {
       openModal: false,
       imagePath: '',
       imagenUri: '',
-      imageRef: require('../assets/fotoRef/obg-5.jpg'),
+      imageRef: require('../assets/fotoRef/obg-1.jpg'),
       ideaOP: true,
       btnEstado: true,
       imageHeight: height,
       imageWidth: width,
-      openModalRef: false
+      openModalRef: false,
     }
   }
+
+  componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+    }
 
   componentWillMount() {
     if (Platform.OS == 'ios') {
@@ -48,8 +53,13 @@ export default class Frontal extends Component {
     }else{
       Orientation.lockToLandscapeLeft();    
     }
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
     
   }
+
+  handleBackButton() {
+        return true;
+    }
 
   openImagePicker(){
       const options = {
@@ -128,7 +138,7 @@ export default class Frontal extends Component {
               
 
                 <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
-                                 resizeMode= 'contain'
+                                  resizeMode= 'contain'
                                  style={styles.containFotoObligatoria}>
                   
                 <View style={{flexDirection: 'column'}}>
@@ -137,7 +147,7 @@ export default class Frontal extends Component {
                   </Text>
                   <View>
                     <Text style={{fontSize: 18, color: 'black'}}>
-                      Foto 5 de 13
+                      Foto 1 de 13
                     </Text>
                   </View>
                 </View>
@@ -170,58 +180,80 @@ export default class Frontal extends Component {
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
             <View style={styles.Body1}>
-              <View style={{flex:1, backgroundColor:'white'}}>  
-                <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
-                  <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
-                </View>
+                  <View style={{flex:1, backgroundColor:'white'}}>  
+                    <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                      <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+                    </View>
 
 
-              </View>
-                <View style={{flex:0.3, backgroundColor:'orange', flexDirection: 'row'}}>
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'white', alignItems: 'center'}}>
-                    {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
-                      <TouchableWithoutFeedback
-                                onPress={this.cambioImagen.bind(this)}
-                                disabled={this.state.btnEstado}
+                  </View>
+                  <View style={{flex:0.3, backgroundColor:'orange', flexDirection: 'row'}}>
+
+                                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'white', alignItems: 'center'}}>
+                                  
+                                 
+                                  {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
+
+
+                                  <TouchableWithoutFeedback
+                                      onPress={this.cambioImagen.bind(this)}
+                                      disabled={this.state.btnEstado}
                                     >
-                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
-                      </TouchableWithoutFeedback>               
-                  </View>
-                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>                           
-                      {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}                                 
-                      <TouchableWithoutFeedback
-                                onPress={this.openImagePicker.bind(this)}  
+                                  {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
+                                  </TouchableWithoutFeedback>
+                                  
+                                </View>
+
+                                <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>
+                                  
+                                  
+                                  {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}
+                                  
+
+                                  <TouchableWithoutFeedback
+                                    onPress={this.openImagePicker.bind(this)}
+                                    
                                   >
-                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
-                      </TouchableWithoutFeedback>        
+                                  {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
+                                  </TouchableWithoutFeedback>
+                                  
+
+                                </View>
+
+
                   </View>
-                </View>
             </View>
 
             <View style={{flex:0.05}}>
 
+    
+            
             </View>
 
             <View style={styles.Body2}>
               <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
-                <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Central</Text>
+                <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Documento Anverso</Text>
                   <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
-                    
-                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Debe verse el vehículo completo.</Text>
-                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Debe poder leerse claramente la patente.</Text>
-
+                    <Text>El documento no debe quedar cortado.</Text>
+                    <Text>Debe poder leerse claramente el texto del documento</Text>
+                    <Text>Si el documento tiene soló una cara, repetir la fotografía en anverso y reverso.</Text>
                   </View>
                     <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('lateralI')}
+                        onPress={() => this.props.navigation.navigate('padronR')}
                         disabled={this.state.disabledButton}
                         >
                       {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
                       style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
                       style={styles.btnSiguiente} />}
                     </TouchableWithoutFeedback>
-              </View>  
-            </View>
 
+                
+              </View>
+
+              
+              
+            </View>
+            
             <Modal
                   visible={this.state.openModal}
                   transparent={true}
@@ -238,7 +270,7 @@ export default class Frontal extends Component {
                               <View style={{flex: 1, paddingLeft: height * 0.015}}>
                                 <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>FOTOS OBLIGATORIAS</Text>
                                 <Text></Text>
-                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black', fontSize: 18}}>FRONTAL</Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black', fontSize: 18}}>DOCUMENTO</Text>
                               </View>
                               <View style={{flex: 0.2}}>
                                 <Image source={require('../assets/modal/linea.png')} style={styles.flecha} />
@@ -266,10 +298,28 @@ export default class Frontal extends Component {
                           </View>
                           <View style={styles.BodyModel}>
                             <ScrollView contentContainerStyle={styles.contentContainer}>
-                              <View style={{flex:1, alignItems: 'center'}}>
-                                
-                                
-
+                              <View style={{flex:1}}>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de inscripción en el RVM (”padrón”).
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de primera inscripción.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de transferencia.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Certificado de anotaciones vigentes.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Permiso de circulación.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Black', color: 'black'}}>
+                                  - Factura de compraventa.
+                                </Text>
+                                <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                                  Asegúrese que se pueda leer correctamente el texto del documento fotografiado.
+                                </Text>
                               </View>
 
                               
@@ -281,6 +331,8 @@ export default class Frontal extends Component {
                           </View>
                           
                         </View>
+                        
+                        
 
                         
                       </View>
@@ -303,7 +355,7 @@ export default class Frontal extends Component {
                       <View style={styles.bordeModal}>
                         <View style={{flex:1}}>
                           
-                          <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={require('../assets/fotoRef/obg-5.jpg')} />
+                          <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={require('../assets/fotoRef/obg-1.jpg')} />
 
 
                         </View>
