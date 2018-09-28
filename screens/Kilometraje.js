@@ -144,6 +144,7 @@ export default class Kilometraje extends Component {
               
 
                 <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
+                                 resizeMode='contain'
                                  style={styles.containFotoObligatoria}>
                   
                 <View style={{flexDirection: 'column'}}>
@@ -184,67 +185,61 @@ export default class Kilometraje extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.65, position: 'absolute'}}>
-               <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
-                    <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
-               </View>
-               <View style={{flex:0.2, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10, paddingBottom: height * 0.05}}>
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end',  backgroundColor: 'white', alignItems: 'center'}}>
-                    
-                   
+            <View style={styles.Body1}>
+              <View style={{flex:1, backgroundColor:'white'}}>  
+                <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                  <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+                </View>
+
+
+              </View>
+                <View style={{flex:0.3, backgroundColor:'orange', flexDirection: 'row'}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'white', alignItems: 'center'}}>
                     {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
-
-
-                    <TouchableWithoutFeedback
-                        onPress={this.cambioImagen.bind(this)}
-                        disabled={this.state.btnEstado}
-                      >
-                    {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
-                    </TouchableWithoutFeedback>
-                    
+                      <TouchableWithoutFeedback
+                                onPress={this.cambioImagen.bind(this)}
+                                disabled={this.state.btnEstado}
+                                    >
+                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
+                      </TouchableWithoutFeedback>               
                   </View>
-
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end',  backgroundColor: 'white', alignItems: 'center'}}>
-                    
-                    
-                    {this.state.fotoUp ? <Text  style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text  style={{textAlign: 'center'}}>Tomar Foto</Text>}
-                    
-
-                    <TouchableWithoutFeedback
-                      onPress={this.openImagePicker.bind(this)}
-                      
-                    >
-                    {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
-                    </TouchableWithoutFeedback>
-                    
-
+                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>                           
+                      {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}                                 
+                      <TouchableWithoutFeedback
+                                onPress={this.openImagePicker.bind(this)}  
+                                  >
+                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
+                      </TouchableWithoutFeedback>        
                   </View>
-                    
-                    
-               </View>
+                </View>
             </View>
 
-            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
+
+            <View style={{flex:0.05}}>
+
+            </View>
+
+            <View style={styles.Body2}>
               <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
-                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Kilometraje</Text>
-                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
-                  
-                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>El kilometraje debe poder leerse claramente.</Text>
-                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black', paddingTop: width * 0.02}}>IMPORTANTE: elegir opción de odómetro (kilometraje total del vehículo), no trip A, trip B ni range.</Text>
-                  
-                </View>
-                  <TouchableWithoutFeedback
+                <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Kilometraje</Text>
+                  <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                    
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>El kilometraje debe poder leerse claramente.</Text>
+                    <Text style={{fontFamily: 'FiraSans-Regular', color: 'black', paddingTop: width * 0.02}}>IMPORTANTE: elegir opción de odómetro (kilometraje total del vehículo), no trip A, trip B ni range.</Text>
+                    
+                  </View>
+                    <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('motor')}
                         disabled={this.state.disabledButton}
                         >
                       {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
                       style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
                       style={styles.btnSiguiente} />}
-                  </TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback>
+              </View>  
+            </View>
 
-                
-              </View>
-              <Modal
+            <Modal
                   visible={this.state.openModal}
                   transparent={true}
                   animationType={'slide'}
@@ -382,9 +377,6 @@ export default class Kilometraje extends Component {
                   </View>
                 </Modal>
 
-
-            </View>
-
          </View>
 
 
@@ -402,10 +394,8 @@ export default class Kilometraje extends Component {
         flex: 1
     },
     containHeader: {
-      flex:1,
+        flex:1,
         flexDirection: 'row',
-        width: height,
-        height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
         paddingHorizontal: 20,
@@ -413,13 +403,12 @@ export default class Kilometraje extends Component {
         borderBottomWidth: 0,
     },
     fondoHeader: {
-        flex: 0.2,
-        height: width * 0.15,
+        flex:0.2,
         backgroundColor: 'transparent',
     },
     logoLet: {
-        width: width * 0.15,
-        height: height * 0.3,
+        width: height * 0.1,
+        height: height * 0.1,
         resizeMode: 'contain',
     },
     textHeader: {
@@ -448,13 +437,14 @@ export default class Kilometraje extends Component {
       textAlignVertical: 'center'
     },
     containFotoObligatoria: {
-        flex:1,
+        flex:1.2,
         flexDirection: 'row',
         width: height * 0.2,
         height: width * 0.15,
         borderColor: 'grey',
         borderBottomWidth: 0,
         justifyContent:'center',
+
 
     },
     btnSiguiente: {
@@ -520,38 +510,6 @@ export default class Kilometraje extends Component {
     marginLeft: width * 0.03,
 
   },
-  modalConfirmationInstru: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-  },
-  containerModalInstru: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  bordeModalInstru: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    height: width * 0.5,
-    width: height * 0.3,
-    borderRadius: width * 0.02,
-    borderColor: 'white',
-    borderWidth: 0.666,
-    backgroundColor: 'white',
-  },
-  logitoLet:{
-    width: height * 0.25,
-    height: width * 0.15,
-    resizeMode: 'contain',
-  },
-  btOk: {
-    width: height * 0.25,
-    height: width * 0.13,
-    resizeMode: 'contain'
-  },
   headerModel:{
     flex:0.4,
     flexDirection: 'row',
@@ -566,6 +524,17 @@ export default class Kilometraje extends Component {
   contentContainer:{
     paddingVertical: width * 0.02,
     paddingHorizontal: height * 0.02
+  },
+  Body1:{
+    flex:1, 
+    backgroundColor:'blue', 
+
+  },
+  Body2:{
+    flex:0.6,  
+    borderRadius: 20,
+    paddingVertical: 10
+    
   },
 
 

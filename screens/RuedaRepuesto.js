@@ -15,7 +15,8 @@ import {
   Modal,
   ScrollView,
   Button,
-  TouchableHighlight
+  TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 import ImagePicker from 'react-native-image-picker';
@@ -38,7 +39,9 @@ export default class RuedaRepuesto extends Component {
       btnEstado: true,
       imageHeight: height,
       imageWidth: width,
-      openModalRef: false
+      openModalRef: false,
+      checkedRueda: false,
+      checkedRepuesto: false
     }
   }
 
@@ -128,6 +131,7 @@ export default class RuedaRepuesto extends Component {
               
 
                 <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
+                                 resizeMode='contain'
                                  style={styles.containFotoObligatoria}>
                   
                 <View style={{flexDirection: 'column'}}>
@@ -168,70 +172,96 @@ export default class RuedaRepuesto extends Component {
 
          <View style={{flex: 1, backgroundColor:'transparent', flexDirection: 'row'}}>
 
-            <View style={{flex:1, backgroundColor:'white', height: width*0.85, width: height*0.65, position: 'absolute'}}>
-               <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
-                    <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
-               </View>
-               <View style={{flex:0.2, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 10,  paddingBottom: height * 0.05}}>
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end',  backgroundColor: 'white', alignItems: 'center'}}>
-                    
-                   
+            <View style={styles.Body1}>
+              <View style={{flex:1, backgroundColor:'white'}}>  
+                <View style={{flex:1, paddingHorizontal: 10, paddingVertical: 10}}>
+                  <Image resizeMode='contain' style={{flex:1, height: null, width: null, alignItems:'center', justifyContent:'center'}} source={this.state.imageRef} />
+                </View>
+
+
+              </View>
+                <View style={{flex:0.3, backgroundColor:'orange', flexDirection: 'row'}}>
+                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'white', alignItems: 'center'}}>
                     {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
-
-
-                    <TouchableWithoutFeedback
-                        onPress={this.cambioImagen.bind(this)}
-                        disabled={this.state.btnEstado}
-                      >
-                    {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
-                    </TouchableWithoutFeedback>
-                    
+                      <TouchableWithoutFeedback
+                                onPress={this.cambioImagen.bind(this)}
+                                disabled={this.state.btnEstado}
+                                    >
+                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
+                      </TouchableWithoutFeedback>               
                   </View>
-
-                  <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end',  backgroundColor: 'white', alignItems: 'center'}}>
-                    
-                    
-                    {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}
-                    
-
-                    <TouchableWithoutFeedback
-                      onPress={this.openImagePicker.bind(this)}
-                      
-                    >
-                    {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
-                    </TouchableWithoutFeedback>
-                    
-
+                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>                           
+                      {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}                                 
+                      <TouchableWithoutFeedback
+                                onPress={this.openImagePicker.bind(this)}  
+                                  >
+                      {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
+                      </TouchableWithoutFeedback>        
                   </View>
-                    
-                    
-               </View>
+                </View>
             </View>
 
-            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
-              <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
-                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Rueda de Repuesto</Text>
-                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
-                  
-                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Debe verse la llanta de la rueda.</Text>
-                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Si no tiene rueda de repuesto, marcar la opción que corresponda:.</Text>
+            <View style={{flex:0.05}}>
+
+            </View>
+
+             <View style={styles.Body2}>
+                 <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
+                     <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Rueda de Repuesto</Text>
+                     <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                         <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>
+                         Debe verse la llanta de la rueda.
+                         Si no tiene rueda de repuesto, marcar la opción que corresponda:
+                         </Text>
+                         
+                          
+                          <View style={{flexDirection:'row', alignItems:'center',}}>
+                            <TouchableOpacity
+                              onPress={() => this.setState(previousState => {
+                                return { checkedRueda: !previousState.checkedRueda };
+                              })}>
+                            {this.state.checkedRueda ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                            </TouchableOpacity>
+                             <Text style={{color: 'black', textAlign: 'left'}}>Vehículo no usa rueda de repuesto(tiene sistema run-flat o kit pinchado).</Text>
+                            
+                          </View>
+                          <View style={{flexDirection:'row', alignItems:'center',}}>
+                                <TouchableOpacity 
+                                              onPress={() => this.setState(previousState => {
+                                                return { checkedRepuesto: !previousState.checkedRepuesto };
+                                              })}>
+
+                                {this.state.checkedRepuesto ? <Image style={styles.img} source={require('../assets/images/botones/bt-radio-on.png')}/> : <Image style={styles.img} source={require('../assets/images/botones/bt-radio-off.png')}/>}
+                                
+                                </TouchableOpacity>
+                                <Text style={{color: 'black', textAlign: 'left'}}>La rueda de repuesto no está disponible para ser fotografíada.</Text>
+                                
+                          </View>
+                          <TouchableWithoutFeedback
+                         style={{flex:1}}
+                         onPress={() => this.props.navigation.navigate('neumatico')}
+                         disabled={this.state.disabledButton}
+                     >
+                         {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')}
+                                                             style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
+                                                                                                  style={styles.btnSiguiente} />}
+                     </TouchableWithoutFeedback>
 
 
-                  <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('neumatico')}
-                        disabled={this.state.disabledButton}
-                        >
-                      {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
-                      style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
-                      style={styles.btnSiguiente} />}
-                  </TouchableWithoutFeedback>
-                  
-                </View>
-                  
 
-                
-              </View>
-              <Modal
+                     </View>
+
+                     
+                     
+
+
+                 </View>
+
+
+
+             </View>
+
+            <Modal
                   visible={this.state.openModal}
                   transparent={true}
                   animationType={'slide'}
@@ -341,9 +371,6 @@ export default class RuedaRepuesto extends Component {
                   </View>
                 </Modal>
 
-
-            </View>
-
          </View>
 
 
@@ -361,10 +388,8 @@ export default class RuedaRepuesto extends Component {
         flex: 1
     },
     containHeader: {
-      flex:1,
+        flex:1,
         flexDirection: 'row',
-        width: height,
-        height: width * 0.15,
         backgroundColor: 'transparent',
         alignItems: 'center',
         paddingHorizontal: 20,
@@ -372,42 +397,41 @@ export default class RuedaRepuesto extends Component {
         borderBottomWidth: 0,
     },
     fondoHeader: {
-        flex: 0.2,
-        height: width * 0.15,
+        flex:0.2,
         backgroundColor: 'transparent',
     },
     logoLet: {
-        width: width * 0.15,
-        height: height * 0.3,
+        width: height * 0.1,
+        height: height * 0.1,
         resizeMode: 'contain',
     },
     textHeader: {
-      flex:1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      textAlignVertical: 'center',
-      fontFamily: 'FiraSans-Black',
+        flex:1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        fontFamily: 'FiraSans-Black',
         fontSize: 18,
         color: 'black'
 
 
-        
+
     },
     iconCam: {
-      width: height * 0.1,
-      height: width * 0.12,
-      resizeMode: 'contain',
-      
+        width: height * 0.1,
+        height: width * 0.12,
+        resizeMode: 'contain',
+
     },
     textFotoObligatoria: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      textAlignVertical: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        textAlignVertical: 'center'
     },
     containFotoObligatoria: {
-        flex:1,
+        flex:1.2,
         flexDirection: 'row',
         width: height * 0.2,
         height: width * 0.15,
@@ -415,104 +439,143 @@ export default class RuedaRepuesto extends Component {
         borderBottomWidth: 0,
         justifyContent:'center',
 
+
     },
     btnSiguiente: {
-      width: height * 0.25,
-      height: width * 0.15,
-      resizeMode: 'contain',
+        width: width * 0.5,
+        height: height * 0.05,
+        resizeMode: 'contain',
+        backgroundColor: 'transparent',
     },
     imagePhoto: {
-      height: width, 
-      width: height*0.5,
+        height: width,
+        width: height*0.5,
 
     },
     test1: {
-      height: 0,
-      width: 0
+        height: 0,
+        width: 0
     },
     flecha: {
-      width: width * 0.1,
-      height: height * 0.1,
-      resizeMode: 'contain',
+        width: width * 0.1,
+        height: height * 0.1,
+        resizeMode: 'contain',
     },
     modalConfirmation: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-  },
-  containerModal: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  bordeModal: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    height: height * 0.4,
-    width: width * 1.5,
-    borderRadius: width * 0.02,
-    borderColor: 'white',
-    borderWidth: 0.666,
-    backgroundColor: 'white',
-  },
-  iconoConfirmacionModal: {
-    width: width * 0.15,
-    height: height * 0.15,
-    resizeMode: 'contain',
-  },
-  btnCerrarModal: {
-    position: 'absolute',
-    top: -(height * 0.04),
-    right: -(width * 0.04),
-    width: 50,
-    height: 50,
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    },
+    containerModal: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    bordeModal: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        height: height * 0.4,
+        width: width * 1.5,
+        borderRadius: width * 0.02,
+        borderColor: 'white',
+        borderWidth: 0.666,
+        backgroundColor: 'white',
+    },
+    iconoConfirmacionModal: {
+        width: width * 0.15,
+        height: height * 0.15,
+        resizeMode: 'contain',
+        marginLeft: width * 0.03,
+    },
+    btnCerrarModal: {
+        position: 'absolute',
+        top: -(height * 0.04),
+        right: -(width * 0.04),
+        width: 50,
+        height: 50,
 
-  },
-  iconoAyudaModal: {
-    width: width * 0.14,
-    height: height * 0.14,
-    resizeMode: 'contain',
-    marginLeft: width * 0.03,
+    },
+    iconoAyudaModal: {
+        width: width * 0.14,
+        height: height * 0.14,
+        resizeMode: 'contain',
+        marginLeft: width * 0.03,
 
-  },
-  headerModel:{
-    flex:0.4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: height * 0.02
+    },
+    headerModel:{
+        flex:0.4,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: height * 0.02
 
-  },
-  BodyModel:{
-    flex:1,
+    },
+    BodyModel:{
+        flex:1,
 
-  },
-  contentContainer:{
-    paddingVertical: width * 0.02,
-    paddingHorizontal: height * 0.02
-  },
-  ayudaImage: {
-    height: width * 0.6,
-    width: height * 0.7,
-    resizeMode: 'contain'
-  },
-  headerModel:{
-    flex:0.4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: height * 0.02
+    },
+    contentContainer:{
+        paddingVertical: width * 0.02,
+        paddingHorizontal: height * 0.02
+    },
+    Body1:{
+        flex:1,
+        backgroundColor:'blue',
 
-  },
-  BodyModel:{
-    flex:1,
+    },
+    Body2:{
+        flex:0.6,
+        borderRadius: 20,
+        paddingVertical: 10
 
-  },
-  contentContainer:{
-    paddingVertical: width * 0.02,
-    paddingHorizontal: height * 0.02
-  },
+    },
+    modalConfirmationInstru:{
+      flex:1,
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+
+    },
+    containerModalInstru: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    bordeModalInstru: {
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      height: width * 0.5,
+      width: height * 0.3,
+      borderRadius: width * 0.02,
+      borderColor: 'white',
+      borderWidth: 0.665,
+      backgroundColor: 'white'
+    },
+    logitoLet: {
+      width: height * 0.25,
+      height: width * 0.15,
+      resizeMode: 'contain'
+    },
+    btOk: {
+      width: height * 0.25,
+      height: width * 0.13,
+      resizeMode: 'contain'
+    },
+    img:{
+        height:height * 0.03,
+        width: width * 0.05,
+        resizeMode: 'contain'
+    },
+    btn:{
+
+      flexDirection: 'row',
+      alignItems:'center',
+
+    },
 
 
 
-  })
+
+})

@@ -3,30 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70f7fa87-7c05-4ac3-9b60-909bca2a3466" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/assets/release/index.android.bundle.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/apk/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build/outputs/lint-results-release-fatal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Frontal.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Frontal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Kilometraje.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Kilometraje.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/LateralDerecho.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LateralDerecho.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/LateralIzquierdo.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LateralIzquierdo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Motor.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Motor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Neumatico.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Neumatico.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/PadronAnverso.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PadronAnverso.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/PadronReverso.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PadronReverso.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Panel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Parabrisa.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Parabrisa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Posterior.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Posterior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/RuedaRepuesto.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/RuedaRepuesto.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,7 +19,7 @@
     <session id="-1395130782">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.26" value="1" />
@@ -63,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="7255" />
+          <entry key="js" value="7379" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="7255" />
+          <entry key="JavaScript" value="7379" />
         </counts>
       </usages-collector>
     </session>
@@ -87,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+            <state relative-caret-position="143">
+              <caret line="88" column="56" lean-forward="true" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -128,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/screens/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="220" column="25" selection-start-line="220" selection-start-column="25" selection-end-line="220" selection-end-column="25" />
+            <state relative-caret-position="232">
+              <caret line="221" column="46" lean-forward="true" selection-start-line="221" selection-start-column="46" selection-end-line="221" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -140,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-875">
-              <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+            <state relative-caret-position="26">
+              <caret line="200" column="12" selection-start-line="200" selection-start-column="12" selection-end-line="225" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -157,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.state.enviar4</find>
       <find>DaLateralDScreen</find>
       <find>componentDid</find>
       <find>nextScreen</find>
@@ -185,8 +162,9 @@
       <find>gotoscreen</find>
       <find>Body</find>
       <find>goToScreen</find>
-      <find>gotoNext</find>
       <find>lateral</find>
+      <find>gotoNext</find>
+      <find>resize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -198,7 +176,6 @@
         <option value="$PROJECT_DIR$/screens/InfoCar.js" />
         <option value="$PROJECT_DIR$/screens/Kilometraje.js" />
         <option value="$PROJECT_DIR$/screens/Parabrisa.js" />
-        <option value="$PROJECT_DIR$/screens/Panel.js" />
         <option value="$PROJECT_DIR$/screens/PadronReverso.js" />
         <option value="$PROJECT_DIR$/screens/PadronAnverso.js" />
         <option value="$PROJECT_DIR$/screens/Neumatico.js" />
@@ -221,6 +198,7 @@
         <option value="$PROJECT_DIR$/screens/AccSelectionScreen.js" />
         <option value="$PROJECT_DIR$/screens/LateralDerecho.js" />
         <option value="$PROJECT_DIR$/components/LoginForm.js" />
+        <option value="$PROJECT_DIR$/screens/Panel.js" />
       </list>
     </option>
   </component>
@@ -321,16 +299,15 @@
       <workItem from="1537481667706" duration="11118000" />
       <workItem from="1537571826759" duration="28122000" />
       <workItem from="1537998955602" duration="2140000" />
-      <workItem from="1538115469536" duration="606000" />
+      <workItem from="1538115469536" duration="1261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58852000" />
+    <option name="totallyTimeSpent" value="59507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -540,20 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="220" column="25" selection-start-line="220" selection-start-column="25" selection-end-line="220" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Kilometraje.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6579">
-          <caret line="558" column="36" selection-start-line="558" selection-start-column="36" selection-end-line="558" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -564,20 +527,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
+    <entry file="file://$PROJECT_DIR$/screens/Kilometraje.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-875">
-          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+        <state relative-caret-position="6579">
+          <caret line="558" column="36" selection-start-line="558" selection-start-column="36" selection-end-line="558" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+        <state relative-caret-position="143">
+          <caret line="88" column="56" lean-forward="true" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/LateralDerecho.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="200" column="12" selection-start-line="200" selection-start-column="12" selection-end-line="225" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="221" column="46" lean-forward="true" selection-start-line="221" selection-start-column="46" selection-end-line="221" selection-end-column="46" />
         </state>
       </provider>
     </entry>

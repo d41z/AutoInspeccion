@@ -138,6 +138,7 @@ export default class Panel extends Component {
               
 
                 <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
+                                 resizeMode= 'contain'
                                  style={styles.containFotoObligatoria}>
                   
                 <View style={{flexDirection: 'column'}}>
@@ -207,29 +208,32 @@ export default class Panel extends Component {
                 </View>
             </View>
 
-            <View style={{flex:1, backgroundColor:'transparent', height: width * 0.85, width: height*0.3, right: 0, position: 'absolute', paddingTop:10, paddingBottom:33}}>
-              <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
-                  <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Panel</Text>
-                <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
-                  
-                  <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Deben verse completos el volante, la radio y el panel del copiloto.</Text>
-                  
-                </View>
-                  <TouchableWithoutFeedback
-                        onPress={() => this.goToNextScreen()}
-                        disabled={this.state.disabledButton}
-                        >
-                      {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')} 
-                      style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
-                      style={styles.btnSiguiente} />}
-                  </TouchableWithoutFeedback>
+             <View style={{flex:0.05}}>
 
-                
-              </View>
-              
+             </View>
+
+             <View style={styles.Body2}>
+                 <View style={{flex: 1, backgroundColor: 'white', borderRadius: 10, paddingVertical: 10, alignItems: 'center', paddingHorizontal: 10}}>
+                     <Text style={{textAlign: 'center', fontFamily: 'FiraSans-Black', color: 'black'}}>Panel</Text>
+                     <View style={{flex:1, paddingHorizontal: 10, paddingTop:5}}>
+                         <Text style={{fontFamily: 'FiraSans-Regular', color: 'black'}}>Deben verse completos el volante, la radio y el panel del copiloto.</Text>
+
+                     </View>
+                     <TouchableWithoutFeedback
+                         onPress={() => this.goToNextScreen()}
+                         disabled={this.state.disabledButton}
+                     >
+                         {this.state.disabledButton ? <Image source={require('../assets/images/botones/bt-siguiente-off.png')}
+                                                             style={styles.btnSiguiente}/>:<Image source={require('../assets/images/botones/bt-siguiente.png')}
+                                                                                                  style={styles.btnSiguiente} />}
+                     </TouchableWithoutFeedback>
 
 
-            </View>
+                 </View>
+
+
+
+             </View>
             <Modal
                   visible={this.state.openModal}
                   transparent={true}
@@ -374,7 +378,7 @@ export default class Panel extends Component {
   }
 }
 
-  const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         backgroundColor: 'transparent',
@@ -399,29 +403,29 @@ export default class Panel extends Component {
         resizeMode: 'contain',
     },
     textHeader: {
-      flex:1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      textAlignVertical: 'center',
-      fontFamily: 'FiraSans-Black',
+        flex:1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        fontFamily: 'FiraSans-Black',
         fontSize: 18,
         color: 'black'
 
 
-        
+
     },
     iconCam: {
-      width: height * 0.1,
-      height: width * 0.12,
-      resizeMode: 'contain',
-      
+        width: height * 0.1,
+        height: width * 0.12,
+        resizeMode: 'contain',
+
     },
     textFotoObligatoria: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      textAlignVertical: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        textAlignVertical: 'center'
     },
     containFotoObligatoria: {
         flex:1.2,
@@ -435,95 +439,129 @@ export default class Panel extends Component {
 
     },
     btnSiguiente: {
-      width: width * 0.5,
-      height: height * 0.10,
-      resizeMode: 'contain',
-      backgroundColor: 'transparent',
+        width: width * 0.5,
+        height: height * 0.10,
+        resizeMode: 'contain',
+        backgroundColor: 'transparent',
     },
     imagePhoto: {
-      height: width, 
-      width: height*0.5,
+        height: width,
+        width: height*0.5,
 
     },
     test1: {
-      height: 0,
-      width: 0
+        height: 0,
+        width: 0
     },
     flecha: {
-      width: width * 0.1,
-      height: height * 0.1,
-      resizeMode: 'contain',
+        width: width * 0.1,
+        height: height * 0.1,
+        resizeMode: 'contain',
     },
     modalConfirmation: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-  },
-  containerModal: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  bordeModal: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    height: height * 0.4,
-    width: width * 1.5,
-    borderRadius: width * 0.02,
-    borderColor: 'white',
-    borderWidth: 0.666,
-    backgroundColor: 'white',
-  },
-  iconoConfirmacionModal: {
-    width: width * 0.15,
-    height: height * 0.15,
-    resizeMode: 'contain',
-    marginLeft: width * 0.03,
-  },
-  btnCerrarModal: {
-    position: 'absolute',
-    top: -(height * 0.04),
-    right: -(width * 0.04),
-    width: 50,
-    height: 50,
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    },
+    containerModal: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    bordeModal: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        height: height * 0.4,
+        width: width * 1.5,
+        borderRadius: width * 0.02,
+        borderColor: 'white',
+        borderWidth: 0.666,
+        backgroundColor: 'white',
+    },
+    iconoConfirmacionModal: {
+        width: width * 0.15,
+        height: height * 0.15,
+        resizeMode: 'contain',
+        marginLeft: width * 0.03,
+    },
+    btnCerrarModal: {
+        position: 'absolute',
+        top: -(height * 0.04),
+        right: -(width * 0.04),
+        width: 50,
+        height: 50,
 
-  },
-  iconoAyudaModal: {
-    width: width * 0.14,
-    height: height * 0.14,
-    resizeMode: 'contain',
-    marginLeft: width * 0.03,
+    },
+    iconoAyudaModal: {
+        width: width * 0.14,
+        height: height * 0.14,
+        resizeMode: 'contain',
+        marginLeft: width * 0.03,
 
-  },
-  headerModel:{
-    flex:0.4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: height * 0.02
+    },
+    headerModel:{
+        flex:0.4,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: height * 0.02
 
-  },
-  BodyModel:{
-    flex:1,
+    },
+    BodyModel:{
+        flex:1,
 
-  },
-  contentContainer:{
-    paddingVertical: width * 0.02,
-    paddingHorizontal: height * 0.02
-  },
-  Body1:{
-    flex:1, 
-    backgroundColor:'blue', 
+    },
+    contentContainer:{
+        paddingVertical: width * 0.02,
+        paddingHorizontal: height * 0.02
+    },
+    Body1:{
+        flex:1,
+        backgroundColor:'blue',
 
-  },
-  Body2:{
-    flex:0.6,  
-    borderRadius: 20,
-    paddingVertical: 10
-    
-  },
+    },
+    Body2:{
+        flex:0.6,
+        borderRadius: 20,
+        paddingVertical: 10
+
+    },
+    modalConfirmationInstru:{
+      flex:1,
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+
+    },
+    containerModalInstru: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    bordeModalInstru: {
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      height: width * 0.5,
+      width: height * 0.3,
+      borderRadius: width * 0.02,
+      borderColor: 'white',
+      borderWidth: 0.665,
+      backgroundColor: 'white'
+    },
+    logitoLet: {
+      width: height * 0.25,
+      height: width * 0.15,
+      resizeMode: 'contain'
+    },
+    btOk: {
+      width: height * 0.25,
+      height: width * 0.13,
+      resizeMode: 'contain'
+    },
 
 
 
-  })
+
+})
