@@ -159,8 +159,7 @@ export default class DaLateralIScreen extends Component {
     }
 
     handleBackButtonClick() {
-        Orientation.lockToPortrait()
-        this.props.navigation.goBack(null);
+        
         return true;
     }
 
@@ -558,14 +557,14 @@ export default class DaLateralIScreen extends Component {
                                 onPress={this.openImagePicker1.bind(this)}
 
                             >
-                                {this.state.fotoUp1 ? <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp1 ? <Image  source={require('../assets/images/botones/laterales/tapabarros-delantero-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/laterales/tapabarros-delantero-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton}
                                 onPress={this.openImagePicker1.bind(this)}
                             >
-                                {this.state.fotoUp1 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp1 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -582,14 +581,14 @@ export default class DaLateralIScreen extends Component {
                                 onPress={this.openImagePicker2.bind(this)}
 
                             >
-                                {this.state.fotoUp2 ? <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp2 ? <Image  source={require('../assets/images/botones/laterales/tapabarros-trasero-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/laterales/tapabarros-trasero-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton2}
                                 onPress={this.openImagePicker2.bind(this)}
                             >
-                                {this.state.fotoUp2 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp2 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -604,14 +603,14 @@ export default class DaLateralIScreen extends Component {
                                 onPress={this.openImagePicker3.bind(this)}
 
                             >
-                                {this.state.fotoUp3 ? <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp3 ? <Image  source={require('../assets/images/botones/laterales/puerta-delantera-on.png')}style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/laterales/puerta-delantera-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton3}
                                 onPress={this.openImagePicker3.bind(this)}
                             >
-                                {this.state.fotoUp3 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp3 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -627,14 +626,14 @@ export default class DaLateralIScreen extends Component {
                                 onPress={this.openImagePicker4.bind(this)}
 
                             >
-                                {this.state.fotoUp4 ? <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp4 ? <Image  source={require('../assets/images/botones/laterales/puerta-trasera-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/laterales/puerta-trasera-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton4}
                                 onPress={this.openImagePicker4.bind(this)}
                             >
-                                {this.state.fotoUp4 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp4 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -650,14 +649,14 @@ export default class DaLateralIScreen extends Component {
                                 onPress={this.openImagePicker5.bind(this)}
 
                             >
-                                {this.state.fotoUp5 ? <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp5 ? <Image  source={require('../assets/images/botones/laterales/espejo-retrovisor-on.png')} style={styles.btnSi}/> : <Image source={require('../assets/images/botones/laterales/espejo-retrovisor-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton5}
                                 onPress={this.openImagePicker4.bind(this)}
                             >
-                                {this.state.fotoUp5 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp5 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback

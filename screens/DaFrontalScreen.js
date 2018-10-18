@@ -24,6 +24,10 @@ import ImagePicker from 'react-native-image-picker';
 let screen = { width, height } = Dimensions.get('screen');
 
 
+
+
+
+
 export default class DaFrontalScreen extends Component {
     constructor(props) {
         super(props)
@@ -171,8 +175,7 @@ export default class DaFrontalScreen extends Component {
     }
 
     handleBackButtonClick() {
-        Orientation.lockToPortrait()
-        this.props.navigation.goBack(null);
+
         return true;
     }
 
@@ -556,6 +559,7 @@ export default class DaFrontalScreen extends Component {
 
 
     render(){
+        const { navigation } = this.props;
 
 
         return(
@@ -623,14 +627,14 @@ export default class DaFrontalScreen extends Component {
                                 onPress={this.openImagePicker1.bind(this)}
 
                             >
-                                {this.state.fotoUp1 ? <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-delantera-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp1 ? <Image  source={require('../assets/images/botones/frontal/mascara-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/frontal/mascara-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton}
                                 onPress={this.openImagePicker1.bind(this)}
                             >
-                                {this.state.fotoUp1 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp1 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -647,14 +651,14 @@ export default class DaFrontalScreen extends Component {
                                 onPress={this.openImagePicker2.bind(this)}
 
                             >
-                                {this.state.fotoUp2 ? <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp2 ? <Image  source={require('../assets/images/botones/frontal/capot-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/frontal/capot-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton2}
                                 onPress={this.openImagePicker2.bind(this)}
                             >
-                                {this.state.fotoUp2 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp2 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -669,14 +673,14 @@ export default class DaFrontalScreen extends Component {
                                 onPress={this.openImagePicker3.bind(this)}
 
                             >
-                                {this.state.fotoUp3 ? <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-puerta-trasera-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp3 ? <Image  source={require('../assets/images/botones/frontal/parabrisas-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/frontal/parabrisas-off.png')}style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton3}
                                 onPress={this.openImagePicker3.bind(this)}
                             >
-                                {this.state.fotoUp3 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp3 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -692,14 +696,14 @@ export default class DaFrontalScreen extends Component {
                                 onPress={this.openImagePicker4.bind(this)}
 
                             >
-                                {this.state.fotoUp4 ? <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-delantero-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp4 ? <Image  source={require('../assets/images/botones/frontal/foco-delantero-derecho-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/frontal/foco-delantero-derecho-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton4}
                                 onPress={this.openImagePicker4.bind(this)}
                             >
-                                {this.state.fotoUp4 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp4 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -715,14 +719,14 @@ export default class DaFrontalScreen extends Component {
                                 onPress={this.openImagePicker5.bind(this)}
 
                             >
-                                {this.state.fotoUp5 ? <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp5 ? <Image  source={require('../assets/images/botones/frontal/foco-delantero-izquierdo-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/frontal/foco-delantero-izquierdo-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton5}
                                 onPress={this.openImagePicker4.bind(this)}
                             >
-                                {this.state.fotoUp5 ?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp5 ?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
@@ -739,14 +743,14 @@ export default class DaFrontalScreen extends Component {
                                 onPress={this.openImagePicker6.bind(this)}
 
                             >
-                                {this.state.fotoUp6 ? <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/bt-tapabarro-trasero-off.png')} style={styles.btnSi}/>}
+                                {this.state.fotoUp6 ? <Image  source={require('../assets/images/botones/frontal/parachoques-on.png')} style={styles.btnSi}/> : <Image  source={require('../assets/images/botones/frontal/parachoques-off.png')} style={styles.btnSi}/>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback
                                 disabled={!this.state.disabledButton6}
                                 onPress={this.openImagePicker6.bind(this)}
                             >
-                                {this.state.fotoUp6?  <Image  source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
+                                {this.state.fotoUp6?  <Image  source={require('../assets/images/fotos-obligatorias/ic-repetirfoto.png')} style={styles.icVerFoto}/> : <View></View>}
                             </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback

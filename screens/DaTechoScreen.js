@@ -105,8 +105,7 @@ export default class DaTechoScreen extends Component {
     }
 
     handleBackButtonClick() {
-        Orientation.lockToPortrait()
-        this.props.navigation.goBack(null);
+       
         return true;
     }
 

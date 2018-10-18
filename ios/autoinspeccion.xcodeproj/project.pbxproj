@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -57,6 +56,7 @@
 		F3BB404666ED45A8B7E2DF09 /* FiraSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16B4C49AF2ED4B20BAA5E77A /* FiraSans-ExtraBoldItalic.ttf */; };
 		F4DB5CB692D54BF1834227DC /* FiraSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCA0FCFC7A304963B03E7C6A /* FiraSans-ExtraBold.ttf */; };
 		F87C497466B44EFCA0DFD208 /* libRCTOrientation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4564FBF5CA94E27A1AB9C69 /* libRCTOrientation.a */; };
+		6E25EFE1E07B48779E963558 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FFE1E0D4D44459BDBDCFC5 /* libRNCamera.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -398,6 +398,8 @@
 		E676C48B0EE1481A98708C5D /* FiraSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FiraSans-Italic.ttf"; path = "../assets/fonts/FiraSans-Italic.ttf"; sourceTree = "<group>"; };
 		F497EFAE741648D49BD9BDE9 /* FiraSans-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FiraSans-BlackItalic.ttf"; path = "../assets/fonts/FiraSans-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F9651D7B74C04B40B3532886 /* FiraSans-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FiraSans-ExtraLight.ttf"; path = "../assets/fonts/FiraSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		BD5A73AE652D4794961161A2 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; name = "RNCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		A6FFE1E0D4D44459BDBDCFC5 /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +430,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				F87C497466B44EFCA0DFD208 /* libRCTOrientation.a in Frameworks */,
 				0411D3C65DB74EB6A3C08188 /* libRNImagePicker.a in Frameworks */,
+				6E25EFE1E07B48779E963558 /* libRNCamera.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +643,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				0557DCEDB1C4429F989F521A /* RCTOrientation.xcodeproj */,
 				3B54345AF42C40B19558753A /* RNImagePicker.xcodeproj */,
+				BD5A73AE652D4794961161A2 /* RNCamera.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1329,12 +1333,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-orientationiOSRCTOrientation/**",
 					"$(SRCROOT)..\node_modules\neact-native-image-pickerios",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 				INFOPLIST_FILE = autoinspeccionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1356,12 +1362,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-orientationiOSRCTOrientation/**",
 					"$(SRCROOT)..\node_modules\neact-native-image-pickerios",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 				INFOPLIST_FILE = autoinspeccionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1390,6 +1398,7 @@
 					ode_modules,
 					"eact-native-image-pickerios",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 				INFOPLIST_FILE = autoinspeccion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1418,6 +1427,7 @@
 					ode_modules,
 					"eact-native-image-pickerios",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 				INFOPLIST_FILE = autoinspeccion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1447,11 +1457,13 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-orientationiOSRCTOrientation/**",
 					"$(SRCROOT)..\node_modules\neact-native-image-pickerios",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 				INFOPLIST_FILE = "autoinspeccion-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1483,11 +1495,13 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-orientationiOSRCTOrientation/**",
 					"$(SRCROOT)..\node_modules\neact-native-image-pickerios",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 				INFOPLIST_FILE = "autoinspeccion-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1520,6 +1534,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.autoinspeccion-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1544,6 +1559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

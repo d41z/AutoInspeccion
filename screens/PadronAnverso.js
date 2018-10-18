@@ -16,12 +16,16 @@ import {
   ScrollView,
   Button,
   TouchableHighlight,
-  BackHandler
+  BackHandler,
+  TouchableOpacity
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 import ImagePicker from 'react-native-image-picker';
+import { RNCamera } from 'react-native-camera';
 
 const { width, height } = Dimensions.get('window')
+
+
 
 
 export default class PadronAnverso extends Component {
@@ -40,12 +44,36 @@ export default class PadronAnverso extends Component {
       imageHeight: height,
       imageWidth: width,
       openModalRef: false,
+      openModalCam: false,
     }
   }
+
+   takePicture = async function() {
+    if (this.camera) {
+      const options = { quality: 0.5, base64: true };
+
+      this.setState({
+        loading: true
+      });
+      const data = await this.camera.takePictureAsync(options);
+      let source = { uri: data.uri };
+      this.setState({
+        loading: false,
+        imageRef: source,
+        fotoUp: true,
+        btnEstado: false,
+        disabledButton: false,
+        openModalCam: false
+      });
+      console.log(data.uri);
+    }
+  };
 
   componentDidMount() {
         BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
     }
+
+
 
   componentWillMount() {
     if (Platform.OS == 'ios') {
@@ -104,6 +132,9 @@ export default class PadronAnverso extends Component {
       })
   }
 
+
+
+
   cambioImagen=()=>{
    
     this.setState({
@@ -112,6 +143,7 @@ export default class PadronAnverso extends Component {
     
     
   }
+
 
 
   render(){
@@ -189,7 +221,6 @@ export default class PadronAnverso extends Component {
               </View>
                 <View style={{flex:0.3, backgroundColor:'orange', flexDirection: 'row'}}>
                   <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'white', alignItems: 'center'}}>
-                    {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Ver Referencia</Text> : <Text></Text>}
                       <TouchableWithoutFeedback
                                 onPress={this.cambioImagen.bind(this)}
                                 disabled={this.state.btnEstado}
@@ -197,10 +228,9 @@ export default class PadronAnverso extends Component {
                       {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/> : <Image style={styles.test1} source={require('../assets/images/fotos-obligatorias/bt-ver-referencia.png')}/>}
                       </TouchableWithoutFeedback>               
                   </View>
-                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>                           
-                      {this.state.fotoUp ? <Text style={{textAlign: 'center'}}>Repetir Foto</Text> : <Text style={{textAlign: 'center'}}>Tomar Foto</Text>}                                 
+                  <View style={{flex:1, flexDirection: 'row',  backgroundColor: 'white', justifyContent: 'flex-end', alignItems: 'center'}}>                                                          
                       <TouchableWithoutFeedback
-                                onPress={this.openImagePicker.bind(this)}  
+                                onPress={() => this.setState({ openModalCam: true })}  
                                   >
                       {this.state.fotoUp ? <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-repetirfoto.png')}/> : <Image style={styles.iconCam} source={require('../assets/images/fotos-obligatorias/bt-tomar-foto.png')}/>}
                       </TouchableWithoutFeedback>        
@@ -347,8 +377,118 @@ export default class PadronAnverso extends Component {
                     </View>
                   </View>
                 </Modal>
+                <Modal
+                  visible={this.state.openModalCam}
+                  transparent={true}
+                  animationType={'slide'}
+                  onRequestClose={() => this.setState({ openModalCam: false })}
+                  supportedOrientations={['landscape']}
+                >
+                  <View style={styles.modalConfirmationCam}>
+                    <View style={styles.containerModalCam}>
+                      <View style={styles.bordeModalCam}>
+                        <View style={{flex:1, flexDirection: 'column'}}>
+                          <ImageBackground  source={require('../assets/others/fondo-titulos.png')}
+                                            style={styles.fondoHeader}>
+
+                           <View style={styles.containHeader}>
+
+                              <View style={{flex:0.8}}>
+                                <View style={{flexDirection: 'row'}}>
+                               <Image source={require('../assets/others/icono-titulos.png')}
+                                style={styles.logoLet} />
+                                <Text style={styles.textHeader}>
+                                  INGRESO DE FOTOGRAFÍAS
+                                </Text>
+                                </View>
+                                
+                              </View>
+                              
+                              
+
+                                <ImageBackground source={require('../assets/images/cabecera-fondo-amarillo.png')}
+                                                  resizeMode= 'contain'
+                                                 style={styles.containFotoObligatoria}>
+                                  
+                                <View style={{flexDirection: 'column'}}>
+                                  <Text style={{fontSize: 14, color: 'black'}}>
+                                    Fotos Obligatorias
+                                  </Text>
+                                  <View>
+                                    <Text style={{fontSize: 18, color: 'black'}}>
+                                      Foto 1 de 13
+                                    </Text>
+                                  </View>
+                                </View>
+                                  
+                                    
+
+                                </ImageBackground>
+
+                              
+
+                              <View style={{flex:0.3, flexDirection: 'row', alignItems: 'center'}}>
+                                <Image source={require('../assets/images/fotos-obligatorias/cabecera-icono-tiempo.png')} style={styles.flecha} />
+                                <Text style={{textAlign: 'center'}}>
+                                  00:00
+                                </Text>
+                              </View>
+
+                              <View style={{flex:0.1}}>
+                                <TouchableWithoutFeedback
+                                          onPress={() => this.setState({ openModal: true })}>
+                                <Image source={require('../assets/modal/icono-ayuda.png')} style={styles.flecha} />
+                                </TouchableWithoutFeedback>
+                              </View>
+                     
+                            </View>
+
+
+                        </ImageBackground>
+                        <View style={{flex:1, flexDirection:'column'}}>
+                         
+                          <View style={{height:height*0.5, width: height*0.666}}>
+                            <RNCamera
+                              ref={ref => {
+                                this.camera = ref;
+                              }}
+                              style = {styles.preview}
+                              type={RNCamera.Constants.Type.back}
+                              flashMode={RNCamera.Constants.FlashMode.off}
+
+                              permissionDialogTitle={'Permission to use camera'}
+                              permissionDialogMessage={'We need your permission to use your camera phone'}
+                              onGoogleVisionBarcodesDetected={({ barcodes }) => {
+                                console.log(barcodes)
+                              }}
+                              />
+                          </View>
+                          
+
+                        </View>
+                        <View style={{position: 'absolute', top: 0, right: 0, bottom: -(height*0.08), justifyContent: 'center', alignItems: 'center'}}>
+                        <TouchableWithoutFeedback onPress={this.takePicture.bind(this)} style={styles.capture}>  
+                          <Image source={require('../assets/images/fotos-obligatorias/bt-tomar-foto-cam.png')} resizeMode='contain' style={styles.takeCam}/>
+                        </TouchableWithoutFeedback>
+                        </View>
+
+                          
+                          
+
+
+                        </View>
+                        
+
+                        
+                      </View>
+                      
+                    </View>
+                  </View>
+                </Modal>
+                
 
          </View>
+
 
 
         
@@ -396,8 +536,8 @@ export default class PadronAnverso extends Component {
         
     },
     iconCam: {
-      width: height * 0.1,
-      height: width * 0.12,
+      width: height * 0.3,
+      height: width * 0.14,
       resizeMode: 'contain',
       
     },
@@ -506,6 +646,62 @@ export default class PadronAnverso extends Component {
     borderRadius: 20,
     paddingVertical: 10
     
+  },
+  preview: {
+    flex:1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  capture: {
+    flex: 0,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding: 15,
+    paddingHorizontal: 20,
+    alignSelf: 'center',
+    margin: 20
+  },
+  modalConfirmationCam: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
+  containerModalCam: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bordeModalCam: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    height: width * 0.92,
+    width: height,
+    borderRadius: width * 0.02,
+    borderColor: 'white',
+    borderWidth: 0.666,
+    backgroundColor: 'white',
+  },
+  buttonCam: {
+        position: 'absolute',
+        bottom: 25,
+        padding: 16,
+        right: 20,
+        left: 20,
+        borderRadius: 20,
+        alignItems: 'center',
+  },
+  imageCam:{
+    width: height * 0.1,
+    height: width * 0.1,
+    resizeMode: 'contain',
+
+  },
+  takeCam:{
+    height: width * 0.2,
+    width: height * 0.2,
+
   },
 
 

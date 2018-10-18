@@ -8,10 +8,16 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   Image,
-  Modal
+  Modal,
+  Alert
 } from 'react-native';
 
 const { width, height } = Dimensions.get('screen');
+
+
+
+
+
 
   export default class LoginForm extends Component{
     constructor(props) {
@@ -19,43 +25,58 @@ const { width, height } = Dimensions.get('screen');
     this.state = {
       loading: false,
       openModalLogin: false,
-      user: {
-        rut: '',
-        patente: '',
-        token: '',
+      openModalPatente: false,
+      rut:'',
+      patente:'',
+      vehiculo: {
+        modelo: '',
+        ano: '',
+        color: '',
       },
     }
   }
 
   fetchDataLogin() {
-    var patente = this.state.patente1+this.state.patente2+this.state.patente3;
-    fetch('url', {
+
+    try{
+      console.log(this.state.rut)
+      console.log(this.state.patente)
+    fetch('http://innovawebdesarrollo.cl/let/index.php/API/login', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: 'email=' + encodeURIComponent(this.state.rut) + '&'
-        + 'password=' + encodeURIComponent(patente),
+      body: 'rut=' + encodeURIComponent(this.state.rut) + '&'
+        + 'plate=' + encodeURIComponent(this.state.patente)
     })
       .then((response) => response.json())
+
       .then((responseData) => {
+        console.log('sds'),
         this.setState({
           mensajeRegistro: responseData.mensaje,
-          tokenUsuario: responseData.token
+          tokenUsuario: responseData.token,
+
         })
       }).then(
         () => this.handleLogin()
       )
       .catch((error) => {
-        console.log(error)
+        console.log('error')
       });
+
+    }catch(err){
+      console.log(err)
+    }
+
+
   }
+
 
   handleLogin() {
     if (this.state.mensajeRegistro == 'Ok') {
-      AsyncStorage.setItem('token', this.state.tokenUsuario);
-      this.props.navigation.navigate('bienvenida', { item: 'bienvenida', token: this.state.tokenUsuario})
+      this.props.navigation.navigate('terms')
     } else {
       console.log('Login Incorrecto')
       this.setState({
@@ -63,6 +84,82 @@ const { width, height } = Dimensions.get('screen');
       })
     }
   }
+
+
+  formateaRut(rut){
+    var actual = rut.replace(/^0+/, "");
+    if (actual != '' && actual.length > 0) {
+                var sinPuntos = actual.replace(/\./g, "");
+                var actualLimpio;
+                if(actual != '' && actual.length >= 1){
+                    actualLimpio = sinPuntos.replace(/-/g, "");
+                }
+
+    try{
+                    var inicio = (actualLimpio != 'undefined') ? actualLimpio.substring(0, actualLimpio.length - 1) : '';
+                    var rutPuntos = "";
+                    var i = 0;
+                    var j = 1;
+                    for (i = inicio.length - 1; i >= 0; i--) {
+                        var letra = inicio.charAt(i);
+                        rutPuntos = letra + rutPuntos;
+                        if (j % 3 == 0 && j <= inicio.length - 1) {
+                            rutPuntos = "." + rutPuntos;
+                        }
+                        j++;
+                    }
+                    var dv = actualLimpio.substring(actualLimpio.length - 1);
+                    rutPuntos = rutPuntos + (rutPuntos.length > 2 ? "-" : "") + dv;
+
+
+                    this.setState({
+                        rut: rutPuntos
+          });
+
+
+
+                }catch(err){
+                    // console.log(err)
+                    
+                }
+            }
+            return rutPuntos;
+
+
+  }
+
+  formarteandoRut(value) {
+            this.formateaRut(value.toUpperCase());
+        }
+
+
+        validarPatente(value){
+
+            var patron1  = /[A-Z]{2}[A-Z]{2}[0-9]{2}/;
+            var patron2  = /[A-Z]{2}[0-9]{2}[0-9]{2}/;
+          if(value.length == 6){
+
+            if(patron1.test(value) || patron2.test(value)){
+                this.setState({
+                        patente: value
+                          });
+            }else{
+            this.setState({
+                        openModalPatente: true
+                          });
+            }
+
+          }
+          
+          
+          
+
+
+
+        }
+
+
+
 
 
     render(){
@@ -73,6 +170,9 @@ const { width, height } = Dimensions.get('screen');
               RUT Asegurado:
             </Text> 
             <TextInput
+              value={this.state.rut}
+              maxLength={12}
+              onChangeText={(value) => this.formarteandoRut(value)}
               underlineColorAndroid="transparent"
               style={styles.input} 
 
@@ -81,12 +181,14 @@ const { width, height } = Dimensions.get('screen');
               Patente:
             </Text> 
             <TextInput
+              maxLength={6}
+              onChangeText={(text)=> this.setState({patente: text})}
               underlineColorAndroid="transparent"
               style={styles.input} 
             /> 
 
             <TouchableWithoutFeedback
-                      onPress={() => navigate('terms')}>
+                      onPress={() => this.fetchDataLogin()}>
                     <Image source={require('../assets/images/botones/bt-continuar.png')}
                       style={styles.btnIngresar} />
             </TouchableWithoutFeedback>
@@ -111,6 +213,37 @@ const { width, height } = Dimensions.get('screen');
                         
                       </View>
                       <TouchableWithoutFeedback onPress={() => this.setState({ openModalLogin: false })}>
+                        <Image source={require('../assets/modal/bt-cerrar.png')}
+                          style={styles.btnCerrarModal} />
+                      </TouchableWithoutFeedback>
+                    </View>
+                  </View>
+                </Modal>
+                <Modal
+                  visible={this.state.openModalPatente}
+                  transparent={true}
+                  animationType={'slide'}
+                  onRequestClose={() => this.setState({ openModalPatente: false })}
+                >
+                  <View style={styles.modalConfirmation}>
+                    <View style={styles.containerModal}>
+                      <View style={styles.bordeModal}>
+                        <View style={{flex:1}}>
+                          <Text style={{textAlign: 'center', fontSize: 24, color:'black'}}>Error</Text>
+                          <Text style={{textAlign: 'center', fontSize: 20}}>La Patente debe estar en el siguiente formato:</Text>
+                          <View style={{flex:1, alignItems:'center', justifyContent: 'center'}}>
+                            <Text style={{textAlign: 'center', fontSize: 20, color:'black'}}>AA9999</Text>
+                            <Text style={{textAlign: 'center', fontSize: 20, color:'black'}}>o</Text>
+                            <Text style={{textAlign: 'center', fontSize: 20, color:'black'}}>AAAA99</Text>
+                          </View>
+
+
+
+                          
+                        </View>
+                        
+                      </View>
+                      <TouchableWithoutFeedback onPress={() => this.setState({ openModalPatente: false })}>
                         <Image source={require('../assets/modal/bt-cerrar.png')}
                           style={styles.btnCerrarModal} />
                       </TouchableWithoutFeedback>
